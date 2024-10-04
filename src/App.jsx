@@ -7,6 +7,7 @@ import TrainingHub from "./views/TrainingHub";
 import Policies from "./views/Policies";
 import SWProfile from "./views/SWProfile";
 import Timesheet from "./views/TimeSheet";
+import NoPage from "./components/NoPage"
 import SideNavBar from "./components/SideNavBar";
 
 
@@ -30,6 +31,7 @@ function App() {
               <Route path="/policies" element={<Policies />} />
               <Route path="/SWProfile" element={<SWProfile />} />
               <Route path="/timesheet" element={<Timesheet />} />
+              <Route path="*" element={<NoPage />} />
             </Routes>
           </div>
         </div>
