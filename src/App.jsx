@@ -16,13 +16,13 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <div className="flex gap-5 h-screen relative md:static">
-          <div className="h-full md:relative absolute left-0 top-0">
+        <div className="flex gap-5 md:h-screen relative md:static">
+          <div className="h-screen md:relative absolute left-0 top-0">
             <SideNavBar />
           </div>
           
           {/* Other Components  */}
-          <div className="">
+          <div className="md:w-[80%] w-full">
             <Routes>
               <Route path="/" element={<ServiceProfile />} />
               <Route path="/YP" element={<YoungPersonProfile />} />

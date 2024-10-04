@@ -9,7 +9,7 @@ const SideNavBar = () => {
       {/* logo   */}
         <img src={Logo} alt="Logo" className='h-12 md:w-52 w-full' />
 
-        <div className='text-gray-300 font-bold flex flex-col md:gap-6 gap-2'>
+        <div className='text-gray-300 font-bold flex flex-col md:gap-6 sm:gap-2'>
             <NavLink to="/" className={({ isActive }) =>`flex gap-3 items-center p-2 rounded-[3px] ${isActive ? "bg-gray-600 text-white " : "bg-none"}`}>
                 <FontAwesomeIcon icon={faBriefcase} />
                 <p>Service Profile</p>
