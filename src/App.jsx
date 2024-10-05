@@ -1,5 +1,8 @@
 import ReactDOM from "react-dom/client";
+import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import YoungPersonProfile from "./views/YoungPersonProfile";
 import ServiceProfile from "./views/ServiceProfile";
 import Reports from "./views/Reports";
@@ -12,13 +15,20 @@ import SideNavBar from "./components/SideNavBar";
 
 
 function App() {
+  const [showNav, setShowNav] = useState(false);
 
   return (
     <>
       <BrowserRouter>
         <div className="flex gap-5 md:h-screen relative md:static">
-          <div className="h-screen md:relative absolute left-0 top-0">
-            <SideNavBar />
+          <div className="absolute md:relative md:left-0 md:top-0 top-2">
+            <div className="md:hidden fixed right-4" onClick={() => setShowNav(prevShowNav => !prevShowNav)}>
+              <FontAwesomeIcon className={`h-8 w-8 ${showNav? "hidden" : "block"}`} icon={faBars} />
+              <FontAwesomeIcon className={`h-8 w-8 ${showNav? "block" : "hidden"}`} icon={faXmark} />
+            </div>
+            <div className={`h-screen md:block ${showNav? 'block' : 'hidden'} left-0 top-0`}>
+              <SideNavBar />
+            </div>
           </div>
           
           {/* Other Components  */}
