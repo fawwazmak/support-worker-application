@@ -1,7 +1,9 @@
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilter, faBriefcase, faPen, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 const Homepage = () => {
+  
   return (
     <div className='p-4'>
       <header className='flex sm:justify-between sm:gap-0 gap-5 sm:flex-row flex-col'>
