@@ -1,20 +1,31 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFilter, faBriefcase,} from '@fortawesome/free-solid-svg-icons';
+import { faFilter, faBriefcase,faXmark} from '@fortawesome/free-solid-svg-icons';
 
 
 const ServiceProfile = () => {
   const [students, setStudents] = useState([
-    { id: 1, name: "Adedoyin Aderonke", email: "themba@gmail.com", address: "12, beever street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Male", age: "23" },
-    { id: 2, name: "Adedoyin Aderonke", email: "themba@gmail.com", address: "12, beever street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Male", age: "23" },
-    { id: 3, name: "Adedoyin Aderonke", email: "themba@gmail.com", address: "12, beever street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Male", age: "23" },
+    { id: 1, name: "Adedoyin Aderonke", email: "themba@gmail.com", address: "12, beever street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Male", age: "23", riskLevel: "low", },
+    { id: 2, name: "Adedoyin Aderonke", email: "themba@gmail.com", address: "12, beever street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Male", age: "23", riskLevel: "low", },
+    { id: 3, name: "Adedoyin Aderonke", email: "themba@gmail.com", address: "12, beever street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Male", age: "23", riskLevel: "low", },
+    { id: 4, name: "Adedoyin Aderonke", email: "themba@gmail.com", address: "12, beever street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Male", age: "23", riskLevel: "low", },
+    { id: 5, name: "Adedoyin Aderonke", email: "themba@gmail.com", address: "12, beever street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Male", age: "23", riskLevel: "low", },
+    { id: 6, name: "Adedoyin Aderonke", email: "themba@gmail.com", address: "12, beever street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Male", age: "23", riskLevel: "low", },
+    { id: 7, name: "Adedoyin Aderonke", email: "themba@gmail.com", address: "12, beever street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Male", age: "23", riskLevel: "low", },
+    { id: 8, name: "Adedoyin Aderonke", email: "themba@gmail.com", address: "12, beever street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Male", age: "23", riskLevel: "low", },
+    { id: 9, name: "Adedoyin Aderonke", email: "themba@gmail.com", address: "12, beever street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Male", age: "23", riskLevel: "low", },
   ]);
 
   const [selectedStudent, setSelectedStudent] = useState(null);
 
 
-  const onClickStudent = (student) => {
+  const clickedStudent = (student) => {
     setSelectedStudent(student);
+  }
+
+  const deselect = () => {
+    setSelectedStudent(null);
+    console.log("Alright")
   }
 
   return (
@@ -89,7 +100,7 @@ const ServiceProfile = () => {
 
           <tbody className='font-medium'>
             {students.map(student => (
-              <tr key={student.id} className='px-3 whitespace-nowrap md:text-left text-center' onClick={() => onClickStudent(student)}>
+              <tr key={student.id} className='px-3 whitespace-nowrap md:text-left text-center' onClick={() => clickedStudent(student)}>
                 <td>{student.id}</td>
                 <td>{student.name}</td>
                 <td>{student.address}</td>
@@ -103,34 +114,88 @@ const ServiceProfile = () => {
 
 
         {selectedStudent && (
-          <div className='modal absolute right-0 top-0'>
-            <figure>
-              <img src="" alt="" />
-              <figcaption>{selectedStudent.name}</figcaption>
-            </figure>
+          <>
+            <div className='modal absolute right-0 top-0 p-4 bg-white h-full flex flex-col gap-4 md:w-2/5 z-20'>
+              <div className='absolute right-4' onClick={deselect}>
+                <FontAwesomeIcon icon={faXmark} className='md:h-6 h-4' />
+              </div>
+              <figure>
+                <img src="" alt="" />
+                <figcaption className='text-center font-bold md:text-2xl text-lg'>{selectedStudent.name}</figcaption>
+              </figure>
 
-            <div>
-              <h2>Young person's details</h2>
+              <table>
+                <thead>
+                  <tr><th className='text-center bg-purple-300 py-2 w-full' colSpan={2}>Young person's details</th></tr>
+                </thead>  
+                <tfoot>
+                  <tr><td colSpan={2} className='text-center bg-purple-300 py-2 w-full'>Actions</td></tr>
+                </tfoot>
 
-              <ul>
-                <li>Risk level {}</li>
-                <li>Email {selectedStudent.email}</li>
-                <li>Phone {selectedStudent.contact}</li>
-                <li>Address {selectedStudent.address}</li>
-                <li>Age {} Years</li>
-                <li>Gender {}</li>
-              </ul>
+                <tbody className='w-1/2 mx-auto'>
+                  <tr className='font-semibold'>
+                    <td className='text-gray-400'>Risk level</td>
+                    <td className='w-1/2'>{selectedStudent.riskLevel}</td>
+                  </tr>
+                  <tr className='font-semibold'>
+                    <td className='text-gray-400'>Email</td>
+                    <td className='w-1/2'>{selectedStudent.email}</td>
+                  </tr>
+                  <tr className='font-semibold'>
+                    <td className='text-gray-400'>Phone</td>
+                    <td className='w-1/2'>{selectedStudent.contact}</td>
+                  </tr>
+                  <tr className='font-semibold'>
+                    <td className='text-gray-400'>Address</td>
+                    <td className='w-1/2'>{selectedStudent.address}</td>
+                  </tr>
+                  <tr className='font-semibold'>
+                    <td className='text-gray-400'>Age</td>
+                    <td className='w-1/2'>{selectedStudent.age}</td>
+                  </tr>
+                  <tr className='font-semibold'>
+                    <td className='text-gray-400'>Gender</td>
+                    <td className='w-1/2'>{selectedStudent.gender}</td>
+                  </tr>
+                </tbody>
+              </table>  
 
-              <h2>Actions</h2>
-
-              <div>
-                <div className='flex items-center md:gap-3 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-500 md:justify-normal justify-between'>
+                
+              <div className='flex flex-wrap gap-2'>
+                <div className='flex items-center md:gap-3 gap-2 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-400 md:justify-normal justify-between'>
                   <FontAwesomeIcon icon={faBriefcase} />
-                  <p>Profile</p>
+                  <p>profile</p>
+                </div>
+
+                <div className='flex items-center md:gap-3 gap-2 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-400 md:justify-normal justify-between'>
+                  <FontAwesomeIcon icon={faBriefcase} />
+                  <p>incident report</p>
+                </div>
+
+                <div className='flex items-center md:gap-3 gap-2 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-400 md:justify-normal justify-between'>
+                  <FontAwesomeIcon icon={faBriefcase} />
+                  <p>property check</p>
+                </div>
+
+                <div className='flex items-center md:gap-3 gap-2 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-400 md:justify-normal justify-between'>
+                  <FontAwesomeIcon icon={faBriefcase} />
+                  <p>room check</p>
+                </div>
+
+                <div className='flex items-center md:gap-3 gap-2 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-400 md:justify-normal justify-between'>
+                  <FontAwesomeIcon icon={faBriefcase} />
+                  <p>emergency contact</p>
+                </div>
+
+                <div className='flex items-center md:gap-3 gap-2 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-400 md:justify-normal justify-between'>
+                  <FontAwesomeIcon icon={faBriefcase} />
+                  <p>Risk assesment plan</p>
                 </div>
               </div>
             </div>
-          </div>
+
+            <div className='bg-gray-200 md:block hidden opacity-50 h-full w-full absolute left-0 top-0 z-10' onClick={deselect}></div>
+          </>
         )}
       </div>
     </div>
