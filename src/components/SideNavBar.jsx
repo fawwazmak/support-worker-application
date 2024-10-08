@@ -4,11 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBriefcase, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import Logo from '/logo.png'
 
-const SideNavBar = ({noSideBar, changeValue}) => {
+const SideNavBar = () => {
     const navigate = useNavigate();
     const logIn = () => {
         navigate('/');
-        changeValue(true);
     }
   return (
     <aside className='bg-purple-800 p-4 h-full flex flex-col md:gap-24 gap-4'>

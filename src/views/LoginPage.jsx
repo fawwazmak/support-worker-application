@@ -3,15 +3,12 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
 
-const LoginPage = ({noSideBar, changeValue}) => {
+const LoginPage = () => {
     const navigate = useNavigate();
     const onSubmit = (e) => {
         e.preventDefault();
 
         navigate('/serviceProfile');
-
-        changeValue(false);
-        // localStorage.setItem(changeValue, false);
     }
 
     
