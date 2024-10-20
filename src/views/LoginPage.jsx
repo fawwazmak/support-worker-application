@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
 
-const LoginPage = () => {
+const LoginPage = ({ onLogin }) => {
   const [role, setRole] = useState('user'); // default to 'user'
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -20,13 +20,15 @@ const LoginPage = () => {
     // Check role and credentials
     if (role === 'admin') {
       if (email === adminCredentials.email && password === adminCredentials.password) {
-        navigate('/serviceProfile');
+        onLogin(); // Call the login handler passed from the parent
+        navigate('/serviceProfile'); // Navigate to the admin page
       } else {
         setError('Invalid admin credentials');
       }
     } else if (role === 'user') {
       if (email === userCredentials.email && password === userCredentials.password) {
-        navigate('/userDashboard');
+        onLogin(); // Call the login handler passed from the parent
+        navigate('/YP'); // Navigate to the user page
       } else {
         setError('Invalid user credentials');
       }
@@ -35,7 +37,10 @@ const LoginPage = () => {
 
   return (
     <div className='bg-purple-800 w-screen h-screen flex items-center justify-center'>
-      <form action="" method="post" className='bg-gray-200 md:w-2/5 w-4/5 px-5 py-8 flex flex-col gap-8 rounded-[10px] opacity-80 border-2 border-black' onSubmit={onSubmit}>
+      <form
+        className='bg-gray-200 md:w-2/5 w-4/5 px-5 py-8 flex flex-col gap-8 rounded-[10px] opacity-80 border-2 border-black'
+        onSubmit={onSubmit}
+      >
         <div className='flex flex-col gap-1'>
           <h1 className='md:text-3xl text-2xl text-center font-bold'>Welcome</h1>
           <p className='text-center'>Login to your account to continue</p>
@@ -46,7 +51,6 @@ const LoginPage = () => {
             className='block w-full border-none outline-none focus:outline-none focus:border-none bg-transparent'
             type="email"
             name="email"
-            id="email"
             placeholder="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -59,7 +63,6 @@ const LoginPage = () => {
             className='block w-full border-none outline-none focus:outline-none focus:border-none bg-transparent'
             type='password'
             name="password"
-            id="password"
             placeholder="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
