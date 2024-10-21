@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
 
 const LoginPage = ({ onLogin }) => {
-  const [role, setRole] = useState('user'); // default to 'user'
+  const [role, setRole] = useState('user');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -13,22 +13,22 @@ const LoginPage = ({ onLogin }) => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    // Hardcoded credentials
+    // Admin and User Credentials
     const adminCredentials = { email: 'admin@example.com', password: 'admin123' };
     const userCredentials = { email: 'user@example.com', password: 'user123' };
 
-    // Check role and credentials
+    
     if (role === 'admin') {
       if (email === adminCredentials.email && password === adminCredentials.password) {
-        onLogin(); // Call the login handler passed from the parent
-        navigate('/serviceProfile'); // Navigate to the admin page
+        onLogin(); 
+        navigate('/serviceProfile'); 
       } else {
         setError('Invalid admin credentials');
       }
     } else if (role === 'user') {
       if (email === userCredentials.email && password === userCredentials.password) {
-        onLogin(); // Call the login handler passed from the parent
-        navigate('/YP'); // Navigate to the user page
+        onLogin(); 
+        navigate('/YP'); 
       } else {
         setError('Invalid user credentials');
       }
@@ -100,6 +100,12 @@ const LoginPage = ({ onLogin }) => {
         <button className='bg-purple-800 py-2 rounded-[5px] text-gray-200 text-xl font-medium'>Login</button>
 
         <p className='text-center'>Don't have an account? <span className='text-blue-500 cursor-pointer'>Sign up here</span></p>
+
+        <p>adminCredentials: email - 'admin@example.com'
+         password: 'admin123' </p>
+
+      <p>userCredentials:  email - 'user@example.com'
+         password: 'user123' </p>
       </form>
     </div>
   );
