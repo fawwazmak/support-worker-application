@@ -14,6 +14,7 @@ import NoPage from "./components/NoPage";
 import SideNavBar from "./components/SideNavBar";
 import LoginPage from "./views/LoginPage";
 import ServProfile from "./components/serviceProfileCompo/Profile";
+import StudentList from "./components/serviceProfileCompo/StudentList";
 
 function ProtectedRoute({ children, isAuthenticated }) {
   if (!isAuthenticated) {
@@ -70,6 +71,12 @@ function App() {
                 </ProtectedRoute>
               }
             />
+
+            <Route path="/service" element={
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <StudentList />
+              </ProtectedRoute>
+            } />
             <Route
               path="/YP"
               element={

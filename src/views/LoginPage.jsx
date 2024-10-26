@@ -28,7 +28,7 @@ const LoginPage = ({ onLogin }) => {
     } else if (role === 'user') {
       if (email === userCredentials.email && password === userCredentials.password) {
         onLogin(); 
-        navigate('/YP'); 
+        navigate('/service'); 
       } else {
         setError('Invalid user credentials');
       }

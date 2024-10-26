@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import filterIcon from "/filter-icon.svg";
 import bagIcon from "/bag-icon.svg";
 import bagIconWhite from "/bag-icon-white.svg";
@@ -6,6 +7,19 @@ import arrowUp from "/arrow-up.svg"
 
 
 const Profile = () => {
+    const formRef = useRef(null);
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log('Form submitted!');
+    };
+
+  const triggerFormSubmit = () => {
+    if (formRef.current) {
+      formRef.current.submit(); 
+    }
+  };
+
   return (
     <div className=' px-4 md:px-0 md:pr-4 font-poppins h-screen overflow-y-scroll scrollbar-thin'>
       <header className='flex flex-col pb-2 sticky top-0 z-20 bg-white'>
@@ -23,7 +37,7 @@ const Profile = () => {
         </div>
 
         <div className='flex gap-[12px] self-end'>
-            <button className='rounded-[8px] flex items-center p-[8px] gap-[10px] border border-[#622c98] text-[#622c98]'>
+            <button onClick={triggerFormSubmit} className='rounded-[8px] flex items-center p-[8px] gap-[10px] border border-[#622c98] text-[#622c98]'>
                 <p>Save</p>
                 <img src={bagIcon} alt="bag icon" />
             </button>
@@ -43,7 +57,7 @@ const Profile = () => {
       </header>
 
 
-        <form action="" className="mt-8 w-[80%] mx-auto">
+        <form ref={formRef} onSubmit={handleSubmit} action="" className="mt-8 w-[80%] mx-auto">
             <div className="flex flex-col gap-8 border border-[#F9F2FF] pb-12">
                 <header className="flex justify-between bg-[#F9F2FF] p-5 rounded-t-[8px]">
                     <h2>Service Details</h2>
@@ -120,6 +134,34 @@ const Profile = () => {
             </div>
 
             <div className="flex flex-col gap-8 border border-[#F9F2FF] pb-12">
+                <header className="flex justify-between bg-[#F9F2FF] p-5 rounded-t-[8px]">
+                    <h2>Staff info</h2>
+                    <img src={arrowUp} alt="Arrow" />
+                </header>
+                <div className="flex flex-col gap-4 md:p-5 p-2">
+                    <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                        <label className='w-full' htmlFor="serviceManager">Service manager</label>
+                        <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="serviceManager" id="serviceManager" />
+                    </div>
+
+                    <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                        <label className='w-full' htmlFor="deputyManager">Deputy manager</label>
+                        <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="deputyManager" id="deputyManager" />
+                    </div>
+
+                    <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                        <label className='w-full' htmlFor="callOne">On Call 1</label>
+                        <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="tel" name="callOne" id="callOne" />
+                    </div>
+
+                    <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                        <label className='w-full' htmlFor="callTwo">On Call 2</label>
+                        <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="callTwo" id="callTwo" />
+                    </div>
+                </div>
+            </div>
+
+            <div className="flex flex-col gap-8 border border-[#F9F2FF] pb-12">
                 <header className="flex justify-between bg-[#F9F2FF] p-5">
                     <h2>Service Users</h2>
                     <img src={arrowUp} alt="Arrow" />
@@ -144,11 +186,11 @@ const Profile = () => {
                     </div>
 
                     <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
-                        <label className='w-full' htmlFor="durationOfStay">Duration of Stay</label>
-                        <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="durationOfStay" id="durationOfStay" >
-                            <option value="4">4 months</option>
-                            <option value="6">6 months</option>
-                            <option value="12">12 months</option>
+                        <label className='w-full' htmlFor="pronoun">Pronoun</label>
+                        <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="pronoun" id="pronoun" >
+                            <option value="rather not say">Rather not say</option>
+                            <option value="he">He / him</option>
+                            <option value="she">She / her</option>
                         </select>
                     </div>
 
