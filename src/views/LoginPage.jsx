@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
@@ -10,6 +10,15 @@ const LoginPage = ({ onLogin }) => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
+  useEffect(() => {
+    // Check if login data is already stored in localStorage
+    const savedRole = localStorage.getItem('role');
+    if (savedRole) {
+      onLogin(savedRole === 'admin');
+      navigate(savedRole === 'admin' ? '/serviceProfile' : '/service');
+    }
+  }, [onLogin, navigate]);
+
   const onSubmit = (e) => {
     e.preventDefault();
 
@@ -17,18 +26,19 @@ const LoginPage = ({ onLogin }) => {
     const adminCredentials = { email: 'admin@example.com', password: 'admin123' };
     const userCredentials = { email: 'user@example.com', password: 'user123' };
 
-    
     if (role === 'admin') {
       if (email === adminCredentials.email && password === adminCredentials.password) {
-        onLogin(); 
-        navigate('/serviceProfile'); 
+        localStorage.setItem('role', 'admin'); // Save role in localStorage
+        onLogin(true);
+        navigate('/serviceProfile');
       } else {
         setError('Invalid admin credentials');
       }
     } else if (role === 'user') {
       if (email === userCredentials.email && password === userCredentials.password) {
-        onLogin(); 
-        navigate('/service'); 
+        localStorage.setItem('role', 'user'); // Save role in localStorage
+        onLogin(false);
+        navigate('/service');
       } else {
         setError('Invalid user credentials');
       }
@@ -101,11 +111,8 @@ const LoginPage = ({ onLogin }) => {
 
         <p className='text-center'>Don't have an account? <span className='text-blue-500 cursor-pointer'>Sign up here</span></p>
 
-        <p>adminCredentials: email - 'admin@example.com'
-         password: 'admin123' </p>
-
-      <p>userCredentials:  email - 'user@example.com'
-         password: 'user123' </p>
+        <p>adminCredentials: email - 'admin@example.com' password: 'admin123' </p>
+        <p>userCredentials: email - 'user@example.com' password: 'user123' </p>
       </form>
     </div>
   );

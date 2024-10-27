@@ -16,9 +16,12 @@ import LoginPage from "./views/LoginPage";
 import ServProfile from "./components/serviceProfileCompo/Profile";
 import StudentList from "./components/serviceProfileCompo/StudentList";
 
-function ProtectedRoute({ children, isAuthenticated }) {
+function ProtectedRoute({ children, isAuthenticated, isAdmin, adminOnly }) {
   if (!isAuthenticated) {
     return <Navigate to="/" />;
+  }
+  if (adminOnly && !isAdmin) {
+    return <Navigate to="/service" />;
   }
   return children;
 }
@@ -27,10 +30,13 @@ function App() {
   const [showNav, setShowNav] = useState(false);
   const location = useLocation(); 
   const [isAuthenticated, setIsAuthenticated] = useState(false); 
+  const [isAdmin, setIsAdmin] = useState(false); 
 
-  const handleLogin = () => {
+  const handleLogin = (adminStatus) => {
     setIsAuthenticated(true);
+    setIsAdmin(adminStatus);
   };
+
 
   return (
     <>
@@ -48,35 +54,29 @@ function App() {
           </div>
         )}
 
-
-
         <div className="md:w-[80%] w-full">
           <Routes>
             <Route path="/" element={<LoginPage onLogin={handleLogin} />} />
-            
-            
-            <Route
-              path="/serviceProfile"
-              element={
-                <ProtectedRoute isAuthenticated={isAuthenticated}>
-                  <ServiceProfile />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/serviceProfile/profile"
-              element={
-                <ProtectedRoute isAuthenticated={isAuthenticated}>
-                  <ServProfile />
-                </ProtectedRoute>
-              }
-            />
+
+
+            <Route path="/serviceProfile" element={
+              <ProtectedRoute isAuthenticated={isAuthenticated} isAdmin={isAdmin} adminOnly>
+                <ServiceProfile />
+              </ProtectedRoute>
+            } />
+
+            <Route path="/serviceProfile/profile" element={
+              <ProtectedRoute isAuthenticated={isAuthenticated} isAdmin={isAdmin} adminOnly>
+                <ServProfile />
+              </ProtectedRoute>
+            } />
 
             <Route path="/service" element={
               <ProtectedRoute isAuthenticated={isAuthenticated}>
                 <StudentList />
               </ProtectedRoute>
             } />
+
             <Route
               path="/YP"
               element={
@@ -85,6 +85,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
+
             <Route
               path="/reports"
               element={
@@ -93,6 +94,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
+
             <Route
               path="/trainingHub"
               element={
@@ -101,6 +103,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
+
             <Route
               path="/policies"
               element={
@@ -109,6 +112,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
+
             <Route
               path="/SWProfile"
               element={
@@ -117,6 +121,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
+            
             <Route
               path="/timesheet"
               element={
@@ -125,8 +130,7 @@ function App() {
                 </ProtectedRoute>
               }
             />
-            
-            
+
             <Route path="*" element={<NoPage />} />
           </Routes>
         </div>
@@ -134,7 +138,6 @@ function App() {
     </>
   );
 }
-
 
 export default function Root() {
   return (
