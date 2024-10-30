@@ -13,8 +13,9 @@ import Timesheet from "./views/TimeSheet";
 import NoPage from "./components/NoPage";
 import SideNavBar from "./components/SideNavBar";
 import LoginPage from "./views/LoginPage";
-import ServProfile from "./components/serviceProfileCompo/Profile";
+import ServProfile from "./components/serviceProfileCompo/ServiceProfileForm";
 import StudentList from "./components/serviceProfileCompo/StudentList";
+import YoungProfileForm from "./components/youngPersons/YoungProfileForm";
 
 function ProtectedRoute({ children, isAuthenticated, isAdmin, adminOnly }) {
   if (!isAuthenticated) {
@@ -37,19 +38,19 @@ function App() {
     setIsAdmin(adminStatus);
   };
 
-
+  const activePath = location.pathname === "/service" ? "/serviceProfile" : location.pathname;
   return (
     <>
       <div className="flex gap-5 md:h-screen relative md:static">
         {location.pathname !== "/" && location.pathname !== "*" && (
-          <div className="absolute md:relative md:left-0 md:top-0 top-2">
+          <div className="absolute md:relative md:left-0 md:top-0 top-2 z-50">
             <div className="md:hidden fixed right-4" onClick={() => setShowNav(prevShowNav => !prevShowNav)}>
               <FontAwesomeIcon className={`h-8 w-8 ${showNav ? "hidden" : "block"}`} icon={faBars} />
               <FontAwesomeIcon className={`h-8 w-8 ${showNav ? "block" : "hidden"}`} icon={faXmark} />
             </div>
 
             <div className={`h-screen md:block ${showNav ? 'block' : 'hidden'} left-0 top-0`}>
-              <SideNavBar />
+              <SideNavBar activePath={activePath} />
             </div>
           </div>
         )}
@@ -85,6 +86,12 @@ function App() {
                 </ProtectedRoute>
               }
             />
+
+            <Route path="/YP/form" element={
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <YoungProfileForm />
+              </ProtectedRoute>
+            } />
 
             <Route
               path="/reports"

@@ -8,8 +8,8 @@ const SideNavBar = () => {
     const navigate = useNavigate();
     
     const logOut = () => {
-        localStorage.removeItem('role'); // Clear the login role from localStorage
-        navigate('/'); // Navigate back to the login page
+        localStorage.removeItem('role');
+        navigate('/'); 
     }
 
     return (
@@ -18,7 +18,7 @@ const SideNavBar = () => {
             <img src={Logo} alt="Logo" className='h-12 md:w-52 w-full' />
 
             <div className='text-gray-300 font-medium flex flex-col md:gap-[10px] sm:gap-2'>
-                <NavLink to="/serviceProfile" className={({ isActive }) => `flex gap-3 items-center p-2 rounded-[3px] ${isActive ? "bg-[#311A4878] text-white rounded-[8px] py-3" : "bg-none"}`}>
+                <NavLink to="/serviceProfile" className={({ isActive }) => `flex gap-3 items-center p-2 rounded-[3px] ${(isActive || location.pathname === '/service') ? "bg-[#311A4878] text-white rounded-[8px] py-3" : "bg-none"}`}>
                     <FontAwesomeIcon icon={faBriefcase} />
                     <p>Service Profile</p>
                 </NavLink>

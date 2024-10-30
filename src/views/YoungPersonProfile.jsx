@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilter, faBriefcase, faPen, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 const Homepage = () => {
+  const navigate = useNavigate();
+  const toYpForm = () => { 
+    navigate("/YP/form");
+  }
   
   return (
     <div className='p-4'>
@@ -23,7 +28,7 @@ const Homepage = () => {
         <h6>YP profile</h6>
         <h6>/</h6>
         <h6>Client profiles</h6>
-        <h6>Room check</h6>
+        {/* <h6>Room check</h6> */}
       </div>
 
       <hr />
@@ -38,11 +43,11 @@ const Homepage = () => {
         />
 
         <div className='flex md:gap-5 gap-2 items-center md:self-auto self-end'>
-          <div className='flex items-center gap-3 font-semibold p-2 rounded-[5px] cursor-pointer text-purple-800 border border-purple-800'>
+          {/* <div className='flex items-center gap-3 font-semibold p-2 rounded-[5px] cursor-pointer text-purple-800 border border-purple-800'>
             <p>Back</p>
             <FontAwesomeIcon icon={faBriefcase} />
-          </div>
-          <div className='flex items-center gap-3 font-semibold p-2 rounded-[5px] cursor-pointer text-white bg-purple-800'>
+          </div> */}
+          <div onClick={toYpForm} className='flex items-center gap-3 font-semibold p-2 rounded-[5px] cursor-pointer text-white bg-purple-800'>
             <p>Create New report</p>
             <FontAwesomeIcon icon={faBriefcase} />
           </div>
