@@ -56,4 +56,4 @@ const SideNavBar = () => {
     );
 }
 
-export default SideNavBar
+export default SideNavBar;
