@@ -14,10 +14,10 @@ const YoungProfileForm = () => {
   }
   const formRef = useRef(null);
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log('Form submitted!');
-    };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log('Form submitted!');
+  };
 
   const triggerFormSubmit = () => {
     if (formRef.current) {
@@ -48,7 +48,7 @@ const YoungProfileForm = () => {
                 <img src={bagIcon} alt="bag icon" />
             </button>
 
-            <button onClick={triggerFormSubmit} className='rounded-[8px] flex items-center p-[8px] gap-[10px] bg-[#622c98] text-white'>
+            <button onClick={triggerFormSubmit} className='rounded-[8px] flex items-center p-[8px] gap-[10px] bg-[#622c98] text-white animate-bounce'>
                 <p>Submit</p>
                 <img src={bagIconWhite} alt="bag icon" />
             </button>
@@ -309,29 +309,239 @@ const YoungProfileForm = () => {
 
         <div className="flex flex-col gap-8 border border-[#F9F2FF] pb-12">
           <header className="flex justify-between bg-[#F9F2FF] p-5 rounded-t-[8px]">
-              <h2>Other contacts</h2>
+              <h2>EET (Education, Employment and Training) and source of income</h2>
               <img src={arrowUp} alt="Arrow" />
           </header>
           <div className="flex flex-col gap-4 md:p-5 p-2">
-            {/* Rehabiliation  */}
+            {/* Training  */}
             <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
-              <label className='w-full' htmlFor="rehabiliation">Rehabiliation (company details)</label>
-              <textarea className='border border-[#dedede] p-2 rounded-[4px] w-full' name="rehabiliation" id="rehabiliation" placeholder='Rehabiliation'></textarea>
+              <label className='w-full' htmlFor="training">Training</label>
+              <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="training" id="training">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
             </div>
 
-            {/* Defender management  */}
+            {/* Education  */}
             <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
-              <label className='w-full' htmlFor="defenderManagement">Defender management details</label>
-              <textarea className='border border-[#dedede] p-2 rounded-[4px] w-full' name="defenderManagement" id="defenderManagement" placeholder='Defender Management'></textarea>
+              <label className='w-full' htmlFor="education">Education</label>
+              <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="education" id="education">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
             </div>
 
-            {/* Probation service */}
+            {/* Hobbies  */}
             <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
-              <label className='w-full' htmlFor="probationService">Probation service details</label>
-              <textarea className='border border-[#dedede] p-2 rounded-[4px] w-full' name="probationService" id="probationService" placeholder='Probation service'></textarea>
+              <label className='w-full' htmlFor="hobbies">Hobbies</label>
+              <input placeholder="Reading, meditating" className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="hobbies" id="hobbies" />
+            </div>
+
+            {/* Reasons for not in education and training  */}
+            <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+              <label className='w-full' htmlFor="notEducationTraining">Reasons for not in education and training</label>
+              <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="notEducationTraining" id="notEducationTraining" />
+            </div>
+
+            {/* Occupation */}
+            <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+              <label className='w-full' htmlFor="occupation">Occupation</label>
+              <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="occupation" id="occupation">
+                <option value="teacher">Teacher</option>
+                <option value="engineer">Engineer</option>
+                <option value="others">Others</option>
+              </select>
+            </div>
+
+            {/* length of unemployment */}
+            <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+              <label className='w-full' htmlFor="lenghtUnemployment">Length of unemployment</label>
+              <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="lenghtUnemployment" id="lenghtUnemployment">
+                <option value="0to6">0 - 6 months</option>
+                <option value="6to1">6 months - 1 year</option>
+                <option value="1+">Above 1 year </option>
+              </select>
+            </div>
+          </div>
+          
+        </div>
+
+        <div className="flex flex-col gap-8 border border-[#F9F2FF] pb-12">
+          <header className="flex justify-between bg-[#F9F2FF] p-5 rounded-t-[8px]">
+              <h2>Missing person details</h2>
+              <img src={arrowUp} alt="Arrow" />
+          </header>
+          <div className="flex flex-col gap-4 md:p-5 p-2">
+            {/* height  */}
+            <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+              <label className='w-full' htmlFor="height">Height</label>
+              <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="height" id="height" />
+            </div>
+
+            {/* Eye color  */}
+            <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+              <label className='w-full' htmlFor="eyeColor">Eye color</label>
+              <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="eyeColor" id="eyeColor" />
+            </div>
+
+            {/* Hair color and style  */}
+            <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+              <label className='w-full' htmlFor="hairColorAndStyle">Hair color and style</label>
+              <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="hairColorAndStyle" id="hairColorAndStyle" />
+            </div>
+
+            {/* distinguishing feature  */}
+            <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+              <label className='w-full' htmlFor="distinguishingFeature">Distinguishing feature</label>
+              <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="distinguishingFeature" id="distinguishingFeature" />
+            </div>
+
+            {/* Clothing usually worn */}
+            <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+              <label className='w-full' htmlFor="usuallyWorn">Clothing usually worn</label>
+              <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="usuallyWorn" id="usuallyWorn" />
             </div>
           </div>
         </div>
+
+        <div className="flex flex-col gap-8 border border-[#F9F2FF] pb-12">
+          <header className="flex justify-between bg-[#F9F2FF] p-5 rounded-t-[8px]">
+              <h2>Death</h2>
+              <img src={arrowUp} alt="Arrow" />
+          </header>
+          <div className="flex flex-col gap-4 md:p-5 p-2">
+            <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+              <label className='w-full' htmlFor="dateOfDeath">Date of death</label>
+              <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="date" name="dateOfDeath" id="dateOfDeath" />
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-8 border border-[#F9F2FF] pb-12">
+          <header className="flex justify-between bg-[#F9F2FF] p-5 rounded-t-[8px]">
+              <h2>Risk assessment plan (RAP)</h2>
+              <img src={arrowUp} alt="Arrow" />
+          </header>
+          <div className="flex flex-col gap-4 md:p-5 p-2">
+            {/* Plan name  */}
+            <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+              <label className='w-full' htmlFor="planName">Plan name</label>
+              <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="planName" id="planName" />
+            </div>
+
+            {/* Service name  */}
+            <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+              <label className='w-full' htmlFor="serviceName">Service name</label>
+              <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="serviceName" id="serviceName" />
+            </div>
+
+            {/* Assesment date  */}
+            <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+              <label className='w-full' htmlFor="assessmentDate">Assessment date</label>
+              <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="date" name="assessmentDate" id="assessmentDate" />
+            </div>
+
+            {/* Next assessment date  */}
+            <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+              <label className='w-full' htmlFor="nextAssessmentDate">Next assessment date</label>
+              <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="date" name="nextAssessmentDate" id="nextAssessmentDate" />
+            </div>
+
+            {/* Any historic details  */}
+            <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+              <label className='w-full' htmlFor="historicDetails">Any historic details</label>
+              <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="historicDetails" id="historicDetails" />
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-8 border border-[#F9F2FF] pb-12">
+          <header className="flex justify-between bg-[#F9F2FF] p-5 rounded-t-[8px]">
+            <h2>Safeguarding Assessment Plan (SAP)</h2>
+            <img src={arrowUp} alt="Arrow" />
+          </header>
+          <div className="flex flex-col gap-4 md:p-5 p-2">
+            {/* Start date  */}
+            <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+              <label className='w-full' htmlFor="startDate">Start date</label>
+              <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="date" name="startDate" id="startDate" />
+            </div>
+
+            {/* End date  */}
+            <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+              <label className='w-full' htmlFor="endDate">End date</label>
+              <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="date" name="endDate" id="endDate" />
+            </div>
+
+            {/* category  */}
+            <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+              <label className='w-full' htmlFor="category">Category</label>
+              <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="category" id="category" />
+            </div>
+
+            {/* concern monitoring  */}
+            <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+              <label className='w-full' htmlFor="concernMonitoring">Concern monitoring</label>
+              <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="concernMonitoring" id="concernMonitoring" />
+            </div>
+
+            {/* Risky level  */}
+            <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+              <label className='w-full' htmlFor="riskyLevel">Risky level</label>
+              <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="riskyLevel" id="riskyLevel" />
+            </div>
+
+            {/* Take further actions  */}
+            <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+              <label className='w-full' htmlFor="takeFurtherActions">Take futher actions</label>
+              <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="takeFurtherActions" id="takeFurtherActions" />
+            </div>
+
+            {/* Notes  */}
+            <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+              <label className='w-full' htmlFor="note">Notes</label>
+              <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="note" id="note" />
+            </div>
+
+            {/* Created by  */}
+            <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+              <label className='w-full' htmlFor="createdBy">Created by</label>
+              <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="createdBy" id="createdBy" />
+            </div>
+
+            {/* modified by  */}
+            <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+              <label className='w-full' htmlFor="modifiedBy">Modifed by</label>
+              <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="modifiedBy" id="modifiedBy" />
+            </div>
+          </div>
+        </div>
+
+        {/* <div className="flex flex-col gap-8 border border-[#F9F2FF] pb-12">
+          <header className="flex justify-between bg-[#F9F2FF] p-5 rounded-t-[8px]">
+              <h2>Other contacts</h2>
+              <img src={arrowUp} alt="Arrow" />
+          </header>
+          <div className="flex flex-col gap-4 md:p-5 p-2"> */}
+            {/* Rehabiliation  */}
+            {/* <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+              <label className='w-full' htmlFor="rehabiliation">Rehabiliation (company details)</label>
+              <textarea className='border border-[#dedede] p-2 rounded-[4px] w-full' name="rehabiliation" id="rehabiliation" placeholder='Rehabiliation'></textarea>
+            </div> */}
+
+            {/* Defender management  */}
+            {/* <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+              <label className='w-full' htmlFor="defenderManagement">Defender management details</label>
+              <textarea className='border border-[#dedede] p-2 rounded-[4px] w-full' name="defenderManagement" id="defenderManagement" placeholder='Defender Management'></textarea>
+            </div> */}
+
+            {/* Probation service */}
+            {/* <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+              <label className='w-full' htmlFor="probationService">Probation service details</label>
+              <textarea className='border border-[#dedede] p-2 rounded-[4px] w-full' name="probationService" id="probationService" placeholder='Probation service'></textarea>
+            </div> */}
+          {/* </div> */}
+        {/* </div> */}
       </form>
     </div>
   )

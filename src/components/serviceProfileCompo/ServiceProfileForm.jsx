@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import filterIcon from "/filter-icon.svg";
 import bagIcon from "/bag-icon.svg";
 import bagIconWhite from "/bag-icon-white.svg";
@@ -7,6 +8,10 @@ import arrowUp from "/arrow-up.svg"
 
 
 const Profile = () => {
+    const navigate = useNavigate();
+    const toServiceProfile = () => {
+        navigate("/serviceProfile")
+    }
     const formRef = useRef(null);
 
     const handleSubmit = (event) => {
@@ -37,11 +42,11 @@ const Profile = () => {
         </div>
 
         <div className='flex gap-[12px] self-end'>
-            <button onClick={triggerFormSubmit} className='rounded-[8px] flex items-center p-[8px] gap-[10px] border border-[#622c98] text-[#622c98]'>
+            <button onClick={triggerFormSubmit} className='rounded-[8px] flex items-center p-[8px] gap-[10px] border border-[#622c98] text-[#622c98] animate-bounce'>
                 <p>Save</p>
                 <img src={bagIcon} alt="bag icon" />
             </button>
-            <button className='rounded-[8px] flex items-center p-[8px] gap-[10px] bg-[#622c98] text-white'>
+            <button onClick={toServiceProfile} className='rounded-[8px] flex items-center p-[8px] gap-[10px] bg-[#622c98] text-white'>
                 <p>Back</p>
                 <img src={bagIconWhite} alt="bag icon" />
             </button>

@@ -88,7 +88,7 @@ function App() {
             />
 
             <Route path="/YP/form" element={
-              <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <ProtectedRoute isAuthenticated={isAuthenticated} isAdmin={isAdmin} adminOnly>
                 <YoungProfileForm />
               </ProtectedRoute>
             } />
