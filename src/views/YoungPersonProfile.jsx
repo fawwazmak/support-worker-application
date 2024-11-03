@@ -68,7 +68,7 @@ const Homepage = ({isAdmin}) => {
             <p>Back</p>
             <FontAwesomeIcon icon={faBriefcase} />
           </div> */}
-          <div onClick={toYpForm} className={`${isAdmin ? "flex" : "hidden" } items-center gap-3 font-semibold p-2 rounded-[5px] cursor-pointer text-white bg-purple-800`}>
+          <div onClick={toYpForm}  className={`flex items-center gap-3 font-semibold p-2 rounded-[5px] cursor-pointer text-white bg-purple-800`}>
             <p>Create New report</p>
             <FontAwesomeIcon icon={faBriefcase} />
           </div>

@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import YoungPersonProfile from "./views/YoungPersonProfile";
 import ServiceProfile from "./views/MainServiceProfile";
-import Reports from "./views/Reports";
+import Reports from "./components/otherFormsInServiceProfile/FormsInService";
 import TrainingHub from "./views/TrainingHub";
 import Policies from "./views/Policies";
 import SWProfile from "./views/SWProfile";

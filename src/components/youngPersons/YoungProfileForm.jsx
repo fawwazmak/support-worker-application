@@ -30,10 +30,10 @@ const YoungProfileForm = () => {
     <div className="px-4 md:px-0 md:pr-4 font-poppins h-screen overflow-y-scroll scrollbar-thin">
       <header className='flex flex-col pb-2 sticky top-0 z-20 bg-white'>
         <div className='flex sm:justify-between sm:gap-0 gap-5 sm:flex-row flex-col my-4'>
-            <div className='flex items-center gap-5'>
-                <h1 className='text-2xl font-bold'>Young persons profile</h1>
-                <img src={filterIcon} alt="Filter Icon" />
-            </div>
+          <div className='flex items-center gap-5'>
+              <h1 className='text-2xl font-bold'>Young persons profile</h1>
+              <img src={filterIcon} alt="Filter Icon" />
+          </div>
 
             <div className='flex items-center gap-3 cursor-pointer sm:self-auto self-end bg-[#F9F6F6] p-2 rounded-[5px]'>
                 <img src={bagIconBlack} alt="Icon" className='' />
@@ -66,9 +66,9 @@ const YoungProfileForm = () => {
 
       <form ref={formRef} onSubmit={handleSubmit} action="" className="mt-8 w-[80%] mx-auto">
         <div className="flex flex-col gap-8 border border-[#F9F2FF] pb-12">
-          <header className="flex justify-between bg-[#F9F2FF] p-5 rounded-t-[8px]">
-              <h2>YP Key Details</h2>
-              <img src={arrowUp} alt="Arrow" />
+          <header className="flex justify-between bg-[#F9F2FF] p-5 rounded-t-[8px] sticky top-48">
+            <h2>YP Key Details</h2>
+            <img src={arrowUp} alt="Arrow" />
           </header>
           <div className="flex flex-col gap-4 md:p-5 p-2">
             {/* First name  */}
@@ -168,7 +168,7 @@ const YoungProfileForm = () => {
         </div>
 
         <div className="flex flex-col gap-8 border border-[#F9F2FF] pb-12">
-          <header className="flex justify-between bg-[#F9F2FF] p-5 rounded-t-[8px]">
+          <header className="flex justify-between bg-[#F9F2FF] p-5 rounded-t-[8px] sticky top-48">
               <h2>Young person's contact Details</h2>
               <img src={arrowUp} alt="Arrow" />
           </header>
@@ -237,7 +237,7 @@ const YoungProfileForm = () => {
 
 
         <div className="flex flex-col gap-8 border border-[#F9F2FF] pb-12">
-          <header className="flex justify-between bg-[#F9F2FF] p-5 rounded-t-[8px]">
+          <header className="flex justify-between bg-[#F9F2FF] p-5 rounded-t-[8px] sticky top-48">
               <h2>Nationality and Immigration</h2>
               <img src={arrowUp} alt="Arrow" />
           </header>
@@ -291,7 +291,7 @@ const YoungProfileForm = () => {
         </div>
 
         <div className="flex flex-col gap-8 border border-[#F9F2FF] pb-12">
-          <header className="flex justify-between bg-[#F9F2FF] p-5 rounded-t-[8px]">
+          <header className="flex justify-between bg-[#F9F2FF] p-5 rounded-t-[8px] sticky top-48">
               <h2>Care details</h2>
               <img src={arrowUp} alt="Arrow" />
           </header>
@@ -308,7 +308,7 @@ const YoungProfileForm = () => {
         </div>
 
         <div className="flex flex-col gap-8 border border-[#F9F2FF] pb-12">
-          <header className="flex justify-between bg-[#F9F2FF] p-5 rounded-t-[8px]">
+          <header className="flex justify-between bg-[#F9F2FF] p-5 rounded-t-[8px] sticky top-48">
               <h2>EET (Education, Employment and Training) and source of income</h2>
               <img src={arrowUp} alt="Arrow" />
           </header>
@@ -367,7 +367,7 @@ const YoungProfileForm = () => {
         </div>
 
         <div className="flex flex-col gap-8 border border-[#F9F2FF] pb-12">
-          <header className="flex justify-between bg-[#F9F2FF] p-5 rounded-t-[8px]">
+          <header className="flex justify-between bg-[#F9F2FF] p-5 rounded-t-[8px] sticky top-48">
               <h2>Missing person details</h2>
               <img src={arrowUp} alt="Arrow" />
           </header>
@@ -405,7 +405,7 @@ const YoungProfileForm = () => {
         </div>
 
         <div className="flex flex-col gap-8 border border-[#F9F2FF] pb-12">
-          <header className="flex justify-between bg-[#F9F2FF] p-5 rounded-t-[8px]">
+          <header className="flex justify-between bg-[#F9F2FF] p-5 rounded-t-[8px] sticky top-48">
               <h2>Death</h2>
               <img src={arrowUp} alt="Arrow" />
           </header>
@@ -418,7 +418,7 @@ const YoungProfileForm = () => {
         </div>
 
         <div className="flex flex-col gap-8 border border-[#F9F2FF] pb-12">
-          <header className="flex justify-between bg-[#F9F2FF] p-5 rounded-t-[8px]">
+          <header className="flex justify-between bg-[#F9F2FF] p-5 rounded-t-[8px] sticky top-48">
               <h2>Risk assessment plan (RAP)</h2>
               <img src={arrowUp} alt="Arrow" />
           </header>
@@ -456,7 +456,7 @@ const YoungProfileForm = () => {
         </div>
 
         <div className="flex flex-col gap-8 border border-[#F9F2FF] pb-12">
-          <header className="flex justify-between bg-[#F9F2FF] p-5 rounded-t-[8px]">
+          <header className="flex justify-between bg-[#F9F2FF] p-5 rounded-t-[8px] sticky top-48">
             <h2>Safeguarding Assessment Plan (SAP)</h2>
             <img src={arrowUp} alt="Arrow" />
           </header>
@@ -518,7 +518,7 @@ const YoungProfileForm = () => {
         </div>
 
         {/* <div className="flex flex-col gap-8 border border-[#F9F2FF] pb-12">
-          <header className="flex justify-between bg-[#F9F2FF] p-5 rounded-t-[8px]">
+          <header className="flex justify-between bg-[#F9F2FF] p-5 rounded-t-[8px] sticky top-48">
               <h2>Other contacts</h2>
               <img src={arrowUp} alt="Arrow" />
           </header>
