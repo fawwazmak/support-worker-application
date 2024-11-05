@@ -16,6 +16,7 @@ import LoginPage from "./views/LoginPage";
 import ServProfile from "./components/serviceProfileCompo/ServiceProfileForm";
 import StudentList from "./components/serviceProfileCompo/StudentList";
 import YoungProfileForm from "./components/youngPersons/YoungProfileForm";
+import FormsInYP from "./components/otherFormsInYoungPersonProfile/FormsInYP";
 
 function ProtectedRoute({ children, isAuthenticated, isAdmin, adminOnly }) {
   if (!isAuthenticated) {
@@ -106,7 +107,7 @@ function App() {
               path="/trainingHub"
               element={
                 <ProtectedRoute isAuthenticated={isAuthenticated}>
-                  <TrainingHub />
+                  <FormsInYP />
                 </ProtectedRoute>
               }
             />

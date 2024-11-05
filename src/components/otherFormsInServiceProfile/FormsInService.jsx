@@ -1,9 +1,5 @@
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import filterIcon from "/filter-icon.svg";
-import bagIcon from "/bag-icon.svg";
-import bagIconWhite from "/bag-icon-white.svg";
-import bagIconBlack from "/bag-icon-black.svg";
 import arrowUp from "/arrow-up.svg"
 
 const FormsInService = () => {
@@ -243,12 +239,12 @@ const FormsInService = () => {
             </div>
           </div>
 
-          <button className="bg-[#622c98] rounded-md text-white block py-2 px-5">Save</button>
+          <button className="bg-[#622c98] rounded-md text-white block py-2 px-5 mt-4">Save</button>
         </form>
       </div>
 
       {/* Prevoid management */}
-      <div className="mt-8 h-full overflow-y-scroll scrollbar-thin">
+      <div className="mt-8 h-full overflow-y-scroll scrollbar-thin hidden">
         <h5 className="text-center py-2 font-bold">Prevoid Management</h5>
 
         <form action="" method="post" className="mt-8 w-[80%] mx-auto mb-24">
@@ -388,6 +384,289 @@ const FormsInService = () => {
               </div>
             </div>
           </div>
+
+          <div className="flex flex-col gap-8 border border-[#F9F2FF] pb-4 bg-[#f9f9f9]">
+            <header className="flex sticky top-12 justify-between bg-[#F9F2FF] p-5 rounded-t-[8px]">
+              <h2>Cleaning required</h2>
+              <img src={arrowUp} alt="Arrow" />
+            </header>
+
+            <div className="flex flex-col gap-4 md:p-5 p-2">
+              {/* Cleaning needed  */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="cleaningNeeded">Cleaning needed</label>
+                <input placeholder="state type of cleaning required and where stains are present" className='border border-[#dedede] p-2 rounded-[4px] w-full' type="date" name="cleaningNeeded" id="cleaningNeeded" />
+              </div>
+
+              {/* Deep cleaning needed?  */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="deepCleaningNeeded">Deep cleaning needed?</label>
+                <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="deepCleaningNeeded" id="deepCleaningNeeded">
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                  <option value="notApplicable">Not Applicable</option>
+                </select>
+              </div>
+
+              {/* Bedroom  */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="bedroom">Bedroom</label>
+                <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="bedroom" id="bedroom">
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                  <option value="notApplicable">Not Applicable</option>
+                </select>
+              </div>
+
+              {/* Bathroom  */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="bathroom">Bathroom</label>
+                <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="bathroom" id="bathroom">
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                  <option value="notApplicable">Not Applicable</option>
+                </select>
+              </div>
+
+              {/* Kitchen  */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="kitchen">Kitchen</label>
+                <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="kitchen" id="kitchen">
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                  <option value="notApplicable">Not Applicable</option>
+                </select>
+              </div>
+
+              {/* Others  */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="others">Others</label>
+                <input placeholder="state other list needed to be checked like (gas, electric and waste...)" className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="others" id="others" />
+              </div>
+              
+              {/* System info  */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="systemInfo">System info</label>
+                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="systemInfo" id="systemInfo" />
+              </div>
+
+              {/* White goods  */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="whiteGoods">White goods</label>
+                <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="whiteGoods" id="whiteGoods">
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                  <option value="notApplicable">Not Applicable</option>
+                </select>
+              </div>
+
+              {/* Flooring  */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="flooring">Flooring</label>
+                <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="flooring" id="flooring">
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                  <option value="notApplicable">Not Applicable</option>
+                </select>
+              </div>
+
+              {/* outside areas */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="outsideAreas">Outside areas</label>
+                <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="outsideAreas" id="outsideAreas">
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                  <option value="notApplicable">Not Applicable</option>
+                </select>
+              </div>
+
+              {/* Comments  */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="comments">Comments</label>
+                <textarea className='border border-[#dedede] p-2 rounded-[4px] w-full' name="comments" id="comments" placeholder='Commentary'></textarea>
+              </div>
+
+              {/* Created by */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="createdBy">Created by</label>
+                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="createdBy" id="createdBy" />
+              </div>
+
+              {/* Last modified by */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="lastModifiedBy">Last modified by</label>
+                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="lastModifiedBy" id="lastModifiedBy" />
+              </div>
+            </div>
+          </div>
+
+          <button className="bg-[#622c98] rounded-md text-white block py-2 px-5 mt-4">Save</button>
+        </form>
+      </div>
+
+
+      {/* Maintenance */}
+      <div className="mt-8 h-full overflow-y-scroll scrollbar-thin">
+        <h5 className="text-center py-2 font-bold">Maintenance</h5>
+
+        <form action="" method="post" className="mt-8 w-[80%] mx-auto mb-24">
+          <div className="flex flex-col gap-8 border border-[#F9F2FF] pb-4 bg-[#f9f9f9]">
+            <header className="flex sticky top-12 justify-between bg-[#F9F2FF] p-5 rounded-t-[8px]">
+              <h2>Maintenance</h2>
+              <img src={arrowUp} alt="Arrow" />
+            </header>
+
+            <div className="flex flex-col gap-4 md:p-5 p-2">
+              {/* Service name  */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="serviceName">Service name</label>
+                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="serviceName" id="serviceName" />
+              </div>
+
+              {/* Room number  */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="roomNumber">Room number</label>
+                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="roomNumber" id="roomNumber" />
+              </div>
+
+              {/* Job reported by staff or young person  */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="jobReported">Job reported by staff or young person</label>
+                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="jobReported" id="jobReported" />
+              </div>
+
+              {/* name of young person  */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="youngPersonName">name of young person</label>
+                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="youngPersonName" id="youngPersonName" />
+              </div>
+
+              {/* Date repair requested  */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="dateRepairRequested">Date repair requested</label>
+                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="date" name="dateRepairRequested" id="dateRepairRequested" />
+              </div>
+
+              {/* Time repair requested  */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="serviceName">Time repair requested</label>
+                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="time" name="serviceName" id="serviceName" />
+              </div>
+
+              {/* Upload Files, Images, or Videos  */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="uploadFile">Upload Files, Images, or Videos</label>
+                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="file" name="uploadFile" id="uploadFile" />
+              </div>
+            </div>
+          </div>
+
+
+          <div className="flex flex-col gap-8 border border-[#F9F2FF] pb-4 bg-[#f9f9f9]">
+            <header className="flex sticky top-12 justify-between bg-[#F9F2FF] p-5 rounded-t-[8px]">
+              <h2>Maintenance details</h2>
+              <img src={arrowUp} alt="Arrow" />
+            </header>
+
+            <div className="flex flex-col gap-4 md:p-5 p-2">
+              {/* Job priority */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="jobPriority">Job priority</label>
+                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="jobPriority" id="jobPriority" />
+              </div>
+
+              {/* Reference number */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="referenceNumber">Reference number</label>
+                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="referenceNumber" id="referenceNumber" />
+              </div>
+
+              {/* Cost of repairs */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="costOfRepairs">Cost of repairs</label>
+                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="costOfRepairs" id="costOfRepairs" />
+              </div>
+              
+              {/* Purchase order number */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="purchaseOrderNumber">Purchase order number</label>
+                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="purchaseOrderNumber" id="purchaseOrderNumber" />
+              </div>
+              
+              {/* Post job completion amount */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="postJobCompletionAmount">Post job completion amount</label>
+                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="postJobCompletionAmount" id="postJobCompletionAmount" />
+              </div>
+              
+              {/* Contractor name */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="jobPriority">Contractor name</label>
+                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="jobPriority" id="jobPriority" />
+              </div>
+              
+              {/* Date PO raised */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="dateRaised">Date PO raised</label>
+                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="date" name="dateRaised" id="dateRaised" />
+              </div>
+              
+              {/* Repair timescale */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="repairTimescale">Repair timescale</label>
+                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="time" name="repairTimescale" id="repairTimescale" />
+              </div>
+              
+              {/* Pre-inspection date */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="preInspectionDate">Pre-inspection date</label>
+                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="date" name="preInspectionDate" id="preInspectionDate" />
+              </div>
+
+              {/* Pre-inspection comments  */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="preInspectionComments">Pre-inspection comments</label>
+                <textarea className='border border-[#dedede] p-2 rounded-[4px] w-full' name="preInspectionComments" id="preInspectionComments" placeholder='Enter any additional comments'></textarea>
+              </div>
+
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="postJobCompletionDate">Post job completion date</label>
+                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="date" name="postJobCompletionDate" id="postJobCompletionDate" />
+              </div>
+
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="repairCompletionDate">Repair completion date</label>
+                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="date" name="repairCompletionDate" id="repairCompletionDate" />
+              </div>
+
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="staffMemberSignOut">Staff member sign out</label>
+                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="staffMemberSignOut" id="staffMemberSignOut" />
+              </div>
+
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="systemInfo">System info</label>
+                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="systemInfo" id="systemInfo" />
+              </div>
+
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="postCompletionComments">Post completion comments</label>
+                <textarea className='border border-[#dedede] p-2 rounded-[4px] w-full' name="postCompletionComments" id="postCompletionComments" placeholder='Job satisfied and part inspected state if recall is required'></textarea>
+              </div>
+
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="createdBy">Created by</label>
+                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="createdBy" id="createdBy" />
+              </div>
+
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="lastModifiedBy">Last modified by</label>
+                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="lastModifiedBy" id="lastModifiedBy" />
+              </div>
+            </div>
+          </div>
+
+          <button className="bg-[#622c98] rounded-md text-white block py-2 px-5 mt-4">Save</button>
         </form>
       </div>
     </div>
