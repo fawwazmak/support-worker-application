@@ -5,15 +5,13 @@ import { faFilter, faBriefcase, faPen, faTrashCan, faXmark } from '@fortawesome/
 import bagIcon from "/bag-icon.svg";
 import bagIconWhite from "/bag-icon-white.svg";
 import bagIconBlack from "/bag-icon-black.svg";
-import studentDemo from "/student-demo-image.jpg";
+import studentDemo from "/student-demo-image.jpg"
 
-const Homepage = ({isAdmin}) => {
+const ComplaintsList = () => {
   const navigate = useNavigate();
-  const toYpForm = () => { 
-    navigate("/YP/form");
-  }
-  const toComplaints = () => {
-    navigate("/complaints")
+  
+  const toYPProfile = () => {
+    navigate("/YP")
   }
   const toCaseNote = () => {
     navigate("/casenote")
@@ -43,7 +41,7 @@ const Homepage = ({isAdmin}) => {
     <div className='p-4 h-screen overflow-y-hidden'>
       <header className='flex sm:justify-between sm:gap-0 gap-5 sm:flex-row flex-col'>
         <div className='flex items-center gap-5'>
-          <h1 className='text-2xl font-bold'>Young person's profile</h1>
+          <h1 className='text-2xl font-bold'>Complaints</h1>
           <FontAwesomeIcon icon={faFilter} />
         </div>
 
@@ -54,12 +52,12 @@ const Homepage = ({isAdmin}) => {
         </div>
       </header>
 
-      <div className='flex gap-3 md:gap-5 font-semibold text-gray-300 my-5'>
-        <h6>YP profile</h6>
+      {/* <div className='flex gap-3 md:gap-5 font-semibold text-gray-300 my-5'>
+        <h6>Complaints</h6>
         <h6>/</h6>
         <h6>Client profiles</h6>
-        {/* <h6>Room check</h6> */}
-      </div>
+        <h6>Room check</h6>
+      </div> */}
 
       <hr />
 
@@ -72,16 +70,16 @@ const Homepage = ({isAdmin}) => {
           className='block w-full md:w-3/5 bg-blue-100 outline-none rounded-3xl p-3'
         />
 
-        <div className='flex md:gap-5 gap-2 items-center md:self-auto self-end'>
-          {/* <div className='flex items-center gap-3 font-semibold p-2 rounded-[5px] cursor-pointer text-purple-800 border border-purple-800'>
+        {/* <div className='flex md:gap-5 gap-2 items-center md:self-auto self-end'>
+          <div className='flex items-center gap-3 font-semibold p-2 rounded-[5px] cursor-pointer text-purple-800 border border-purple-800'>
             <p>Back</p>
             <FontAwesomeIcon icon={faBriefcase} />
-          </div> */}
+          </div>
           <div onClick={toYpForm}  className={`flex items-center gap-3 font-semibold p-2 rounded-[5px] cursor-pointer text-white bg-purple-800`}>
             <p>Create New report</p>
             <FontAwesomeIcon icon={faBriefcase} />
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className="w-full md:overflow-x-hidden overflow-x-scroll overflow-y-scroll h-[50%]">
@@ -171,9 +169,9 @@ const Homepage = ({isAdmin}) => {
 
                 
               <div className='flex flex-wrap gap-2 md:justify-start justify-end'>
-                <div onClick={toComplaints} className='flex items-center md:gap-3 gap-2 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-400 md:justify-normal justify-between'>
+                <div onClick={toYPProfile} className='flex items-center md:gap-3 gap-2 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-400 md:justify-normal justify-between'>
                   <img src={bagIcon} alt="Icon" className='h-[16px]' />
-                  <p>Complaints</p>
+                  <p>Yp profile</p>
                 </div>
 
                 <div onClick={toCaseNote} className='flex items-center md:gap-3 gap-2 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-400 md:justify-normal justify-between'>
@@ -201,4 +199,4 @@ const Homepage = ({isAdmin}) => {
   )
 }
 
-export default Homepage
+export default ComplaintsList

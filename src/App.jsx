@@ -20,6 +20,9 @@ import FormsInYP from "./components/otherFormsInYoungPersonProfile/FormsInYP";
 import IncidentReport from "./components/IncidentReportList";
 import PrevoidManagement from "./components/PrevoidManagementList";
 import ManagementList from "./components/ManagementList";
+import CaseNote from "./components/CaseNote";
+import Complaints from "./components/ComplaintsList";
+import RiskAssesment from "./components/RiskAssesment";
 
 function ProtectedRoute({ children, isAuthenticated, isAdmin, adminOnly }) {
   if (!isAuthenticated) {
@@ -100,6 +103,10 @@ function App() {
                 <YoungProfileForm />
               </ProtectedRoute>
             } />
+
+            <Route path="/complaints" element={<Complaints />} />
+            <Route path="/casenote" element={<CaseNote />} />
+            <Route path="/riskAssesment" element={<RiskAssesment />} />
 
             <Route
               path="/reports"
