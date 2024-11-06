@@ -1,19 +1,22 @@
-import { useRef } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import arrowUp from "/arrow-up.svg"
 
 const FormsInService = () => {
+  const [activeForm,setActiveForm] = useState("incident");
+
   return (
     <div className="h-screen overflow-hidden">
       <header className="flex flex-wrap gap-4">
-        <button className='block p-2 bg-[#f0f0f0] md:rounded-md rounded-sm hover:bg-[#6b21a8] hover:text-white'>Incident report</button>
-        <button className='block p-2 bg-[#f0f0f0] md:rounded-md rounded-sm hover:bg-[#6b21a8] hover:text-white'>Previod management</button>
-        <button className='block p-2 bg-[#f0f0f0] md:rounded-md rounded-sm hover:bg-[#6b21a8] hover:text-white'>Maintenence</button>
-        <button className='block p-2 bg-[#f0f0f0] md:rounded-md rounded-sm hover:bg-[#6b21a8] hover:text-white'>Room checks</button>            
+        <button onClick={() => setActiveForm("incident")} className={`block p-2 bg-[#f0f0f0] md:rounded-md rounded-sm ${activeForm === "incident" ? "bg-[#6b21a8] text-white" : " "}`}>Incident report</button>
+        <button onClick={() => setActiveForm("prevoidManagement")} className={`block p-2 bg-[#f0f0f0] md:rounded-md rounded-sm ${activeForm === "prevoidManagement" ? "bg-[#6b21a8] text-white" : " "}`}>Previod management</button>
+        <button onClick={() => setActiveForm("maintenance")} className={`block p-2 bg-[#f0f0f0] md:rounded-md rounded-sm ${activeForm === "maintenance" ? "bg-[#6b21a8] text-white" : " "}`}>Maintenence</button>
+        {/* <button onClick={() => setActiveForm("roomCheck")} className={`block p-2 bg-[#f0f0f0] md:rounded-md rounded-sm ${activeForm === "roomCheck" ? "bg-[#6b21a8] text-white" : " "}`}>Room checks</button>             */}
       </header>
 
       {/* Incident report  */}
-      <div className="mt-8 h-full overflow-y-scroll scrollbar-thin hidden">
+      {activeForm === "incident" && (
+      <div className="mt-8 h-full overflow-y-scroll scrollbar-thin">
         <h5 className="text-center py-2 font-bold">Incident Report</h5>
 
         <form action="" method="post" className="mt-8 w-[80%] mx-auto mb-24">
@@ -242,9 +245,11 @@ const FormsInService = () => {
           <button className="bg-[#622c98] rounded-md text-white block py-2 px-5 mt-4">Save</button>
         </form>
       </div>
+      )}
 
       {/* Prevoid management */}
-      <div className="mt-8 h-full overflow-y-scroll scrollbar-thin hidden">
+      {activeForm === "prevoidManagement" && (
+      <div className="mt-8 h-full overflow-y-scroll scrollbar-thin">
         <h5 className="text-center py-2 font-bold">Prevoid Management</h5>
 
         <form action="" method="post" className="mt-8 w-[80%] mx-auto mb-24">
@@ -503,9 +508,10 @@ const FormsInService = () => {
           <button className="bg-[#622c98] rounded-md text-white block py-2 px-5 mt-4">Save</button>
         </form>
       </div>
-
+      )}
 
       {/* Maintenance */}
+      {activeForm === "maintenance" && (
       <div className="mt-8 h-full overflow-y-scroll scrollbar-thin">
         <h5 className="text-center py-2 font-bold">Maintenance</h5>
 
@@ -669,6 +675,7 @@ const FormsInService = () => {
           <button className="bg-[#622c98] rounded-md text-white block py-2 px-5 mt-4">Save</button>
         </form>
       </div>
+      )}
     </div>
   )
 }
