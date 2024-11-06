@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark} from '@fortawesome/free-solid-svg-icons';
@@ -8,114 +8,72 @@ import bagIconWhite from "/bag-icon-white.svg";
 import bagIconBlack from "/bag-icon-black.svg";
 import studentDemo from "/student-demo-image.jpg"
 
-const StudentList = () => {
+
+const IncidentReport = () => {
   const navigate = useNavigate();
-
-  const toIncident = () => {
-    navigate("/incidentReport")
+  const [students, setStudents] = useState([
+      { id: 1, name: "Adedoyin Aderonke", email: "themba@gmail.com", address: "12, Beever street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Female", age: "24", riskLevel: "low", image: studentDemo, },
+      { id: 2, name: "Olorunsogo Olawale", email: "wale@gmail.com", address: "2, Coker street Olusoga Houston", contact: "08035567812", date: '15/04/24', gender: "Male", age: "25", riskLevel: "low", image: studentDemo, },
+      { id: 3, name: "Mafoluku Arike", email: "mafoluku@gmail.com", address: "30, Cole street Olusoga Houston", contact: "08035567812", date: '11/04/24', gender: "Female", age: "23", riskLevel: "low", image: studentDemo, },
+      { id: 4, name: "Afolabi Ayomide", email: "mide@gmail.com", address: "5, Day street Olusoga Houston", contact: "08035567812", date: '15/04/24', gender: "Male", age: "22", riskLevel: "medium", image: studentDemo, },
+      { id: 5, name: "Olasunkami Ishola", email: "olashola@gmail.com", address: "22, Smith street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Male", age: "27", riskLevel: "low", image: studentDemo, },
+      { id: 6, name: "Sanni Ajoke", email: "ajoke@gmail.com", address: "4, John street Olusoga Houston", contact: "08035567812", date: '14/04/24', gender: "Female", age: "23", riskLevel: "low", image: studentDemo, },
+      { id: 7, name: "Idowu Labake", email: "idowulabake@gmail.com", address: "9, Elegant street Olusoga Houston", contact: "08035567812", date: '11/04/24', gender: "Female", age: "24", riskLevel: "low", image: studentDemo, },
+      { id: 8, name: "Balogun Adeshina", email: "shina@gmail.com", address: "51, Rainbow street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Male", age: "26", riskLevel: "low", image: studentDemo, },
+      { id: 9, name: "Olateju Motunrayo", email: "olarayo@gmail.com", address: "33, Martins street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Female", age: "20", riskLevel: "high", image: studentDemo, },
+  ]);
+  
+  const [selectedStudent, setSelectedStudent] = useState(null);
+  
+  const toServicePage = () => {
+    navigate("/service")
   }
-
   const toPrevoidManagement = () => {
     navigate("/prevoidManagement")
   }
-
   const toManagement = () => {
     navigate("/management")
   }
-
-  const [students, setStudents] = useState([
-    { id: 1, name: "Adedoyin Aderonke", email: "themba@gmail.com", address: "12, Beever street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Female", age: "24", riskLevel: "low", image: studentDemo, },
-    { id: 2, name: "Olorunsogo Olawale", email: "wale@gmail.com", address: "2, Coker street Olusoga Houston", contact: "08035567812", date: '15/04/24', gender: "Male", age: "25", riskLevel: "low", image: studentDemo, },
-    { id: 3, name: "Mafoluku Arike", email: "mafoluku@gmail.com", address: "30, Cole street Olusoga Houston", contact: "08035567812", date: '11/04/24', gender: "Female", age: "23", riskLevel: "low", image: studentDemo, },
-    { id: 4, name: "Afolabi Ayomide", email: "mide@gmail.com", address: "5, Day street Olusoga Houston", contact: "08035567812", date: '15/04/24', gender: "Male", age: "22", riskLevel: "medium", image: studentDemo, },
-    { id: 5, name: "Olasunkami Ishola", email: "olashola@gmail.com", address: "22, Smith street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Male", age: "27", riskLevel: "low", image: studentDemo, },
-    { id: 6, name: "Sanni Ajoke", email: "ajoke@gmail.com", address: "4, John street Olusoga Houston", contact: "08035567812", date: '14/04/24', gender: "Female", age: "23", riskLevel: "low", image: studentDemo, },
-    { id: 7, name: "Idowu Labake", email: "idowulabake@gmail.com", address: "9, Elegant street Olusoga Houston", contact: "08035567812", date: '11/04/24', gender: "Female", age: "24", riskLevel: "low", image: studentDemo, },
-    { id: 8, name: "Balogun Adeshina", email: "shina@gmail.com", address: "51, Rainbow street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Male", age: "26", riskLevel: "low", image: studentDemo, },
-    { id: 9, name: "Olateju Motunrayo", email: "olarayo@gmail.com", address: "33, Martins street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Female", age: "20", riskLevel: "high", image: studentDemo, },
-  ]);
-
-  const [selectedStudent, setSelectedStudent] = useState(null);
-
-
+  
   const clickedStudent = (student) => {
-    setSelectedStudent(student);
+      setSelectedStudent(student);
   }
-
+  
   const deselect = () => {
-    setSelectedStudent(null);
+      setSelectedStudent(null);
+      console.log("Alright")
   }
-
 
   return (
-    <>
-      <div className='px-4 md:px-0 font-poppins'>
+    <div className='px-4 md:px-0 font-poppins'>
         <header className='flex sm:justify-between sm:gap-0 gap-5 sm:flex-row flex-col my-4'>
-          <div className='flex items-center gap-5'>
-            <h1 className='text-2xl font-bold'>Service profile</h1>
-            <img src={filterIcon} alt="Filter Icon" />
-          </div>
+            <div className='flex items-center gap-5'>
+                <h1 className='text-2xl font-bold'>Incident report</h1>
+                <img src={filterIcon} alt="Filter Icon" />
+            </div>
 
-          <div className='flex items-center gap-3 cursor-pointer sm:self-auto self-end bg-[#F9F6F6] p-2 rounded-[5px]'>
-            <img src={bagIconBlack} alt="Icon" className='' />
-            <p>Jonathan D</p>
-            <img src={bagIconBlack} alt="Icon" className='' />
-          </div>
+            <div className='flex items-center gap-3 cursor-pointer sm:self-auto self-end bg-[#F9F6F6] p-2 rounded-[5px]'>
+                <img src={bagIconBlack} alt="Icon" className='' />
+                <p>Jonathan D</p>
+                <img src={bagIconBlack} alt="Icon" className='' />
+            </div>
         </header>
 
         <hr />
 
         <div className='flex sm:flex-row flex-col sm:items-center sm:gap-0 gap-4 sm:justify-between my-3'>
-          <div className='flex items-center gap-x-5 md:w-[50%] w-full justify-between'>
-            <input
-              type="search"
-              name="searchProfile"
-              id="searchProfile"
-              placeholder='Search Profile'
-              className='block bg-blue-100 outline-none rounded-3xl p-3 w-full'
-            />
-            
-            <img src={filterIcon} alt="filter icon" className='border p-2 rounded' />
-          </div>
+            <div className='flex items-center gap-x-5 md:w-[50%] w-full justify-between'>
+                <input type="search" name="searchProfile" id="searchProfile" placeholder='Search Profile' className='block bg-blue-100 outline-none rounded-3xl p-3 w-full' />
+                
+                <img src={filterIcon} alt="filter icon" className='border p-2 rounded' />
+            </div>
 
-          <div className='flex md:flex-row flex-col gap-4'>
-            <button className='flex gap-2 items-center text-[14px] font-medium p-[8px] rounded-[8px] border border-[#622C98] text-[#622C98]'><p>Back</p> <img src={bagIcon} alt="Icon" className='h-[16px]' /> </button>
+            {/* <div className='flex md:flex-row flex-col gap-4'> */}
+                <button className='flex gap-2 items-center text-[14px] font-medium p-[8px] rounded-[8px] border border-[#622C98] text-[#622C98] hover:bg-[#622C98] hover:text-white'><p>Back</p> <img src={bagIcon} alt="Icon" className='h-[16px]' /> </button>
+            {/* </div> */}
+        </div>     
 
-            <button className='flex gap-2 items-center text-[14px] font-medium p-[8px] rounded-[8px] bg-[#622C98] text-white'>
-              <p>Create New Profile</p>
-              <img src={bagIconWhite} alt="Icon" className='' />
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* The service profiles  */}
-      {/* <div className='flex md:flex-row flex-wrap flex-col md:gap-5 gap-2 md:items-center px-4 md:px-0 font-poppins'>
-        <div className='flex items-center md:gap-3 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-500 md:justify-normal justify-between'>
-          <p>Service profile</p>
-          <img src={bagIcon} alt="Icon" className='h-[16px]' />
-        </div>
-        
-        <div className='flex items-center md:gap-3 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-500 md:justify-normal justify-between'>
-          <p>Service profile</p>
-          <img src={bagIcon} alt="Icon" className='h-[16px]' />
-        </div>
-
-
-        <div className='flex items-center md:gap-3 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-500 md:justify-normal justify-between'>
-          <p>Service profile</p>
-          <img src={bagIcon} alt="Icon" className='h-[16px]' />
-        </div>
-
-        <div className='flex items-center md:gap-3 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-500 md:justify-normal justify-between'>
-          <p>Service profile</p>
-          <img src={bagIcon} alt="Icon" className='h-[16px]' />
-        </div>
-      </div>  */}
-        
-
-
-      <div className="w-full lg:overflow-x-hidden overflow-x-scroll px-4 md:px-0 font-poppins">
+        <div className="w-full lg:overflow-x-hidden overflow-x-scroll px-4 md:px-0 font-poppins">
         <table className='border-separate border-spacing-2 md:border-spacing-1 w-full mt-16 border rounded-[5px]'>
           <thead className='bg-gray-200'>
             <tr className='text-center'>
@@ -193,19 +151,19 @@ const StudentList = () => {
 
                 
               <div className='flex flex-wrap gap-2 md:justify-start justify-end'>
-                <div className='flex items-center md:gap-3 gap-2 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-400 md:justify-normal justify-between'>
+                <div onClick={toServicePage} className='flex items-center md:gap-3 gap-2 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-400 md:justify-normal justify-between'>
                   <img src={bagIcon} alt="Icon" className='h-[16px]' />
                   <p>profile</p>
                 </div>
 
-                <div onClick={toIncident} className='flex items-center md:gap-3 gap-2 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-400 md:justify-normal justify-between'>
+                {/* <div className='flex items-center md:gap-3 gap-2 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-400 md:justify-normal justify-between'>
                   <img src={bagIcon} alt="Icon" className='h-[16px]' />
                   <p>incident report</p>
-                </div>
+                </div> */}
 
                 <div onClick={toPrevoidManagement} className='flex items-center md:gap-3 gap-2 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-400 md:justify-normal justify-between'>
                   <img src={bagIcon} alt="Icon" className='h-[16px]' />
-                  <p>prevoid management</p>
+                  <p>Prevoid management</p>
                 </div>
 
                 <div onClick={toManagement} className='flex items-center md:gap-3 gap-2 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-400 md:justify-normal justify-between'>
@@ -228,9 +186,9 @@ const StudentList = () => {
             <div className='bg-gray-200 md:block hidden opacity-50 h-full w-full absolute left-0 top-0 z-10 font-poppins' onClick={deselect}></div>
           </>
         )}
-      </div>
-    </>
+      </div> 
+    </div>
   )
 }
 
-export default StudentList
+export default IncidentReport

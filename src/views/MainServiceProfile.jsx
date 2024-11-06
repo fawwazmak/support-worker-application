@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFilter, faBriefcase,faXmark} from '@fortawesome/free-solid-svg-icons';
 import filterIcon from "/filter-icon.svg";
 import bagIcon from "/bag-icon.svg";
 import bagIconWhite from "/bag-icon-white.svg";
@@ -58,13 +56,7 @@ const ServiceProfile = () => {
       {/* <div className='flex flex-col md:justify-between md:gap-y-8 gap-y-3 my-3'> */}
         <div className='flex sm:flex-row flex-col sm:items-center sm:gap-0 gap-4 sm:justify-between my-3'>
           <div className='flex items-center gap-x-5 md:w-[50%] w-full justify-between'>
-            <input
-              type="search"
-              name="searchProfile"
-              id="searchProfile"
-              placeholder='Search Profile'
-              className='block bg-blue-100 outline-none rounded-3xl p-3 w-full'
-            />
+            <input type="search" name="searchProfile" id="searchProfile" placeholder='Search Profile' className='block bg-blue-100 outline-none rounded-3xl p-3 w-full' />
             
             <img src={filterIcon} alt="filter icon" className='border p-2 rounded' />
           </div>

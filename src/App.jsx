@@ -17,6 +17,9 @@ import ServProfile from "./components/serviceProfileCompo/ServiceProfileForm";
 import StudentList from "./components/serviceProfileCompo/StudentList";
 import YoungProfileForm from "./components/youngPersons/YoungProfileForm";
 import FormsInYP from "./components/otherFormsInYoungPersonProfile/FormsInYP";
+import IncidentReport from "./components/IncidentReportList";
+import PrevoidManagement from "./components/PrevoidManagementList";
+import ManagementList from "./components/ManagementList";
 
 function ProtectedRoute({ children, isAuthenticated, isAdmin, adminOnly }) {
   if (!isAuthenticated) {
@@ -78,6 +81,10 @@ function App() {
                 <StudentList />
               </ProtectedRoute>
             } />
+
+            <Route path="/incidentReport" element={<IncidentReport />} />
+            <Route path="/prevoidManagement" element={<PrevoidManagement />} />
+            <Route path="/management" element={<ManagementList />} />
 
             <Route
               path="/YP"
