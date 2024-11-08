@@ -3,7 +3,7 @@ import React from 'react'
 const NoPage = () => {
   return (
     <div>
-      Page not found
+      <p className='bg-purple-800 text-white p-4 mx-auto'>Page not found</p>
     </div>
   )
 }

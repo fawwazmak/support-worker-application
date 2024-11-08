@@ -80,13 +80,23 @@ const Profile = () => {
                     </div>
 
                     <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                        <label className='w-full' htmlFor="manager">Manager</label>
+                        <input className='border border-[#dedede] p-2 rounded-[4px] w-full' name="manager" id="manager" />
+                    </div>
+
+                    <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
                         <label className='w-full' htmlFor="address">Address</label>
-                        <textarea className='border border-[#dedede] p-2 rounded-[4px] w-full' name="address" id="address" placeholder='Saturation'></textarea>
+                        <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="address" id="address" placeholder='Enter your address' />
                     </div>
 
                     <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
                         <label className='w-full' htmlFor="phoneNumber">Phone number</label>
                         <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="tel" name="phoneNumber" id="phoneNumber" />
+                    </div>
+
+                    <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                        <label className='w-full' htmlFor="email">Email</label>
+                        <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="email" name="email" id="email" />
                     </div>
 
                     <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
@@ -100,6 +110,15 @@ const Profile = () => {
                     </div>
 
                     <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                        <label className='w-full' htmlFor="supportedAccomodation">Supported accomodation</label>
+                        <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="supportedAccomodation" id="supportedAccomodation">
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                            <option value="notApplicable">N/A</option>
+                        </select>
+                    </div>
+
+                    <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
                         <label className='w-full' htmlFor="serviceType">Service type</label>
                         <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="serviceType" id="serviceType">
                             <option value="none">none</option>
@@ -110,31 +129,34 @@ const Profile = () => {
 
                     <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
                         <label className='w-full' htmlFor="numberOfBeds">Number of beds</label>
-                        <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="numberOfBeds" id="numberOfBeds">
-                            <option value="none">none</option>
-                            <option value="optionOne">option one</option>
-                            <option value="optionTwo">option two</option>
-                        </select>
+                        <input max={10} min={0} className='border border-[#dedede] p-2 rounded-[4px] w-full' type="number" name="numberOfBeds" id="numberOfBeds" />
                     </div>
 
                     <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
                         <label className='w-full' htmlFor="specialization">Specialization</label>
                         <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="specialization" id="specialization" >
-                            <option value="none">none</option>
-                            <option value="optionOne">option one</option>
-                            <option value="optionTwo">option two</option>
+                            <option value="16to25">16-25</option>
                         </select>
                     </div>
 
                     <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
                         <label className='w-full' htmlFor="legalSupport">Legal support</label>
                         <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="legalSupport" id="legalSupport">
-                            <option value="none">none</option>
-                            <option value="optionOne">option one</option>
-                            <option value="optionTwo">option two</option>
+                            <option value="low">Low</option> 
+                            <option value="medium">Medium</option>
+                            <option value="medium-high">Medium-high</option>
+                            <option value="high">High</option>
                         </select>
                     </div>
 
+                    <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                        <label className='w-full' htmlFor="focusOfSupport">Focus of support</label>
+                        <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="focusOfSupport" id="focusOfSupport">
+                            <option value="no">no</option>
+                            <option value="yes">Yes</option>
+                            <option value="notApplicable">N/A</option>
+                        </select>
+                    </div>
                 </div>
             </div>
 
@@ -155,13 +177,8 @@ const Profile = () => {
                     </div>
 
                     <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
-                        <label className='w-full' htmlFor="callOne">On Call 1</label>
+                        <label className='w-full' htmlFor="callOne">On Call</label>
                         <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="tel" name="callOne" id="callOne" />
-                    </div>
-
-                    <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
-                        <label className='w-full' htmlFor="callTwo">On Call 2</label>
-                        <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="callTwo" id="callTwo" />
                     </div>
                 </div>
             </div>
@@ -175,25 +192,23 @@ const Profile = () => {
                     <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
                         <label className='w-full' htmlFor="gender">Gender</label>
                         <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="gender" id="gender">
-                            <option value="rather-not-say">rather not say</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
+                            <option value="both">Both</option>
                         </select>
                     </div>
 
                     <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
                         <label className='w-full' htmlFor="ageRange">Age range</label>
                         <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="ageRange" id="ageRange">
-                            <option value="18-20">18 - 20</option>
-                            <option value="21-24">21 - 24</option>
-                            <option value="25-and-above">25 and above</option>
+                            <option value="16-25">16 - 25</option>
                         </select>
                     </div>
 
                     <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
                         <label className='w-full' htmlFor="pronoun">Pronoun</label>
                         <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="pronoun" id="pronoun" >
-                            <option value="rather not say">Rather not say</option>
+                            <option value="ratherNotSay">Rather not say</option>
                             <option value="he">He / him</option>
                             <option value="she">She / her</option>
                         </select>
@@ -202,9 +217,9 @@ const Profile = () => {
                     <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
                         <label className='w-full' htmlFor="durationOfStay">Duration of Stay</label>
                         <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="durationOfStay" id="durationOfStay" >
-                            <option value="4">4 months</option>
-                            <option value="6">6 months</option>
-                            <option value="12">12 months</option>
+                            <option value="0.5">6 months</option>
+                            <option value="1">1 year</option>
+                            <option value="2">2 years</option>
                         </select>
                     </div>
 
@@ -220,30 +235,33 @@ const Profile = () => {
                     <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
                         <label className='w-full' htmlFor="loneWorking">Lone working</label>
                         <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="loneWorking" id="loneWorking">
-                            <option value="false">False</option>
-                            <option value="true">True</option>
+                            <option value="no">no</option>
+                            <option value="yes">Yes</option>
+                            <option value="notApplicable">N/A</option>
                         </select>
                     </div>
 
                     <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
                         <label className='w-full' htmlFor="challengingBehaviour">Challenging behaviour</label>
                         <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="challengingBehaviour" id="challengingBehaviour">
-                            <option value="false">False</option>
-                            <option value="true">True</option>
+                            <option value="no">no</option>
+                            <option value="yes">Yes</option>
+                            <option value="notApplicable">N/A</option>
                         </select>
                     </div>
 
                     <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
                         <label className='w-full' htmlFor="personalCareSupport">Personal care support</label>
                         <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="personalCareSupport" id="personalCareSupport" >
-                            <option value="false">False</option>
-                            <option value="true">True</option>
+                            <option value="no">no</option>
+                            <option value="yes">Yes</option>
+                            <option value="notApplicable">N/A</option>
                         </select>
                     </div>
 
                     <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
                         <label className='w-full' htmlFor="physicalChallenges">Physical challenge(s)</label>
-                        <textarea className='border border-[#dedede] p-2 rounded-[4px] w-full' name="physicalChallenges" id="physicalChallenges" placeholder='Type here'></textarea>
+                        <textarea className='border border-[#dedede] p-2 rounded-[4px] w-full' name="physicalChallenges" id="physicalChallenges" placeholder='Savegaurding young at all time that present various complex needs'></textarea>
                     </div>
 
                 </div>
@@ -258,32 +276,44 @@ const Profile = () => {
                     <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
                         <label className='w-full' htmlFor="sleepInBed">Sleep in bed</label>
                         <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="sleepInBed" id="sleepInBed">
-                            <option value="true">True</option>
-                            <option value="false">False</option>
+                            <option value="no">no</option>
+                            <option value="yes">Yes</option>
+                            <option value="notApplicable">N/A</option>
                         </select>
                     </div>
 
                     <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
                         <label className='w-full' htmlFor="parking">Parking</label>
                         <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="parking" id="parking">
-                            <option value="true">True</option>
-                            <option value="false">False</option>
+                            <option value="no">no</option>
+                            <option value="yes">Yes</option>
+                            <option value="notApplicable">N/A</option>
                         </select>
                     </div>
 
                     <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
                         <label className='w-full' htmlFor="pets">Are there pets</label>
                         <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="pets" id="pets">
-                            <option value="true">True</option>
-                            <option value="false">False</option>
+                            <option value="no">no</option>
+                            <option value="yes">Yes</option>
+                            <option value="notApplicable">N/A</option>
                         </select>
                     </div>
 
                     <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
-                        <label className='w-full' htmlFor="unpaidBreaksy">Unpaid breaks</label>
+                        <div className="w-full flex gap-4 relative">
+                            <label className='' htmlFor="unpaidBreaksy">Unpaid breaks</label>
+                            <div className="group">
+                                <svg className="block h-6 text-red-600" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16 16"><g fill="currentColor"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="m8.93 6.588l-2.29.287l-.082.38l.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319c.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246c-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></g></svg>
+                                <div className="flex flex-col absolute left-0 top-[20px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000">
+                                    <div class="w-0 h-0 border-t-8 border-t-transparent border-l-8 border-l-[#6b21a8] border-r-8 border-r-transparent"></div>
+                                    <p className="bg-[#6b21a8] p-1 text-white  border-s-[#6b21a8] border-s-[2px]">Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                        </div>
                         <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="unpaidBreaksy" id="unpaidBreaksy">
-                            <option value="true">True</option>
-                            <option value="false">False</option>
+                            <option value="0.5">30 minutes</option>
+                            <option value="1">1 hour</option>
                         </select>
                     </div>
 

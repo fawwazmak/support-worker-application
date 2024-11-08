@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import filterIcon from "/filter-icon.svg";
 import bagIcon from "/bag-icon.svg";
@@ -9,6 +9,30 @@ import arrowUp from "/arrow-up.svg"
 
 const YoungProfileForm = () => {
   const navigate = useNavigate();
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
+  const currentMonth = currentDate.getMonth();
+  const [dob, setDob] = useState();
+  
+
+  const handleAge = (e) => {
+    const selectedDate = new Date(e.target.value);
+    const selectedYear = selectedDate.getFullYear();
+    const age = currentYear - selectedYear;
+    const selectedMonth = selectedDate.getMonth();
+    const selectedDay = selectedDate.getDate();
+
+
+    if (
+      selectedMonth > currentMonth ||
+      (selectedMonth === currentMonth && selectedDay > currentDate.getDate())
+    ) {
+      setDob(age - 1);
+    } else {
+      setDob(age);
+    }
+  }
+
   const toYp = () => { 
     navigate("/YP");
   }
@@ -103,16 +127,24 @@ const YoungProfileForm = () => {
             <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
               <label className='w-full' htmlFor="consent">Consent</label>
               <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="consent" id="consent">
-                <option value="none">none</option>
-                <option value="optionOne">One</option>
-                <option value="optionTwo">Two</option>
+                <option value="written">Written</option>
+                <option value="verbal">Verbal</option>
+                <option value="refused">No - refused</option>
+                <option value="withdrawn">No - withdrawn</option>
+                <option value="notRequested">No - not requested</option>
+                <option value="exempt">Exempt</option>
               </select>
             </div>
 
             {/* Date of Birth  */}
             <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
-                <label className='w-full' htmlFor="dateOfBirth">Date of birth</label>
-                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="date" name="dateOfBirth" id="dateOfBirth" />
+              <label className='w-full' htmlFor="dateOfBirth">Date of birth</label>
+              <input onChange={handleAge} className='border border-[#dedede] p-2 rounded-[4px] w-full' type="date" name="dateOfBirth" id="dateOfBirth" />
+            </div>
+
+            <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+              <label className='w-full' htmlFor="currentAge">Current age</label>
+              <input value={dob} readOnly className='border border-[#dedede] p-2 rounded-[4px] w-full' type="number" name="currentAge" id="currentAge" />
             </div>
 
             {/* Gender  */}

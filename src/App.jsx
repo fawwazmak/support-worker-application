@@ -14,7 +14,6 @@ import NoPage from "./components/NoPage";
 import SideNavBar from "./components/SideNavBar";
 import LoginPage from "./views/LoginPage";
 import ServProfile from "./components/serviceProfileCompo/ServiceProfileForm";
-import StudentList from "./components/serviceProfileCompo/StudentList";
 import YoungProfileForm from "./components/youngPersons/YoungProfileForm";
 import FormsInYP from "./components/otherFormsInYoungPersonProfile/FormsInYP";
 import IncidentReport from "./components/IncidentReportList";
@@ -29,7 +28,7 @@ function ProtectedRoute({ children, isAuthenticated, isAdmin, adminOnly }) {
     return <Navigate to="/" />;
   }
   if (adminOnly && !isAdmin) {
-    return <Navigate to="/service" />;
+    return <Navigate to="/serviceProfile" />;
   }
   return children;
 }
@@ -68,26 +67,33 @@ function App() {
 
 
             <Route path="/serviceProfile" element={
-              <ProtectedRoute isAuthenticated={isAuthenticated} isAdmin={isAdmin} adminOnly>
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
                 <ServiceProfile />
               </ProtectedRoute>
             } />
 
             <Route path="/serviceProfile/profile" element={
-              <ProtectedRoute isAuthenticated={isAuthenticated} isAdmin={isAdmin} adminOnly>
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
                 <ServProfile />
               </ProtectedRoute>
             } />
 
-            <Route path="/service" element={
+
+            <Route path="/incidentReport" element={
               <ProtectedRoute isAuthenticated={isAuthenticated}>
-                <StudentList />
+                <IncidentReport />
               </ProtectedRoute>
             } />
-
-            <Route path="/incidentReport" element={<IncidentReport />} />
-            <Route path="/prevoidManagement" element={<PrevoidManagement />} />
-            <Route path="/management" element={<ManagementList />} />
+            <Route path="/prevoidManagement" element={
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <PrevoidManagement />
+              </ProtectedRoute>
+            } />
+            <Route path="/management" element={
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <ManagementList />
+              </ProtectedRoute>
+            } />
 
             <Route
               path="/YP"
@@ -99,14 +105,26 @@ function App() {
             />
 
             <Route path="/YP/form" element={
-              <ProtectedRoute isAuthenticated={isAuthenticated} isAdmin={isAdmin} adminOnly>
+              <ProtectedRoute isAuthenticated={isAuthenticated} isAdmin={isAdmin} >
                 <YoungProfileForm />
               </ProtectedRoute>
             } />
 
-            <Route path="/complaints" element={<Complaints />} />
-            <Route path="/casenote" element={<CaseNote />} />
-            <Route path="/riskAssesment" element={<RiskAssesment />} />
+            <Route path="/complaints" element={
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <Complaints />
+              </ProtectedRoute>
+              }  />
+            <Route path="/casenote" element={
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <CaseNote />
+              </ProtectedRoute>
+              }  />
+            <Route path="/riskAssesment" element={
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <RiskAssesment />
+              </ProtectedRoute>
+              }  />
 
             <Route
               path="/reports"

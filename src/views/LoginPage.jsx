@@ -28,7 +28,7 @@ const LoginPage = ({ onLogin }) => {
 
     if (role === 'admin') {
       if (email === adminCredentials.email && password === adminCredentials.password) {
-        localStorage.setItem('role', 'admin'); // Save role in localStorage
+        localStorage.setItem('role', 'admin'); 
         onLogin(true);
         navigate('/serviceProfile');
       } else {
@@ -36,9 +36,9 @@ const LoginPage = ({ onLogin }) => {
       }
     } else if (role === 'user') {
       if (email === userCredentials.email && password === userCredentials.password) {
-        localStorage.setItem('role', 'user'); // Save role in localStorage
+        localStorage.setItem('role', 'user'); 
         onLogin(false);
-        navigate('/service');
+        navigate('/serviceProfile');
       } else {
         setError('Invalid user credentials');
       }
