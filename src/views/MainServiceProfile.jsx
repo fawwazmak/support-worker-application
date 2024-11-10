@@ -90,10 +90,10 @@ const ServiceProfile = () => {
         <table className='border-separate border-spacing-2 md:border-spacing-1 w-full mt-16 border rounded-[5px]'>
           <thead className='bg-gray-200'>
             <tr className='text-center'>
-              <th className='px-3 py-2'>S/N</th>
-              <th className='px-3 py-2'>Name</th>
+              <th className='px-3 py-2'>Service code</th>
+              <th className='px-3 py-2'>Service name</th>
               <th className='px-3 py-2'>Address</th>
-              <th className='px-3 py-2'>Date</th>
+              <th className='px-3 py-2'>Email</th>
               <th className='px-3 py-2'>Gender</th>
               <th className='px-3 py-2'>Age</th>
             </tr>
@@ -127,7 +127,7 @@ const ServiceProfile = () => {
 
               <table>
                 <thead>
-                  <tr><th className='text-center bg-[#622C981C] py-2 w-full' colSpan={2}>Young person's details</th></tr>
+                  <tr><th className='text-center bg-[#622C981C] py-2 w-full' colSpan={2}>Service details</th></tr>
                 </thead>
                   
                 <tfoot>

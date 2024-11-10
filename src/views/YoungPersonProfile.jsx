@@ -22,16 +22,16 @@ const Homepage = ({isAdmin}) => {
     navigate("/riskAssesment")
   }
   const [YpCandidates, setYpCandidates] = useState([
-    {id: 1, service: "Adedoyin Aderonke", stafflead: "Joe Linton", date: "12/04/24", compiledBy: "oluwsna"},
-    {id: 2, service: "Olorunsogo Olawale", stafflead: "Joe Linton", date: "12/04/24", compiledBy: "oluwsna"},
-    {id: 3, service: "Mafoluku Arike", stafflead: "Joe Linton", date: "12/04/24", compiledBy: "oluwsna"},
-    {id: 4, service: "Afolabi Ayomide", stafflead: "Joe Linton", date: "12/04/24", compiledBy: "oluwsna"},
-    {id: 5, service: "Olasunkami Ishola", stafflead: "Joe Linton", date: "12/04/24", compiledBy: "oluwsna"},
-    {id: 6, service: "Sanni Ajoke", stafflead: "Joe Linton", date: "12/04/24", compiledBy: "oluwsna"},
-    {id: 7, service: "Idowu Labake", stafflead: "Joe Linton", date: "12/04/24", compiledBy: "oluwsna"},
-    {id: 8, service: "Idowu Labake", stafflead: "Joe Linton", date: "12/04/24", compiledBy: "oluwsna"},
-    {id: 9, service: "Idowu Labake", stafflead: "Joe Linton", date: "12/04/24", compiledBy: "oluwsna"},
-    {id: 10, service: "Idowu Labake", stafflead: "Joe Linton", date: "12/04/24", compiledBy: "oluwsna"},
+    {id: 1, service: "Adedoyin Aderonke", stafflead: "Joe Linton", referralDate: "12/04/24", compiledBy: "O luwashina", age: 25,},
+    {id: 2, service: "Olorunsogo Olawale", stafflead: "Joe Linton", referralDate: "12/04/24", compiledBy: "Idowu", age: 21,},
+    {id: 3, service: "Mafoluku Arike", stafflead: "Joe Linton", referralDate: "12/04/24", compiledBy: "Aina", age: 24,},
+    {id: 4, service: "Afolabi Ayomide", stafflead: "Joe Linton", referralDate: "12/04/24", compiledBy: "Dele", age: 25,},
+    {id: 5, service: "Olasunkami Ishola", stafflead: "Joe Linton", referralDate: "12/04/24", compiledBy: "Tola", age: 21,},
+    {id: 6, service: "Sanni Ajoke", stafflead: "Joe Linton", referralDate: "12/04/24", compiledBy: "Deji", age: 20,},
+    {id: 7, service: "Idowu Labake", stafflead: "Joe Linton", referralDate: "12/04/24", compiledBy: "Rebecca", age: 22,},
+    {id: 8, service: "Idowu Labake", stafflead: "Joe Linton", referralDate: "12/04/24", compiledBy: "Femi", age: 24,},
+    {id: 9, service: "Idowu Labake", stafflead: "Joe Linton", referralDate: "12/04/24", compiledBy: "Bola", age: 20,},
+    {id: 10, service: "Idowu Labake", stafflead: "Joe Linton", referralDate: "12/04/24", compiledBy: "Ayo", age: 22,},
   ])
   const [selectedYpCandidate, setSelectedYpCandidate] = useState(null);
 
@@ -89,12 +89,12 @@ const Homepage = ({isAdmin}) => {
           <thead className='bg-gray-200'>
             <tr>
               <th className='px-3 py-2'>S/N</th>
-              <th className='px-3 py-2'>Service</th>
+              <th className='px-3 py-2'>Full name</th>
               <th className='px-3 py-2'>Staff lead</th>
-              <th className='px-3 py-2'>Date</th>
-              <th className='px-3 py-2'>Time</th>
+              <th className='px-3 py-2'>Referrall date</th>
+              <th className='px-3 py-2'>Age</th>
               <th className='px-3 py-2'>Compiled by</th>
-              <th className='px-3 py-2'>Actions</th>
+              <th className='px-3 py-2'>NI number</th>
             </tr>
           </thead>
 
@@ -104,8 +104,8 @@ const Homepage = ({isAdmin}) => {
               <td className='px-3 py-2'>{YpCandidate.id}</td>
               <td className='px-3 py-2'>{YpCandidate.service}</td>
               <td className='px-3 py-2'>{YpCandidate.stafflead}</td>
-              <td className='px-3 py-2'>{YpCandidate.date}</td>
-              <td className='px-3 py-2'>09:30am</td>
+              <td className='px-3 py-2'>{YpCandidate.referralDate}</td>
+              <td className='px-3 py-2'>{YpCandidate.age}</td>
               <td className='px-3 py-2'>{YpCandidate.compiledBy}</td>
               <td className='flex md:gap-5 gap-2 px-3 py-2'>
                 <div className='border border-dotted rounded-[5px] cursor-pointer p-2 h-8 w-8 flex items-center justify-center text-red-500'>

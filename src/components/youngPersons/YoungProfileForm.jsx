@@ -576,6 +576,29 @@ const YoungProfileForm = () => {
 
         <div className="flex flex-col gap-8 border border-[#F9F2FF] pb-12">
           <header className="flex justify-between bg-[#F9F2FF] p-5 rounded-t-[8px] sticky top-48">
+              <h2>Other support worker details</h2>
+              <img src={arrowUp} alt="Arrow" />
+          </header>
+          <div className="flex flex-col gap-4 md:p-5 p-2">
+            <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+              <label className='w-full' htmlFor="otherSName">Name</label>
+              <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="otherSName" id="otherSName" />
+            </div>
+
+            <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+              <label className='w-full' htmlFor="otherSMobileNumber">Mobile number</label>
+              <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="number" name="otherSMobileNumber" id="otherSMobileNumber" />
+            </div>
+
+            <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+              <label className='w-full' htmlFor="otherSComments">Comments</label>
+              <textarea className='border border-[#dedede] p-2 rounded-[4px] w-full' name="otherSComments" id="otherSComments"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-8 border border-[#F9F2FF] pb-12">
+          <header className="flex justify-between bg-[#F9F2FF] p-5 rounded-t-[8px] sticky top-48">
             <h2>Safeguarding Assessment Plan (SAP)</h2>
             <img src={arrowUp} alt="Arrow" />
           </header>

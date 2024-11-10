@@ -80,19 +80,19 @@ function App() {
 
 
             <Route path="/incidentReport" element={
-              <ProtectedRoute isAuthenticated={isAuthenticated}>
+              // <ProtectedRoute isAuthenticated={isAuthenticated}>
                 <IncidentReport />
-              </ProtectedRoute>
+              // </ProtectedRoute>
             } />
             <Route path="/prevoidManagement" element={
-              <ProtectedRoute isAuthenticated={isAuthenticated}>
+              // <ProtectedRoute isAuthenticated={isAuthenticated}>
                 <PrevoidManagement />
-              </ProtectedRoute>
+              // </ProtectedRoute>
             } />
             <Route path="/management" element={
-              <ProtectedRoute isAuthenticated={isAuthenticated}>
+              // <ProtectedRoute isAuthenticated={isAuthenticated}>
                 <ManagementList />
-              </ProtectedRoute>
+              // </ProtectedRoute>
             } />
 
             <Route
@@ -116,14 +116,14 @@ function App() {
               </ProtectedRoute>
               }  />
             <Route path="/casenote" element={
-              <ProtectedRoute isAuthenticated={isAuthenticated}>
+              // <ProtectedRoute isAuthenticated={isAuthenticated}>
                 <CaseNote />
-              </ProtectedRoute>
+              // </ProtectedRoute>
               }  />
             <Route path="/riskAssesment" element={
-              <ProtectedRoute isAuthenticated={isAuthenticated}>
+              // <ProtectedRoute isAuthenticated={isAuthenticated}>
                 <RiskAssesment />
-              </ProtectedRoute>
+              // </ProtectedRoute>
               }  />
 
             <Route
