@@ -22,8 +22,9 @@ import ManagementList from "./components/ManagementList";
 import CaseNote from "./components/CaseNote";
 import Complaints from "./components/ComplaintsList";
 import RiskAssesment from "./components/RiskAssesment";
+import Services from "./views/Services";
 
-function ProtectedRoute({ children, isAuthenticated, isAdmin, adminOnly }) {
+function ProtectedRoute({ children, isAuthenticated, isAdmin, adminOnly = false }) {
   if (!isAuthenticated) {
     return <Navigate to="/" />;
   }
@@ -35,16 +36,15 @@ function ProtectedRoute({ children, isAuthenticated, isAdmin, adminOnly }) {
 
 function App() {
   const [showNav, setShowNav] = useState(false);
-  const location = useLocation(); 
-  const [isAuthenticated, setIsAuthenticated] = useState(false); 
-  const [isAdmin, setIsAdmin] = useState(false); 
+  const location = useLocation();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   const handleLogin = (adminStatus) => {
     setIsAuthenticated(true);
     setIsAdmin(adminStatus);
   };
 
-  const activePath = location.pathname === "/service" ? "/serviceProfile" : location.pathname;
   return (
     <>
       <div className="flex gap-5 md:h-screen relative md:static">
@@ -56,7 +56,7 @@ function App() {
             </div>
 
             <div className={`h-screen md:block ${showNav ? 'block' : 'hidden'} left-0 top-0`}>
-              <SideNavBar activePath={activePath} />
+              <SideNavBar />
             </div>
           </div>
         )}
@@ -65,11 +65,16 @@ function App() {
           <Routes>
             <Route path="/" element={<LoginPage onLogin={handleLogin} />} />
 
-
             <Route path="/serviceProfile" element={
               <ProtectedRoute isAuthenticated={isAuthenticated}>
                 <ServiceProfile />
               </ProtectedRoute>
+            } />
+
+            <Route path="/services" element={
+              // <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <Services />
+              // </ProtectedRoute>
             } />
 
             <Route path="/serviceProfile/profile" element={
@@ -78,34 +83,30 @@ function App() {
               </ProtectedRoute>
             } />
 
-
             <Route path="/incidentReport" element={
-              // <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
                 <IncidentReport />
-              // </ProtectedRoute>
+              </ProtectedRoute>
             } />
             <Route path="/prevoidManagement" element={
-              // <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
                 <PrevoidManagement />
-              // </ProtectedRoute>
+              </ProtectedRoute>
             } />
             <Route path="/management" element={
-              // <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
                 <ManagementList />
-              // </ProtectedRoute>
+              </ProtectedRoute>
             } />
 
-            <Route
-              path="/YP"
-              element={
-                <ProtectedRoute isAuthenticated={isAuthenticated}>
-                  <YoungPersonProfile />
-                </ProtectedRoute>
-              }
-            />
+            <Route path="/YP" element={
+              <ProtectedRoute isAuthenticated={isAuthenticated} isAdmin={isAdmin}>
+                <YoungPersonProfile />
+              </ProtectedRoute>
+            } />
 
             <Route path="/YP/form" element={
-              <ProtectedRoute isAuthenticated={isAuthenticated} isAdmin={isAdmin} >
+              <ProtectedRoute isAuthenticated={isAuthenticated} isAdmin={isAdmin} adminOnly={true}>
                 <YoungProfileForm />
               </ProtectedRoute>
             } />
@@ -114,62 +115,47 @@ function App() {
               <ProtectedRoute isAuthenticated={isAuthenticated}>
                 <Complaints />
               </ProtectedRoute>
-              }  />
+            } />
             <Route path="/casenote" element={
-              // <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
                 <CaseNote />
-              // </ProtectedRoute>
-              }  />
+              </ProtectedRoute>
+            } />
             <Route path="/riskAssesment" element={
-              // <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
                 <RiskAssesment />
-              // </ProtectedRoute>
-              }  />
+              </ProtectedRoute>
+            } />
 
-            <Route
-              path="/reports"
-              element={
-                <ProtectedRoute isAuthenticated={isAuthenticated}>
-                  <Reports />
-                </ProtectedRoute>
-              }
-            />
+            <Route path="/reports" element={
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <Reports />
+              </ProtectedRoute>
+            } />
 
-            <Route
-              path="/trainingHub"
-              element={
-                <ProtectedRoute isAuthenticated={isAuthenticated}>
-                  <FormsInYP />
-                </ProtectedRoute>
-              }
-            />
+            <Route path="/trainingHub" element={
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <FormsInYP />
+              </ProtectedRoute>
+            } />
 
-            <Route
-              path="/policies"
-              element={
-                <ProtectedRoute isAuthenticated={isAuthenticated}>
-                  <Policies />
-                </ProtectedRoute>
-              }
-            />
+            <Route path="/policies" element={
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <Policies />
+              </ProtectedRoute>
+            } />
 
-            <Route
-              path="/SWProfile"
-              element={
-                <ProtectedRoute isAuthenticated={isAuthenticated}>
-                  <SWProfile />
-                </ProtectedRoute>
-              }
-            />
+            <Route path="/SWProfile" element={
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <SWProfile />
+              </ProtectedRoute>
+            } />
             
-            <Route
-              path="/timesheet"
-              element={
-                <ProtectedRoute isAuthenticated={isAuthenticated}>
-                  <Timesheet />
-                </ProtectedRoute>
-              }
-            />
+            <Route path="/timesheet" element={
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <Timesheet />
+              </ProtectedRoute>
+            } />
 
             <Route path="*" element={<NoPage />} />
           </Routes>

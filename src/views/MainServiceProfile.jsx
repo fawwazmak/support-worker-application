@@ -27,15 +27,87 @@ const ServiceProfile = () => {
   }
 
   const [students, setStudents] = useState([
-    { id: 1, name: "Adedoyin Aderonke", email: "themba@gmail.com", address: "12, Beever street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Female", age: "24", riskLevel: "low", image: studentDemo, },
-    { id: 2, name: "Olorunsogo Olawale", email: "wale@gmail.com", address: "2, Coker street Olusoga Houston", contact: "08035567812", date: '15/04/24', gender: "Male", age: "25", riskLevel: "low", image: studentDemo, },
-    { id: 3, name: "Mafoluku Arike", email: "mafoluku@gmail.com", address: "30, Cole street Olusoga Houston", contact: "08035567812", date: '11/04/24', gender: "Female", age: "23", riskLevel: "low", image: studentDemo, },
-    { id: 4, name: "Afolabi Ayomide", email: "mide@gmail.com", address: "5, Day street Olusoga Houston", contact: "08035567812", date: '15/04/24', gender: "Male", age: "22", riskLevel: "medium", image: studentDemo, },
-    { id: 5, name: "Olasunkami Ishola", email: "olashola@gmail.com", address: "22, Smith street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Male", age: "27", riskLevel: "low", image: studentDemo, },
-    { id: 6, name: "Sanni Ajoke", email: "ajoke@gmail.com", address: "4, John street Olusoga Houston", contact: "08035567812", date: '14/04/24', gender: "Female", age: "23", riskLevel: "low", image: studentDemo, },
-    { id: 7, name: "Idowu Labake", email: "idowulabake@gmail.com", address: "9, Elegant street Olusoga Houston", contact: "08035567812", date: '11/04/24', gender: "Female", age: "24", riskLevel: "low", image: studentDemo, },
-    { id: 8, name: "Balogun Adeshina", email: "shina@gmail.com", address: "51, Rainbow street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Male", age: "26", riskLevel: "low", image: studentDemo, },
-    { id: 9, name: "Olateju Motunrayo", email: "olarayo@gmail.com", address: "33, Martins street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Female", age: "20", riskLevel: "high", image: studentDemo, },
+    { id: 1, name: "Adedoyin Aderonke", email: "themba@gmail.com", address: "12, Beever street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Female", age: "24", riskLevel: "low", image: studentDemo, youngPersons: [
+      {id: "001", name: "James", age: "21 years 3months", referralDate: "05/07/2022"},
+      {id: "002", name: "Ayo", age: "26 years 4months", referralDate: "06/06/2024"},
+      {id: "003", name: "Sally", age: "38 years 6days", referralDate: "06/07/2021"},
+      {id: "004", name: "Tolu", age: "25 years 21days", referralDate: "12/07/2011"},
+      {id: "005", name: "Eric", age: "22 years 6days", referralDate: "02/09/2021"},
+      {id: "006", name: "Titi", age: "38 years 12days", referralDate: "01/11/2020"},
+      {id: "007", name: "Aina", age: "29 years 2months", referralDate: "21/10/2023"}
+    ] },
+    { id: 2, name: "Olorunsogo Olawale", email: "wale@gmail.com", address: "2, Coker street Olusoga Houston", contact: "08035567812", date: '15/04/24', gender: "Male", age: "25", riskLevel: "low", image: studentDemo, youngPersons: [
+      {id: "001", name: "James", age: "21 years 3months", referralDate: "05/07/2022"},
+      {id: "002", name: "Ayo", age: "26 years 4months", referralDate: "06/06/2024"},
+      {id: "003", name: "Sally", age: "38 years 6days", referralDate: "06/07/2021"},
+      {id: "004", name: "Tolu", age: "25 years 21days", referralDate: "12/07/2011"},
+      {id: "005", name: "Eric", age: "22 years 6days", referralDate: "02/09/2021"},
+      {id: "006", name: "Titi", age: "38 years 12days", referralDate: "01/11/2020"},
+      {id: "007", name: "Aina", age: "29 years 2months", referralDate: "21/10/2023"}
+    ] },
+    { id: 3, name: "Mafoluku Arike", email: "mafoluku@gmail.com", address: "30, Cole street Olusoga Houston", contact: "08035567812", date: '11/04/24', gender: "Female", age: "23", riskLevel: "low", image: studentDemo, youngPersons: [
+      {id: "001", name: "James", age: "21 years 3months", referralDate: "05/07/2022"},
+      {id: "002", name: "Ayo", age: "26 years 4months", referralDate: "06/06/2024"},
+      {id: "003", name: "Sally", age: "38 years 6days", referralDate: "06/07/2021"},
+      {id: "004", name: "Tolu", age: "25 years 21days", referralDate: "12/07/2011"},
+      {id: "005", name: "Eric", age: "22 years 6days", referralDate: "02/09/2021"},
+      {id: "006", name: "Titi", age: "38 years 12days", referralDate: "01/11/2020"},
+      {id: "007", name: "Aina", age: "29 years 2months", referralDate: "21/10/2023"}
+    ] },
+    { id: 4, name: "Afolabi Ayomide", email: "mide@gmail.com", address: "5, Day street Olusoga Houston", contact: "08035567812", date: '15/04/24', gender: "Male", age: "22", riskLevel: "medium", image: studentDemo, youngPersons: [
+      {id: "001", name: "James", age: "21 years 3months", referralDate: "05/07/2022"},
+      {id: "002", name: "Ayo", age: "26 years 4months", referralDate: "06/06/2024"},
+      {id: "003", name: "Sally", age: "38 years 6days", referralDate: "06/07/2021"},
+      {id: "004", name: "Tolu", age: "25 years 21days", referralDate: "12/07/2011"},
+      {id: "005", name: "Eric", age: "22 years 6days", referralDate: "02/09/2021"},
+      {id: "006", name: "Titi", age: "38 years 12days", referralDate: "01/11/2020"},
+      {id: "007", name: "Aina", age: "29 years 2months", referralDate: "21/10/2023"}
+    ] },
+    { id: 5, name: "Olasunkami Ishola", email: "olashola@gmail.com", address: "22, Smith street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Male", age: "27", riskLevel: "low", image: studentDemo, youngPersons: [
+      {id: "001", name: "James", age: "21 years 3months", referralDate: "05/07/2022"},
+      {id: "002", name: "Ayo", age: "26 years 4months", referralDate: "06/06/2024"},
+      {id: "003", name: "Sally", age: "38 years 6days", referralDate: "06/07/2021"},
+      {id: "004", name: "Tolu", age: "25 years 21days", referralDate: "12/07/2011"},
+      {id: "005", name: "Eric", age: "22 years 6days", referralDate: "02/09/2021"},
+      {id: "006", name: "Titi", age: "38 years 12days", referralDate: "01/11/2020"},
+      {id: "007", name: "Aina", age: "29 years 2months", referralDate: "21/10/2023"}
+    ] },
+    { id: 6, name: "Sanni Ajoke", email: "ajoke@gmail.com", address: "4, John street Olusoga Houston", contact: "08035567812", date: '14/04/24', gender: "Female", age: "23", riskLevel: "low", image: studentDemo, youngPersons: [
+      {id: "001", name: "James", age: "21 years 3months", referralDate: "05/07/2022"},
+      {id: "002", name: "Ayo", age: "26 years 4months", referralDate: "06/06/2024"},
+      {id: "003", name: "Sally", age: "38 years 6days", referralDate: "06/07/2021"},
+      {id: "004", name: "Tolu", age: "25 years 21days", referralDate: "12/07/2011"},
+      {id: "005", name: "Eric", age: "22 years 6days", referralDate: "02/09/2021"},
+      {id: "006", name: "Titi", age: "38 years 12days", referralDate: "01/11/2020"},
+      {id: "007", name: "Aina", age: "29 years 2months", referralDate: "21/10/2023"}
+    ] },
+    { id: 7, name: "Idowu Labake", email: "idowulabake@gmail.com", address: "9, Elegant street Olusoga Houston", contact: "08035567812", date: '11/04/24', gender: "Female", age: "24", riskLevel: "low", image: studentDemo, youngPersons: [
+      {id: "001", name: "James", age: "21 years 3months", referralDate: "05/07/2022"},
+      {id: "002", name: "Ayo", age: "26 years 4months", referralDate: "06/06/2024"},
+      {id: "003", name: "Sally", age: "38 years 6days", referralDate: "06/07/2021"},
+      {id: "004", name: "Tolu", age: "25 years 21days", referralDate: "12/07/2011"},
+      {id: "005", name: "Eric", age: "22 years 6days", referralDate: "02/09/2021"},
+      {id: "006", name: "Titi", age: "38 years 12days", referralDate: "01/11/2020"},
+      {id: "007", name: "Aina", age: "29 years 2months", referralDate: "21/10/2023"}
+    ] },
+    { id: 8, name: "Balogun Adeshina", email: "shina@gmail.com", address: "51, Rainbow street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Male", age: "26", riskLevel: "low", image: studentDemo, youngPersons: [
+      {id: "001", name: "James", age: "21 years 3months", referralDate: "05/07/2022"},
+      {id: "002", name: "Ayo", age: "26 years 4months", referralDate: "06/06/2024"},
+      {id: "003", name: "Sally", age: "38 years 6days", referralDate: "06/07/2021"},
+      {id: "004", name: "Tolu", age: "25 years 21days", referralDate: "12/07/2011"},
+      {id: "005", name: "Eric", age: "22 years 6days", referralDate: "02/09/2021"},
+      {id: "006", name: "Titi", age: "38 years 12days", referralDate: "01/11/2020"},
+      {id: "007", name: "Aina", age: "29 years 2months", referralDate: "21/10/2023"}
+    ] },
+    { id: 9, name: "Olateju Motunrayo", email: "olarayo@gmail.com", address: "33, Martins street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Female", age: "20", riskLevel: "high", image: studentDemo, youngPersons: [
+      {id: "001", name: "James", age: "21 years 3months", referralDate: "05/07/2022"},
+      {id: "002", name: "Ayo", age: "26 years 4months", referralDate: "06/06/2024"},
+      {id: "003", name: "Sally", age: "38 years 6days", referralDate: "06/07/2021"},
+      {id: "004", name: "Tolu", age: "25 years 21days", referralDate: "12/07/2011"},
+      {id: "005", name: "Eric", age: "22 years 6days", referralDate: "02/09/2021"},
+      {id: "006", name: "Titi", age: "38 years 12days", referralDate: "01/11/2020"},
+      {id: "007", name: "Aina", age: "29 years 2months", referralDate: "21/10/2023"}
+    ] },
   ]);
 
   const [selectedStudent, setSelectedStudent] = useState(null);
@@ -43,11 +115,11 @@ const ServiceProfile = () => {
 
   const clickedStudent = (student) => {
     setSelectedStudent(student);
+    navigate('/services', { state: { selectedStudent: student } });
   }
 
   const deselect = () => {
     setSelectedStudent(null);
-    console.log("Alright")
   }
 
   return (
@@ -114,7 +186,7 @@ const ServiceProfile = () => {
         </table>
 
 
-        {selectedStudent && (
+        {/* {selectedStudent && (
           <>
             <div className='modal absolute right-0 top-0 p-4 bg-white h-screen overflow-y-scroll flex flex-col gap-4 md:w-2/5 z-50 font-poppins'>
               <div className='absolute right-4' onClick={deselect}>
@@ -198,7 +270,7 @@ const ServiceProfile = () => {
 
             <div className='bg-gray-200 md:block hidden opacity-50 h-full w-full absolute left-0 top-0 z-10 font-poppins' onClick={deselect}></div>
           </>
-        )}
+        )} */}
       </div>
     </div>
   )

@@ -15,7 +15,7 @@ const LoginPage = ({ onLogin }) => {
     const savedRole = localStorage.getItem('role');
     if (savedRole) {
       onLogin(savedRole === 'admin');
-      navigate(savedRole === 'admin' ? '/serviceProfile' : '/service');
+      navigate(savedRole === 'admin' ? '/serviceProfile' : '/serviceProfile');
     }
   }, [onLogin, navigate]);
 
