@@ -22,93 +22,6 @@ const FormsInService = () => {
         <form action="" method="post" className="mt-8 w-[80%] mx-auto mb-24">
           <div className="flex flex-col gap-8 border border-[#F9F2FF] pb-4 bg-[#f9f9f9]">
             <header className="flex sticky top-12 justify-between bg-[#F9F2FF] p-5 rounded-t-[8px]">
-              <h2>Worker complete incident details</h2>
-              <img src={arrowUp} alt="Arrow" />
-            </header>
-
-            <div className="flex flex-col gap-4 md:p-5 p-2">
-              {/* Police involved  */}
-              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
-                <label className='w-full' htmlFor="policeInvolved">Police involved</label>
-                <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="policeInvolved" id="policeInvolved">
-                    <option value="no">No</option>
-                    <option value="yes">Yes</option>
-                </select>
-              </div>
-
-              {/* Fire brigade involved  */}
-              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
-                <label className='w-full' htmlFor="fireBrigade">Fire brigade invloved</label>
-                <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="fireBrigade" id="fireBrigade">
-                    <option value="no">No</option>
-                    <option value="yes">Yes</option>
-                </select>
-              </div>
-
-              {/* Ambulance involved  */}
-              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
-                <label className='w-full' htmlFor="ambulanceInvolved">Ambulance involved</label>
-                <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="ambulanceInvolved" id="ambulanceInvolved">
-                    <option value="no">No</option>
-                    <option value="yes">Yes</option>
-                </select>
-              </div>
-
-              {/* Details of emergency service involved */}
-              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
-                <label className='w-full' htmlFor="detailsEmergency">Details of emergency service involved</label>
-                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="detailsEmergency" id="detailsEmergency" />
-              </div>
-
-              {/* Involved external person  */}
-              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
-                <label className='w-full' htmlFor="externalPerson">Involved external person?</label>
-                <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="externalPerson" id="externalPerson">
-                    <option value="no">No</option>
-                    <option value="yes">Yes</option>
-                </select>
-              </div>
-
-              {/* Name(s) of external person(s) involved */}
-              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
-                <label className='w-full' htmlFor="externalPersonName">Name(s) of external person(s) involved</label>
-                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="externalPersonName" id="externalPersonName" />
-              </div>
-
-              {/* Social service involved */}
-              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
-                <label className='w-full' htmlFor="socialService">Social service involved?</label>
-                <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="socialService" id="socialService">
-                    <option value="no">No</option>
-                    <option value="yes">Yes</option>
-                </select>
-              </div>
-
-              {/* CMHT involved */}
-              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
-                <label className='w-full' htmlFor="cmht">CMHT involved?</label>
-                <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="cmht" id="cmht">
-                    <option value="no">No</option>
-                    <option value="yes">Yes</option>
-                </select>
-              </div>
-
-              {/* Other external services involved  */}
-              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
-                <label className='w-full' htmlFor="otherExternalService">Other external services involved</label>
-                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="otherExternalService" id="otherExternalService" />
-              </div>
-
-              {/* Name(s) of other external service(s) involved  */}
-              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
-                <label className='w-full' htmlFor="otherExternalServiceName">Name(s) of other external service(s) involved</label>
-                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="otherExternalServiceName" id="otherExternalServiceName" />
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-8 border border-[#F9F2FF] pb-4 bg-[#f9f9f9]">
-            <header className="flex sticky top-12 justify-between bg-[#F9F2FF] p-5 rounded-t-[8px]">
               <h2>Worker complete external services</h2>
               <img src={arrowUp} alt="Arrow" />
             </header>
@@ -137,7 +50,7 @@ const FormsInService = () => {
 
               {/* Cause of concern  */}
               <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
-                <label className='w-full' htmlFor="causeOfConcern">Your cause of concern about YP/Yp's child</label>
+                <label className='w-full' htmlFor="causeOfConcern">Your cause of concern about YP</label>
                 <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="causeOfConcern" id="causeOfConcern" />
               </div>
 
@@ -238,6 +151,94 @@ const FormsInService = () => {
               <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
                 <label className='w-full' htmlFor="createdBy">Last modified</label>
                 <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="createdBy" id="createdBy" />
+              </div>
+            </div>
+          </div>
+
+
+          <div className="flex flex-col gap-8 border border-[#F9F2FF] pb-4 bg-[#f9f9f9]">
+            <header className="flex sticky top-12 justify-between bg-[#F9F2FF] p-5 rounded-t-[8px]">
+              <h2>Worker complete incident details</h2>
+              <img src={arrowUp} alt="Arrow" />
+            </header>
+
+            <div className="flex flex-col gap-4 md:p-5 p-2">
+              {/* Police involved  */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="policeInvolved">Police involved</label>
+                <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="policeInvolved" id="policeInvolved">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+              </div>
+
+              {/* Fire brigade involved  */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="fireBrigade">Fire brigade invloved</label>
+                <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="fireBrigade" id="fireBrigade">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+              </div>
+
+              {/* Ambulance involved  */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="ambulanceInvolved">Ambulance involved</label>
+                <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="ambulanceInvolved" id="ambulanceInvolved">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+              </div>
+
+              {/* Details of emergency service involved */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="detailsEmergency">Details of emergency service involved</label>
+                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="detailsEmergency" id="detailsEmergency" />
+              </div>
+
+              {/* Involved external person  */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="externalPerson">Involved external person?</label>
+                <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="externalPerson" id="externalPerson">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+              </div>
+
+              {/* Name(s) of external person(s) involved */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="externalPersonName">Name(s) of external person(s) involved</label>
+                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="externalPersonName" id="externalPersonName" />
+              </div>
+
+              {/* Social service involved */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="socialService">Social service involved?</label>
+                <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="socialService" id="socialService">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+              </div>
+
+              {/* CMHT involved */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="cmht">CMHT involved?</label>
+                <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="cmht" id="cmht">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+              </div>
+
+              {/* Other external services involved  */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="otherExternalService">Other external services involved</label>
+                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="otherExternalService" id="otherExternalService" />
+              </div>
+
+              {/* Name(s) of other external service(s) involved  */}
+              <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                <label className='w-full' htmlFor="otherExternalServiceName">Name(s) of other external service(s) involved</label>
+                <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="otherExternalServiceName" id="otherExternalServiceName" />
               </div>
             </div>
           </div>

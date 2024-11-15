@@ -35,7 +35,20 @@ const ServiceProfile = () => {
       {id: "005", name: "Eric", age: "22 years 6days", referralDate: "02/09/2021"},
       {id: "006", name: "Titi", age: "38 years 12days", referralDate: "01/11/2020"},
       {id: "007", name: "Aina", age: "29 years 2months", referralDate: "21/10/2023"}
-    ] },
+    ], incidentReport: [
+      {id: "001", dateOfIncident: "5/01/2022", timeOfIncident: "05:27", causeOfConcern: "Theft", createdBy: "Kunle"}, 
+      {id: "002", dateOfIncident: "11/06/2021", timeOfIncident: "15:11", causeOfConcern: "Health", createdBy: "Shola"}, 
+      {id: "003", dateOfIncident: "03/11/2020", timeOfIncident: "11:50", causeOfConcern: "Abuse", createdBy: "Keni"}, 
+      {id: "004", dateOfIncident: "22/09/2019", timeOfIncident: "17:11", causeOfConcern: "Health", createdBy: "James"}, 
+      {id: "005", dateOfIncident: "18/06/2021", timeOfIncident: "19:13", causeOfConcern: "Theft", createdBy: "Adams"}, 
+      {id: "006", dateOfIncident: "07/02/2024", timeOfIncident: "10:11", causeOfConcern: "Health", createdBy: "Ayo"}, 
+      {id: "007", dateOfIncident: "24/04/2020", timeOfIncident: "08:11", causeOfConcern: "Health", createdBy: "Lola"}, 
+      {id: "010", dateOfIncident: "23/04/2021", timeOfIncident: "20:11", causeOfConcern: "Health", createdBy: "Ronke"}, 
+      {id: "011", dateOfIncident: "04/09/2021", timeOfIncident: "11:19", causeOfConcern: "Health", createdBy: "Kemi"}, 
+      {id: "012", dateOfIncident: "21/03/2020", timeOfIncident: "08:11", causeOfConcern: "Health", createdBy: "Aina"},  
+    ], 
+    },
+
     { id: 2, name: "Olorunsogo Olawale", email: "wale@gmail.com", address: "2, Coker street Olusoga Houston", contact: "08035567812", date: '15/04/24', gender: "Male", age: "25", riskLevel: "low", image: studentDemo, youngPersons: [
       {id: "001", name: "James", age: "21 years 3months", referralDate: "05/07/2022"},
       {id: "002", name: "Ayo", age: "26 years 4months", referralDate: "06/06/2024"},
@@ -44,7 +57,20 @@ const ServiceProfile = () => {
       {id: "005", name: "Eric", age: "22 years 6days", referralDate: "02/09/2021"},
       {id: "006", name: "Titi", age: "38 years 12days", referralDate: "01/11/2020"},
       {id: "007", name: "Aina", age: "29 years 2months", referralDate: "21/10/2023"}
-    ] },
+    ], incidentReport: [
+      {id: "001", dateOfIncident: "5/01/2022", timeOfIncident: "05:27", causeOfConcern: "Theft", createdBy: "Kunle"}, 
+      {id: "002", dateOfIncident: "11/06/2021", timeOfIncident: "15:11", causeOfConcern: "Health", createdBy: "Shola"}, 
+      {id: "003", dateOfIncident: "03/11/2020", timeOfIncident: "11:50", causeOfConcern: "Abuse", createdBy: "Keni"}, 
+      {id: "004", dateOfIncident: "22/09/2019", timeOfIncident: "17:11", causeOfConcern: "Health", createdBy: "James"}, 
+      {id: "005", dateOfIncident: "18/06/2021", timeOfIncident: "19:13", causeOfConcern: "Theft", createdBy: "Adams"}, 
+      {id: "006", dateOfIncident: "07/02/2024", timeOfIncident: "10:11", causeOfConcern: "Health", createdBy: "Ayo"}, 
+      {id: "007", dateOfIncident: "24/04/2020", timeOfIncident: "08:11", causeOfConcern: "Health", createdBy: "Lola"}, 
+      {id: "010", dateOfIncident: "23/04/2021", timeOfIncident: "20:11", causeOfConcern: "Health", createdBy: "Ronke"}, 
+      {id: "011", dateOfIncident: "04/09/2021", timeOfIncident: "11:19", causeOfConcern: "Health", createdBy: "Kemi"}, 
+      {id: "012", dateOfIncident: "21/03/2020", timeOfIncident: "08:11", causeOfConcern: "Health", createdBy: "Aina"},  
+    ], 
+    },
+
     { id: 3, name: "Mafoluku Arike", email: "mafoluku@gmail.com", address: "30, Cole street Olusoga Houston", contact: "08035567812", date: '11/04/24', gender: "Female", age: "23", riskLevel: "low", image: studentDemo, youngPersons: [
       {id: "001", name: "James", age: "21 years 3months", referralDate: "05/07/2022"},
       {id: "002", name: "Ayo", age: "26 years 4months", referralDate: "06/06/2024"},
@@ -53,7 +79,20 @@ const ServiceProfile = () => {
       {id: "005", name: "Eric", age: "22 years 6days", referralDate: "02/09/2021"},
       {id: "006", name: "Titi", age: "38 years 12days", referralDate: "01/11/2020"},
       {id: "007", name: "Aina", age: "29 years 2months", referralDate: "21/10/2023"}
-    ] },
+    ], incidentReport: [
+      {id: "001", dateOfIncident: "5/01/2022", timeOfIncident: "05:27", causeOfConcern: "Theft", createdBy: "Kunle"}, 
+      {id: "002", dateOfIncident: "11/06/2021", timeOfIncident: "15:11", causeOfConcern: "Health", createdBy: "Shola"}, 
+      {id: "003", dateOfIncident: "03/11/2020", timeOfIncident: "11:50", causeOfConcern: "Abuse", createdBy: "Keni"}, 
+      {id: "004", dateOfIncident: "22/09/2019", timeOfIncident: "17:11", causeOfConcern: "Health", createdBy: "James"}, 
+      {id: "005", dateOfIncident: "18/06/2021", timeOfIncident: "19:13", causeOfConcern: "Theft", createdBy: "Adams"}, 
+      {id: "006", dateOfIncident: "07/02/2024", timeOfIncident: "10:11", causeOfConcern: "Health", createdBy: "Ayo"}, 
+      {id: "007", dateOfIncident: "24/04/2020", timeOfIncident: "08:11", causeOfConcern: "Health", createdBy: "Lola"}, 
+      {id: "010", dateOfIncident: "23/04/2021", timeOfIncident: "20:11", causeOfConcern: "Health", createdBy: "Ronke"}, 
+      {id: "011", dateOfIncident: "04/09/2021", timeOfIncident: "11:19", causeOfConcern: "Health", createdBy: "Kemi"}, 
+      {id: "012", dateOfIncident: "21/03/2020", timeOfIncident: "08:11", causeOfConcern: "Health", createdBy: "Aina"},  
+    ], 
+    },
+
     { id: 4, name: "Afolabi Ayomide", email: "mide@gmail.com", address: "5, Day street Olusoga Houston", contact: "08035567812", date: '15/04/24', gender: "Male", age: "22", riskLevel: "medium", image: studentDemo, youngPersons: [
       {id: "001", name: "James", age: "21 years 3months", referralDate: "05/07/2022"},
       {id: "002", name: "Ayo", age: "26 years 4months", referralDate: "06/06/2024"},
@@ -62,7 +101,20 @@ const ServiceProfile = () => {
       {id: "005", name: "Eric", age: "22 years 6days", referralDate: "02/09/2021"},
       {id: "006", name: "Titi", age: "38 years 12days", referralDate: "01/11/2020"},
       {id: "007", name: "Aina", age: "29 years 2months", referralDate: "21/10/2023"}
-    ] },
+    ], incidentReport: [
+      {id: "001", dateOfIncident: "5/01/2022", timeOfIncident: "05:27", causeOfConcern: "Theft", createdBy: "Kunle"}, 
+      {id: "002", dateOfIncident: "11/06/2021", timeOfIncident: "15:11", causeOfConcern: "Health", createdBy: "Shola"}, 
+      {id: "003", dateOfIncident: "03/11/2020", timeOfIncident: "11:50", causeOfConcern: "Abuse", createdBy: "Keni"}, 
+      {id: "004", dateOfIncident: "22/09/2019", timeOfIncident: "17:11", causeOfConcern: "Health", createdBy: "James"}, 
+      {id: "005", dateOfIncident: "18/06/2021", timeOfIncident: "19:13", causeOfConcern: "Theft", createdBy: "Adams"}, 
+      {id: "006", dateOfIncident: "07/02/2024", timeOfIncident: "10:11", causeOfConcern: "Health", createdBy: "Ayo"}, 
+      {id: "007", dateOfIncident: "24/04/2020", timeOfIncident: "08:11", causeOfConcern: "Health", createdBy: "Lola"}, 
+      {id: "010", dateOfIncident: "23/04/2021", timeOfIncident: "20:11", causeOfConcern: "Health", createdBy: "Ronke"}, 
+      {id: "011", dateOfIncident: "04/09/2021", timeOfIncident: "11:19", causeOfConcern: "Health", createdBy: "Kemi"}, 
+      {id: "012", dateOfIncident: "21/03/2020", timeOfIncident: "08:11", causeOfConcern: "Health", createdBy: "Aina"},  
+    ], 
+    },
+
     { id: 5, name: "Olasunkami Ishola", email: "olashola@gmail.com", address: "22, Smith street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Male", age: "27", riskLevel: "low", image: studentDemo, youngPersons: [
       {id: "001", name: "James", age: "21 years 3months", referralDate: "05/07/2022"},
       {id: "002", name: "Ayo", age: "26 years 4months", referralDate: "06/06/2024"},
@@ -71,7 +123,20 @@ const ServiceProfile = () => {
       {id: "005", name: "Eric", age: "22 years 6days", referralDate: "02/09/2021"},
       {id: "006", name: "Titi", age: "38 years 12days", referralDate: "01/11/2020"},
       {id: "007", name: "Aina", age: "29 years 2months", referralDate: "21/10/2023"}
-    ] },
+    ], incidentReport: [
+      {id: "001", dateOfIncident: "5/01/2022", timeOfIncident: "05:27", causeOfConcern: "Theft", createdBy: "Kunle"}, 
+      {id: "002", dateOfIncident: "11/06/2021", timeOfIncident: "15:11", causeOfConcern: "Health", createdBy: "Shola"}, 
+      {id: "003", dateOfIncident: "03/11/2020", timeOfIncident: "11:50", causeOfConcern: "Abuse", createdBy: "Keni"}, 
+      {id: "004", dateOfIncident: "22/09/2019", timeOfIncident: "17:11", causeOfConcern: "Health", createdBy: "James"}, 
+      {id: "005", dateOfIncident: "18/06/2021", timeOfIncident: "19:13", causeOfConcern: "Theft", createdBy: "Adams"}, 
+      {id: "006", dateOfIncident: "07/02/2024", timeOfIncident: "10:11", causeOfConcern: "Health", createdBy: "Ayo"}, 
+      {id: "007", dateOfIncident: "24/04/2020", timeOfIncident: "08:11", causeOfConcern: "Health", createdBy: "Lola"}, 
+      {id: "010", dateOfIncident: "23/04/2021", timeOfIncident: "20:11", causeOfConcern: "Health", createdBy: "Ronke"}, 
+      {id: "011", dateOfIncident: "04/09/2021", timeOfIncident: "11:19", causeOfConcern: "Health", createdBy: "Kemi"}, 
+      {id: "012", dateOfIncident: "21/03/2020", timeOfIncident: "08:11", causeOfConcern: "Health", createdBy: "Aina"},  
+    ], 
+    },
+
     { id: 6, name: "Sanni Ajoke", email: "ajoke@gmail.com", address: "4, John street Olusoga Houston", contact: "08035567812", date: '14/04/24', gender: "Female", age: "23", riskLevel: "low", image: studentDemo, youngPersons: [
       {id: "001", name: "James", age: "21 years 3months", referralDate: "05/07/2022"},
       {id: "002", name: "Ayo", age: "26 years 4months", referralDate: "06/06/2024"},
@@ -80,7 +145,20 @@ const ServiceProfile = () => {
       {id: "005", name: "Eric", age: "22 years 6days", referralDate: "02/09/2021"},
       {id: "006", name: "Titi", age: "38 years 12days", referralDate: "01/11/2020"},
       {id: "007", name: "Aina", age: "29 years 2months", referralDate: "21/10/2023"}
-    ] },
+    ], incidentReport: [
+      {id: "001", dateOfIncident: "5/01/2022", timeOfIncident: "05:27", causeOfConcern: "Theft", createdBy: "Kunle"}, 
+      {id: "002", dateOfIncident: "11/06/2021", timeOfIncident: "15:11", causeOfConcern: "Health", createdBy: "Shola"}, 
+      {id: "003", dateOfIncident: "03/11/2020", timeOfIncident: "11:50", causeOfConcern: "Abuse", createdBy: "Keni"}, 
+      {id: "004", dateOfIncident: "22/09/2019", timeOfIncident: "17:11", causeOfConcern: "Health", createdBy: "James"}, 
+      {id: "005", dateOfIncident: "18/06/2021", timeOfIncident: "19:13", causeOfConcern: "Theft", createdBy: "Adams"}, 
+      {id: "006", dateOfIncident: "07/02/2024", timeOfIncident: "10:11", causeOfConcern: "Health", createdBy: "Ayo"}, 
+      {id: "007", dateOfIncident: "24/04/2020", timeOfIncident: "08:11", causeOfConcern: "Health", createdBy: "Lola"}, 
+      {id: "010", dateOfIncident: "23/04/2021", timeOfIncident: "20:11", causeOfConcern: "Health", createdBy: "Ronke"}, 
+      {id: "011", dateOfIncident: "04/09/2021", timeOfIncident: "11:19", causeOfConcern: "Health", createdBy: "Kemi"}, 
+      {id: "012", dateOfIncident: "21/03/2020", timeOfIncident: "08:11", causeOfConcern: "Health", createdBy: "Aina"},  
+    ], 
+    },
+
     { id: 7, name: "Idowu Labake", email: "idowulabake@gmail.com", address: "9, Elegant street Olusoga Houston", contact: "08035567812", date: '11/04/24', gender: "Female", age: "24", riskLevel: "low", image: studentDemo, youngPersons: [
       {id: "001", name: "James", age: "21 years 3months", referralDate: "05/07/2022"},
       {id: "002", name: "Ayo", age: "26 years 4months", referralDate: "06/06/2024"},
@@ -89,7 +167,20 @@ const ServiceProfile = () => {
       {id: "005", name: "Eric", age: "22 years 6days", referralDate: "02/09/2021"},
       {id: "006", name: "Titi", age: "38 years 12days", referralDate: "01/11/2020"},
       {id: "007", name: "Aina", age: "29 years 2months", referralDate: "21/10/2023"}
-    ] },
+    ], incidentReport: [
+      {id: "001", dateOfIncident: "5/01/2022", timeOfIncident: "05:27", causeOfConcern: "Theft", createdBy: "Kunle"}, 
+      {id: "002", dateOfIncident: "11/06/2021", timeOfIncident: "15:11", causeOfConcern: "Health", createdBy: "Shola"}, 
+      {id: "003", dateOfIncident: "03/11/2020", timeOfIncident: "11:50", causeOfConcern: "Abuse", createdBy: "Keni"}, 
+      {id: "004", dateOfIncident: "22/09/2019", timeOfIncident: "17:11", causeOfConcern: "Health", createdBy: "James"}, 
+      {id: "005", dateOfIncident: "18/06/2021", timeOfIncident: "19:13", causeOfConcern: "Theft", createdBy: "Adams"}, 
+      {id: "006", dateOfIncident: "07/02/2024", timeOfIncident: "10:11", causeOfConcern: "Health", createdBy: "Ayo"}, 
+      {id: "007", dateOfIncident: "24/04/2020", timeOfIncident: "08:11", causeOfConcern: "Health", createdBy: "Lola"}, 
+      {id: "010", dateOfIncident: "23/04/2021", timeOfIncident: "20:11", causeOfConcern: "Health", createdBy: "Ronke"}, 
+      {id: "011", dateOfIncident: "04/09/2021", timeOfIncident: "11:19", causeOfConcern: "Health", createdBy: "Kemi"}, 
+      {id: "012", dateOfIncident: "21/03/2020", timeOfIncident: "08:11", causeOfConcern: "Health", createdBy: "Aina"},  
+    ], 
+    },
+
     { id: 8, name: "Balogun Adeshina", email: "shina@gmail.com", address: "51, Rainbow street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Male", age: "26", riskLevel: "low", image: studentDemo, youngPersons: [
       {id: "001", name: "James", age: "21 years 3months", referralDate: "05/07/2022"},
       {id: "002", name: "Ayo", age: "26 years 4months", referralDate: "06/06/2024"},
@@ -98,7 +189,20 @@ const ServiceProfile = () => {
       {id: "005", name: "Eric", age: "22 years 6days", referralDate: "02/09/2021"},
       {id: "006", name: "Titi", age: "38 years 12days", referralDate: "01/11/2020"},
       {id: "007", name: "Aina", age: "29 years 2months", referralDate: "21/10/2023"}
-    ] },
+    ], incidentReport: [
+      {id: "001", dateOfIncident: "5/01/2022", timeOfIncident: "05:27", causeOfConcern: "Theft", createdBy: "Kunle"}, 
+      {id: "002", dateOfIncident: "11/06/2021", timeOfIncident: "15:11", causeOfConcern: "Health", createdBy: "Shola"}, 
+      {id: "003", dateOfIncident: "03/11/2020", timeOfIncident: "11:50", causeOfConcern: "Abuse", createdBy: "Keni"}, 
+      {id: "004", dateOfIncident: "22/09/2019", timeOfIncident: "17:11", causeOfConcern: "Health", createdBy: "James"}, 
+      {id: "005", dateOfIncident: "18/06/2021", timeOfIncident: "19:13", causeOfConcern: "Theft", createdBy: "Adams"}, 
+      {id: "006", dateOfIncident: "07/02/2024", timeOfIncident: "10:11", causeOfConcern: "Health", createdBy: "Ayo"}, 
+      {id: "007", dateOfIncident: "24/04/2020", timeOfIncident: "08:11", causeOfConcern: "Health", createdBy: "Lola"}, 
+      {id: "010", dateOfIncident: "23/04/2021", timeOfIncident: "20:11", causeOfConcern: "Health", createdBy: "Ronke"}, 
+      {id: "011", dateOfIncident: "04/09/2021", timeOfIncident: "11:19", causeOfConcern: "Health", createdBy: "Kemi"}, 
+      {id: "012", dateOfIncident: "21/03/2020", timeOfIncident: "08:11", causeOfConcern: "Health", createdBy: "Aina"},  
+    ], 
+    },
+
     { id: 9, name: "Olateju Motunrayo", email: "olarayo@gmail.com", address: "33, Martins street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Female", age: "20", riskLevel: "high", image: studentDemo, youngPersons: [
       {id: "001", name: "James", age: "21 years 3months", referralDate: "05/07/2022"},
       {id: "002", name: "Ayo", age: "26 years 4months", referralDate: "06/06/2024"},
@@ -107,7 +211,20 @@ const ServiceProfile = () => {
       {id: "005", name: "Eric", age: "22 years 6days", referralDate: "02/09/2021"},
       {id: "006", name: "Titi", age: "38 years 12days", referralDate: "01/11/2020"},
       {id: "007", name: "Aina", age: "29 years 2months", referralDate: "21/10/2023"}
-    ] },
+    ], incidentReport: [
+      {id: "001", dateOfIncident: "5/01/2022", timeOfIncident: "05:27", causeOfConcern: "Theft", createdBy: "Kunle"}, 
+      {id: "002", dateOfIncident: "11/06/2021", timeOfIncident: "15:11", causeOfConcern: "Health", createdBy: "Shola"}, 
+      {id: "003", dateOfIncident: "03/11/2020", timeOfIncident: "11:50", causeOfConcern: "Abuse", createdBy: "Keni"}, 
+      {id: "004", dateOfIncident: "22/09/2019", timeOfIncident: "17:11", causeOfConcern: "Health", createdBy: "James"}, 
+      {id: "005", dateOfIncident: "18/06/2021", timeOfIncident: "19:13", causeOfConcern: "Theft", createdBy: "Adams"}, 
+      {id: "006", dateOfIncident: "07/02/2024", timeOfIncident: "10:11", causeOfConcern: "Health", createdBy: "Ayo"}, 
+      {id: "007", dateOfIncident: "24/04/2020", timeOfIncident: "08:11", causeOfConcern: "Health", createdBy: "Lola"}, 
+      {id: "010", dateOfIncident: "23/04/2021", timeOfIncident: "20:11", causeOfConcern: "Health", createdBy: "Ronke"}, 
+      {id: "011", dateOfIncident: "04/09/2021", timeOfIncident: "11:19", causeOfConcern: "Health", createdBy: "Kemi"}, 
+      {id: "012", dateOfIncident: "21/03/2020", timeOfIncident: "08:11", causeOfConcern: "Health", createdBy: "Aina"},  
+    ], 
+    },
+
   ]);
 
   const [selectedStudent, setSelectedStudent] = useState(null);
@@ -115,7 +232,7 @@ const ServiceProfile = () => {
 
   const clickedStudent = (student) => {
     setSelectedStudent(student);
-    navigate('/services', { state: { selectedStudent: student } });
+    navigate('/services', { state: { selectedStudent: student } }); 
   }
 
   const deselect = () => {
