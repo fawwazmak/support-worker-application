@@ -1,13 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
-import filterIcon from "/filter-icon.svg";
 import bagIcon from "/bag-icon.svg";
-import bagIconWhite from "/bag-icon-white.svg";
-import bagIconBlack from "/bag-icon-black.svg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark} from '@fortawesome/free-solid-svg-icons';
-import studentDemo from "/student-demo-image.jpg"
+import arrowUp from "/arrow-up.svg"
 
 const Services = () => {
   const navigate = useNavigate();
@@ -19,7 +16,6 @@ const Services = () => {
   const youngpersonsTodisplay = showAllYP ? selectedStudent.youngPersons : selectedStudent.youngPersons.slice(0, 5);
   const incidentTodisplay = showAllIncident ? selectedStudent.incidentReport : selectedStudent.incidentReport.slice(0, 5);
   const [selectedYoungPerson, setSelectedYoungPerson] = useState(null);
-
 
   const toProfile = () => { 
     navigate("/serviceProfile/profile");
@@ -46,6 +42,37 @@ const Services = () => {
   }
 
 
+  // Drag into input 
+  const [dragActive, setDragActive] = useState(false);
+  const [files, setFiles] = useState([]);
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setDragActive(true);
+  };
+
+  const handleDragLeave = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setDragActive(false);
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setDragActive(false);
+    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+      setFiles(Array.from(e.dataTransfer.files));
+      e.dataTransfer.clearData();
+    }
+  };
+
+  const handleFileChange = (e) => {
+    setFiles(Array.from(e.target.files));
+  };
+
+
   return (
     <div className='h-screen overflow-y-hidden'>
       <header className='text-[#6b21a8] shadow-lg mb-8'>
@@ -67,10 +94,291 @@ const Services = () => {
         </ul>
       </header>
 
-      <div className='overflow-y-scroll h-full pb-24'>
+      <div className='overflow-y-scroll h-full pb-24 scrollbar-thin'>
         {(currentTab === "service") && (
           <>
-            
+            <div className=' px-4 md:px-0 md:pr-4 font-poppins'>
+              <form action="" className="mt-8 w-[80%] mx-auto">
+                <button className='bg-[#6b21a8] text-white px-6 py-2 my-4 rounded-[8px] sticky top-4 left-0 block'>Save</button>
+                <div className="flex flex-col gap-8 border border-[#F9F2FF] pb-12">
+                    <header className="flex justify-between bg-[#F9F2FF] p-5 rounded-t-[8px]">
+                        <h2>Service Details</h2>
+                        <img src={arrowUp} alt="Arrow" />
+                    </header>
+                    <div className="flex flex-col gap-4 md:p-5 p-2">
+                        <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                            <label className='w-full' htmlFor="serviceCode">Service code</label>
+                            <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="serviceCode" id="serviceCode" />
+                        </div>
+
+                        <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                            <label className='w-full' htmlFor="serviceName">Service name</label>
+                            <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="serviceName" id="serviceName" />
+                        </div>
+
+                        <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                            <label className='w-full' htmlFor="manager">Manager</label>
+                            <input className='border border-[#dedede] p-2 rounded-[4px] w-full' name="manager" id="manager" />
+                        </div>
+
+                        <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                            <label className='w-full' htmlFor="address">Address</label>
+                            <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="address" id="address" placeholder='Enter your address' />
+                        </div>
+
+                        <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                            <label className='w-full' htmlFor="phoneNumber">Phone number</label>
+                            <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="tel" name="phoneNumber" id="phoneNumber" />
+                        </div>
+
+                        <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                            <label className='w-full' htmlFor="email">Email</label>
+                            <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="email" name="email" id="email" />
+                        </div>
+
+                        <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                            <label className='w-full' htmlFor="landLine">Landline</label>
+                            <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="landLine" id="landLine" />
+                        </div>
+
+                        <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                            <label className='w-full' htmlFor="emergencyNumber">Emergency number</label>
+                            <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="tel" name="emergencyNumber" id="emergencyNumber" />
+                        </div>
+
+                        <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                            <label className='w-full' htmlFor="supportedAccomodation">Supported accomodation</label>
+                            <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="supportedAccomodation" id="supportedAccomodation">
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                                <option value="notApplicable">N/A</option>
+                            </select>
+                        </div>
+
+                        <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                            <label className='w-full' htmlFor="serviceType">Service type</label>
+                            <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="serviceType" id="serviceType">
+                                <option value="none">none</option>
+                                <option value="optionOne">option one</option>
+                                <option value="optionTwo">option two</option>
+                            </select>
+                        </div>
+
+                        <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                            <label className='w-full' htmlFor="numberOfBeds">Number of beds</label>
+                            <input max={10} min={0} className='border border-[#dedede] p-2 rounded-[4px] w-full' type="number" name="numberOfBeds" id="numberOfBeds" />
+                        </div>
+
+                        <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                            <label className='w-full' htmlFor="specialization">Specialization</label>
+                            <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="specialization" id="specialization" >
+                                <option value="16to25">16-25</option>
+                            </select>
+                        </div>
+
+                        <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                            <label className='w-full' htmlFor="legalSupport">Legal support</label>
+                            <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="legalSupport" id="legalSupport">
+                                <option value="low">Low</option> 
+                                <option value="medium">Medium</option>
+                                <option value="medium-high">Medium-high</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+
+                        <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                            <label className='w-full' htmlFor="focusOfSupport">Focus of support</label>
+                            <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="focusOfSupport" id="focusOfSupport">
+                                <option value="no">no</option>
+                                <option value="yes">Yes</option>
+                                <option value="notApplicable">N/A</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="flex flex-col gap-8 border border-[#F9F2FF] pb-12">
+                    <header className="flex justify-between bg-[#F9F2FF] p-5 rounded-t-[8px]">
+                        <h2>Staff info</h2>
+                        <img src={arrowUp} alt="Arrow" />
+                    </header>
+                    <div className="flex flex-col gap-4 md:p-5 p-2">
+                      <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                        <label className='w-full' htmlFor="serviceManager">Service manager</label>
+                        <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="serviceManager" id="serviceManager" />
+                      </div>
+
+                      <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                        <label className='w-full' htmlFor="deputyManager">Deputy manager</label>
+                        <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="text" name="deputyManager" id="deputyManager" />
+                      </div>
+
+                      <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                        <label className='w-full' htmlFor="callOne">On Call</label>
+                        <input className='border border-[#dedede] p-2 rounded-[4px] w-full' type="tel" name="callOne" id="callOne" />
+                      </div>
+                    </div>
+                </div>
+
+                <div className="flex flex-col gap-8 border border-[#F9F2FF] pb-12">
+                    <header className="flex justify-between bg-[#F9F2FF] p-5">
+                        <h2>Service Users</h2>
+                        <img src={arrowUp} alt="Arrow" />
+                    </header>
+                    <div className="flex flex-col gap-4 md:p-5 p-2">
+                        <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                            <label className='w-full' htmlFor="gender">Gender</label>
+                            <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="gender" id="gender">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="both">Both</option>
+                            </select>
+                        </div>
+
+                        <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                            <label className='w-full' htmlFor="ageRange">Age range</label>
+                            <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="ageRange" id="ageRange">
+                                <option value="16-25">16 - 25</option>
+                            </select>
+                        </div>
+
+                        <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                            <label className='w-full' htmlFor="pronoun">Pronoun</label>
+                            <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="pronoun" id="pronoun" >
+                                <option value="ratherNotSay">Rather not say</option>
+                                <option value="he">He / him</option>
+                                <option value="she">She / her</option>
+                            </select>
+                        </div>
+
+                        <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                            <label className='w-full' htmlFor="durationOfStay">Duration of Stay</label>
+                            <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="durationOfStay" id="durationOfStay" >
+                                <option value="0.5">6 months</option>
+                                <option value="1">1 year</option>
+                                <option value="2">2 years</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div className="flex flex-col gap-8 border border-[#F9F2FF] pb-12">
+                    <header className="flex justify-between bg-[#F9F2FF] p-5">
+                        <h2>Support considerations</h2>
+                        <img src={arrowUp} alt="Arrow" />
+                    </header>
+                    <div className="flex flex-col gap-4 md:p-5 p-2">
+                        <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                            <label className='w-full' htmlFor="loneWorking">Lone working</label>
+                            <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="loneWorking" id="loneWorking">
+                                <option value="no">no</option>
+                                <option value="yes">Yes</option>
+                                <option value="notApplicable">N/A</option>
+                            </select>
+                        </div>
+
+                        <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                            <label className='w-full' htmlFor="challengingBehaviour">Challenging behaviour</label>
+                            <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="challengingBehaviour" id="challengingBehaviour">
+                                <option value="no">no</option>
+                                <option value="yes">Yes</option>
+                                <option value="notApplicable">N/A</option>
+                            </select>
+                        </div>
+
+                        <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                            <label className='w-full' htmlFor="personalCareSupport">Personal care support</label>
+                            <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="personalCareSupport" id="personalCareSupport" >
+                                <option value="no">no</option>
+                                <option value="yes">Yes</option>
+                                <option value="notApplicable">N/A</option>
+                            </select>
+                        </div>
+
+                        <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                            <label className='w-full' htmlFor="physicalChallenges">Physical challenge(s)</label>
+                            <textarea className='border border-[#dedede] p-2 rounded-[4px] w-full' name="physicalChallenges" id="physicalChallenges" placeholder='Savegaurding young at all time that present various complex needs'></textarea>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div className="flex flex-col gap-8 border border-[#F9F2FF] pb-12">
+                    <header className="flex justify-between bg-[#F9F2FF] p-5">
+                        <h2>Other considerations and FAQS</h2>
+                        <img src={arrowUp} alt="Arrow" />
+                    </header>
+                    <div className="flex flex-col gap-4 md:p-5 p-2">
+                        <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                            <label className='w-full' htmlFor="sleepInBed">Sleep in bed</label>
+                            <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="sleepInBed" id="sleepInBed">
+                                <option value="no">no</option>
+                                <option value="yes">Yes</option>
+                                <option value="notApplicable">N/A</option>
+                            </select>
+                        </div>
+
+                        <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                            <label className='w-full' htmlFor="parking">Parking</label>
+                            <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="parking" id="parking">
+                                <option value="no">no</option>
+                                <option value="yes">Yes</option>
+                                <option value="notApplicable">N/A</option>
+                            </select>
+                        </div>
+
+                        <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                            <label className='w-full' htmlFor="pets">Are there pets</label>
+                            <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="pets" id="pets">
+                                <option value="no">no</option>
+                                <option value="yes">Yes</option>
+                                <option value="notApplicable">N/A</option>
+                            </select>
+                        </div>
+
+                        <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                            <label className='' htmlFor="unpaidBreaksy">Unpaid breaks</label>
+                            <select className='border border-[#dedede] p-2 rounded-[4px] w-full' name="unpaidBreaksy" id="unpaidBreaksy">
+                                <option value="0.5">30 minutes</option>
+                                <option value="1">1 hour</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div className="flex flex-col gap-8 border border-[#F9F2FF] pb-12">
+                    <header className="flex justify-between bg-[#F9F2FF] p-5">
+                        <h2>System info</h2>
+                        <img src={arrowUp} alt="Arrow" />
+                    </header>
+                    <div className="flex flex-col gap-4 md:p-5 p-2">
+                        <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                            <label className='w-full' htmlFor="notes">Notes</label>
+                            <textarea className='border border-[#dedede] p-2 rounded-[4px] w-full' name="notes" id="notes" placeholder='Type here'></textarea>
+                        </div>
+
+                        <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                            <label className='w-full' htmlFor="commissionDate">Commission date</label>
+                            <textarea className='border border-[#dedede] p-2 rounded-[4px] w-full' name="commissionDate" id="commissionDate" placeholder='Type here'></textarea>
+                        </div>
+
+                        <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                            <label className='w-full' htmlFor="createdBy">Created by</label>
+                            <textarea className='border border-[#dedede] p-2 rounded-[4px] w-full' name="createdBy" id="createdBy" placeholder='Type here'></textarea>
+                        </div>
+
+                        <div className='flex md:flex-row flex-col md:gap-0 sm:gap-4 gap-1 justify-between'>
+                            <label className='w-full' htmlFor="modifiedBy">Modified by</label>
+                            <textarea className='border border-[#dedede] p-2 rounded-[4px] w-full' name="modifiedBy" id="modifiedBy" placeholder='Type here'></textarea>
+                        </div>
+
+                    </div>
+                </div>
+                
+              </form>
+            </div>
           </>
         )}
 
@@ -109,7 +417,7 @@ const Services = () => {
                 </table>
 
                 {selectedStudent.youngPersons.length > 5 && (
-                  <button className='block mx-auto text-center p-2 text-[#6b21a8] text-lg animate-pulse' onClick={() => setShowAllYP(!showAllYP)}>
+                  <button className='block mx-auto text-center p-2 text-[#6b21a8] text-lg animate-pulse my-2' onClick={() => setShowAllYP(!showAllYP)}>
                     {showAllYP ? 'View Less' : 'View All'}
                   </button>
                 )}
@@ -118,7 +426,7 @@ const Services = () => {
               <>
                 {selectedYoungPerson && (
                   <>
-                    <div className='modal absolute right-0 top-0 p-4 bg-white h-screen overflow-y-scroll flex flex-col gap-4 md:w-2/5 z-50 font-poppins'>
+                    <div className='modal absolute right-0 top-0 p-4 bg-white h-screen overflow-y-scroll flex flex-col gap-4 md:w-2/5 z-50 font-poppins scrollbar-thin'>
                       <div className='absolute right-4' onClick={deselectYoungPerson}>
                         <FontAwesomeIcon icon={faXmark} className='md:h-6 h-4' />
                       </div>
@@ -235,7 +543,46 @@ const Services = () => {
                 </table>
 
                 {selectedStudent.incidentReport.length > 5 && (
-                  <button className='block mx-auto text-center p-2 text-[#6b21a8] text-lg animate-pulse' onClick={() => setShowAllIncident(!showAllIncident)}>
+                  <button className='block mx-auto text-center p-2 text-[#6b21a8] text-lg animate-pulse my-2' onClick={() => setShowAllIncident(!showAllIncident)}>
+                    {showAllIncident ? 'View Less' : 'View All'}
+                  </button>
+                )}
+              </div>
+
+
+              {/* Previod management  */}
+              <div>
+                <p className='bg-[#6b21a8] text-white p-2'>Previod management</p>
+                <table className='border-separate border-spacing-2 md:border-spacing-1 w-full mt-4 border rounded-[5px]'>
+                  <thead className='bg-gray-200'>
+                    <tr className='text-center'>
+                      <th className='px-3 py-2'>Serivce ID</th>
+                      <th className='px-3 py-2'>Room</th>
+                      <th className='px-3 py-2'>Intended void date</th>
+                      <th className='px-3 py-2'>Created by</th>
+                    </tr>
+                  </thead>
+
+                  <tbody className='font-medium'>
+                  {incidentTodisplay.length > 0 ? (
+                  incidentTodisplay.map(incidentTodisplay => (
+                    <tr key={incidentTodisplay.id} className="px-3 whitespace-nowrap text-center">
+                      <td>{incidentTodisplay.dateOfIncident}</td>
+                      <td>{incidentTodisplay.timeOfIncident}</td>
+                      <td>{incidentTodisplay.causeOfConcern}</td>
+                      <td>{incidentTodisplay.createdBy}</td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan="4" className="text-center">No data available</td>
+                  </tr>
+                )}
+                  </tbody>
+                </table>
+
+                {selectedStudent.incidentReport.length > 5 && (
+                  <button className='block mx-auto text-center p-2 text-[#6b21a8] text-lg animate-pulse my-2' onClick={() => setShowAllIncident(!showAllIncident)}>
                     {showAllIncident ? 'View Less' : 'View All'}
                   </button>
                 )}
@@ -246,7 +593,22 @@ const Services = () => {
 
         {(currentTab === "files") && (
           <>
-            <p>Correspondence</p>
+            <form action="" method="post">
+              <div className={`border ${dragActive ? 'border-blue-500 bg-blue-100' : 'border-[#dedede]'} p-4 rounded-[4px] w-full text-center`} onDragOver={handleDragOver} onDragEnter={handleDragOver} onDragLeave={handleDragLeave} onDrop={handleDrop}>
+                <label htmlFor="serviceFiles" className="cursor-pointer">{files.length === 0? 'Drag files here or click to upload' : `${files.length} file(s) selected`}</label>
+                <input className="hidden" type="file" name="serviceFiles" id="serviceFiles" multiple onChange={handleFileChange} />
+              </div>
+
+              {files.length > 0 && (
+                <ul className="mt-2 flex justify-between md:px-4 px-2">
+                  {files.map((file, index) => (
+                    <li key={index} className="text-sm">
+                      {file.name}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </form>
           </>
         )}
       </div>

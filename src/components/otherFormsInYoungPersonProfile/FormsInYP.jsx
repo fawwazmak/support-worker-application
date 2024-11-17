@@ -21,7 +21,7 @@ const FormsInYP = () => {
 
       {/* Complaints report  */}
       {activeForm === 'complaints' && (
-          <div className="mt-8 h-full overflow-y-scroll scrollbar-thin ">
+          <div className="mt-8 h-full overflow-y-scroll scrollbar-thin">
           <h5 className="text-center py-2 font-bold">Complaints</h5>
   
           <form action="" method="post" className="mt-8 w-[80%] mx-auto mb-24">

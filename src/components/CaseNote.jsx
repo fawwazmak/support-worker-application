@@ -82,7 +82,7 @@ const CaseNote = () => {
         </div> */}
       </div>
 
-      <div className="w-full md:overflow-x-hidden overflow-x-scroll overflow-y-scroll h-[50%]">
+      <div className="w-full md:overflow-x-hidden overflow-x-scroll overflow-y-scroll h-[50%] scrollbar-thin">
         <table className='w-full text-left mt-16 border rounded-[5px]'>
           <thead className='bg-gray-200'>
             <tr>

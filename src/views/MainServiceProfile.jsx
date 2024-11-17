@@ -27,7 +27,7 @@ const ServiceProfile = () => {
   }
 
   const [students, setStudents] = useState([
-    { id: 1, name: "Adedoyin Aderonke", email: "themba@gmail.com", address: "12, Beever street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Female", age: "24", riskLevel: "low", image: studentDemo, youngPersons: [
+    { id: 1, name: "Adedoyin Aderonke", email: "themba@gmail.com", address: "12, Beever street Olusoga Houston", contact: "08035567812", date: '12/04/24', dob: "1996-10-21", age: "24", riskLevel: "low", image: studentDemo, youngPersons: [
       {id: "001", name: "James", age: "21 years 3months", referralDate: "05/07/2022"},
       {id: "002", name: "Ayo", age: "26 years 4months", referralDate: "06/06/2024"},
       {id: "003", name: "Sally", age: "38 years 6days", referralDate: "06/07/2021"},
@@ -49,7 +49,7 @@ const ServiceProfile = () => {
     ], 
     },
 
-    { id: 2, name: "Olorunsogo Olawale", email: "wale@gmail.com", address: "2, Coker street Olusoga Houston", contact: "08035567812", date: '15/04/24', gender: "Male", age: "25", riskLevel: "low", image: studentDemo, youngPersons: [
+    { id: 2, name: "Olorunsogo Olawale", email: "wale@gmail.com", address: "2, Coker street Olusoga Houston", contact: "08035567812", date: '15/04/24', dob: "2000-02-11", age: "25", riskLevel: "low", image: studentDemo, youngPersons: [
       {id: "001", name: "James", age: "21 years 3months", referralDate: "05/07/2022"},
       {id: "002", name: "Ayo", age: "26 years 4months", referralDate: "06/06/2024"},
       {id: "003", name: "Sally", age: "38 years 6days", referralDate: "06/07/2021"},
@@ -71,7 +71,7 @@ const ServiceProfile = () => {
     ], 
     },
 
-    { id: 3, name: "Mafoluku Arike", email: "mafoluku@gmail.com", address: "30, Cole street Olusoga Houston", contact: "08035567812", date: '11/04/24', gender: "Female", age: "23", riskLevel: "low", image: studentDemo, youngPersons: [
+    { id: 3, name: "Mafoluku Arike", email: "mafoluku@gmail.com", address: "30, Cole street Olusoga Houston", contact: "08035567812", date: '11/04/24', dob: "1997-06-24", age: "23", riskLevel: "low", image: studentDemo, youngPersons: [
       {id: "001", name: "James", age: "21 years 3months", referralDate: "05/07/2022"},
       {id: "002", name: "Ayo", age: "26 years 4months", referralDate: "06/06/2024"},
       {id: "003", name: "Sally", age: "38 years 6days", referralDate: "06/07/2021"},
@@ -93,7 +93,7 @@ const ServiceProfile = () => {
     ], 
     },
 
-    { id: 4, name: "Afolabi Ayomide", email: "mide@gmail.com", address: "5, Day street Olusoga Houston", contact: "08035567812", date: '15/04/24', gender: "Male", age: "22", riskLevel: "medium", image: studentDemo, youngPersons: [
+    { id: 4, name: "Afolabi Ayomide", email: "mide@gmail.com", address: "5, Day street Olusoga Houston", contact: "08035567812", date: '15/04/24', dob: "1999-07-28", age: "22", riskLevel: "medium", image: studentDemo, youngPersons: [
       {id: "001", name: "James", age: "21 years 3months", referralDate: "05/07/2022"},
       {id: "002", name: "Ayo", age: "26 years 4months", referralDate: "06/06/2024"},
       {id: "003", name: "Sally", age: "38 years 6days", referralDate: "06/07/2021"},
@@ -115,7 +115,7 @@ const ServiceProfile = () => {
     ], 
     },
 
-    { id: 5, name: "Olasunkami Ishola", email: "olashola@gmail.com", address: "22, Smith street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Male", age: "27", riskLevel: "low", image: studentDemo, youngPersons: [
+    { id: 5, name: "Olasunkami Ishola", email: "olashola@gmail.com", address: "22, Smith street Olusoga Houston", contact: "08035567812", date: '12/04/24', dob: "2001-01-30", age: "27", riskLevel: "low", image: studentDemo, youngPersons: [
       {id: "001", name: "James", age: "21 years 3months", referralDate: "05/07/2022"},
       {id: "002", name: "Ayo", age: "26 years 4months", referralDate: "06/06/2024"},
       {id: "003", name: "Sally", age: "38 years 6days", referralDate: "06/07/2021"},
@@ -137,7 +137,7 @@ const ServiceProfile = () => {
     ], 
     },
 
-    { id: 6, name: "Sanni Ajoke", email: "ajoke@gmail.com", address: "4, John street Olusoga Houston", contact: "08035567812", date: '14/04/24', gender: "Female", age: "23", riskLevel: "low", image: studentDemo, youngPersons: [
+    { id: 6, name: "Sanni Ajoke", email: "ajoke@gmail.com", address: "4, John street Olusoga Houston", contact: "08035567812", date: '14/04/24', dob: "2000-09-11", age: "23", riskLevel: "low", image: studentDemo, youngPersons: [
       {id: "001", name: "James", age: "21 years 3months", referralDate: "05/07/2022"},
       {id: "002", name: "Ayo", age: "26 years 4months", referralDate: "06/06/2024"},
       {id: "003", name: "Sally", age: "38 years 6days", referralDate: "06/07/2021"},
@@ -159,7 +159,7 @@ const ServiceProfile = () => {
     ], 
     },
 
-    { id: 7, name: "Idowu Labake", email: "idowulabake@gmail.com", address: "9, Elegant street Olusoga Houston", contact: "08035567812", date: '11/04/24', gender: "Female", age: "24", riskLevel: "low", image: studentDemo, youngPersons: [
+    { id: 7, name: "Idowu Labake", email: "idowulabake@gmail.com", address: "9, Elegant street Olusoga Houston", contact: "08035567812", date: '11/04/24', dob: "1996-12-29", age: "24", riskLevel: "low", image: studentDemo, youngPersons: [
       {id: "001", name: "James", age: "21 years 3months", referralDate: "05/07/2022"},
       {id: "002", name: "Ayo", age: "26 years 4months", referralDate: "06/06/2024"},
       {id: "003", name: "Sally", age: "38 years 6days", referralDate: "06/07/2021"},
@@ -181,7 +181,7 @@ const ServiceProfile = () => {
     ], 
     },
 
-    { id: 8, name: "Balogun Adeshina", email: "shina@gmail.com", address: "51, Rainbow street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Male", age: "26", riskLevel: "low", image: studentDemo, youngPersons: [
+    { id: 8, name: "Balogun Adeshina", email: "shina@gmail.com", address: "51, Rainbow street Olusoga Houston", contact: "08035567812", date: '12/04/24', dob: "1998-08-15", age: "26", riskLevel: "low", image: studentDemo, youngPersons: [
       {id: "001", name: "James", age: "21 years 3months", referralDate: "05/07/2022"},
       {id: "002", name: "Ayo", age: "26 years 4months", referralDate: "06/06/2024"},
       {id: "003", name: "Sally", age: "38 years 6days", referralDate: "06/07/2021"},
@@ -203,7 +203,7 @@ const ServiceProfile = () => {
     ], 
     },
 
-    { id: 9, name: "Olateju Motunrayo", email: "olarayo@gmail.com", address: "33, Martins street Olusoga Houston", contact: "08035567812", date: '12/04/24', gender: "Female", age: "20", riskLevel: "high", image: studentDemo, youngPersons: [
+    { id: 9, name: "Olateju Motunrayo", email: "olarayo@gmail.com", address: "33, Martins street Olusoga Houston", contact: "08035567812", date: '12/04/24', dob: "2000-01-11", age: "20", riskLevel: "high", image: studentDemo, youngPersons: [
       {id: "001", name: "James", age: "21 years 3months", referralDate: "05/07/2022"},
       {id: "002", name: "Ayo", age: "26 years 4months", referralDate: "06/06/2024"},
       {id: "003", name: "Sally", age: "38 years 6days", referralDate: "06/07/2021"},
@@ -283,7 +283,7 @@ const ServiceProfile = () => {
               <th className='px-3 py-2'>Service name</th>
               <th className='px-3 py-2'>Address</th>
               <th className='px-3 py-2'>Email</th>
-              <th className='px-3 py-2'>Gender</th>
+              <th className='px-3 py-2'>Date of birth</th>
               <th className='px-3 py-2'>Age</th>
             </tr>
           </thead>
@@ -295,7 +295,7 @@ const ServiceProfile = () => {
                 <td>{student.name}</td>
                 <td>{student.address}</td>
                 <td>{student.date}</td>
-                <td>{student.gender}</td>
+                <td>{student.dob}</td>
                 <td>{student.age}</td>
               </tr>
             ))}
@@ -303,91 +303,7 @@ const ServiceProfile = () => {
         </table>
 
 
-        {/* {selectedStudent && (
-          <>
-            <div className='modal absolute right-0 top-0 p-4 bg-white h-screen overflow-y-scroll flex flex-col gap-4 md:w-2/5 z-50 font-poppins'>
-              <div className='absolute right-4' onClick={deselect}>
-                <FontAwesomeIcon icon={faXmark} className='md:h-6 h-4' />
-              </div>
-              <figure>
-                <img src={selectedStudent.image} alt="student image" className='block h-28 w-28 mx-auto border-8 border-[#2060BE] rounded-[50%] mb-3' />
-                <figcaption className='text-center font-bold md:text-2xl text-lg'>{selectedStudent.name}</figcaption>
-              </figure>
-
-              <table>
-                <thead>
-                  <tr><th className='text-center bg-[#622C981C] py-2 w-full' colSpan={2}>Service details</th></tr>
-                </thead>
-                  
-                <tfoot>
-                  <tr><td colSpan={2} className='text-center bg-[#622C981C] py-2 w-full'>Actions</td></tr>
-                </tfoot>
-
-                <tbody className='w-1/2 mx-auto'>
-                  <tr className='font-semibold'>
-                    <td className='text-gray-400 md:pt-4 pt-2'>Risk level</td>
-                    <td className='w-1/2 md:text-start text-right text-wrap md:pt-4 pt-2'>{selectedStudent.riskLevel}</td>
-                  </tr>
-                  <tr className='font-semibold'>
-                    <td className='text-gray-400'>Email</td>
-                    <td className='w-1/2 md:text-start text-right text-wrap'>{selectedStudent.email}</td>
-                  </tr>
-                  <tr className='font-semibold'>
-                    <td className='text-gray-400'>Phone</td>
-                    <td className='w-1/2 md:text-start text-right text-wrap'>{selectedStudent.contact}</td>
-                  </tr>
-                  <tr className='font-semibold'>
-                    <td className='text-gray-400'>Address</td>
-                    <td className='w-1/2 md:text-start text-right text-wrap'>{selectedStudent.address}</td>
-                  </tr>
-                  <tr className='font-semibold'>
-                    <td className='text-gray-400'>Age</td>
-                    <td className='w-1/2 md:text-start text-right text-wrap'>{selectedStudent.age}</td>
-                  </tr>
-                  <tr className='font-semibold'>
-                    <td className='text-gray-400 md:pb-4 pb-2'>Gender</td>
-                    <td className='w-1/2 md:text-start text-right text-wrap md:pb-4 pb-2'>{selectedStudent.gender}</td>
-                  </tr>
-                </tbody>
-              </table>  
-
-                
-              <div onClick={toProfile} className='flex flex-wrap gap-2 md:justify-start justify-end'>
-                <div className='flex items-center md:gap-3 gap-2 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-400 md:justify-normal justify-between'>
-                  <img src={bagIcon} alt="Icon" className='h-[16px]' />
-                  <p>profile</p>
-                </div>
-
-                <div onClick={toIncident} className='flex items-center md:gap-3 gap-2 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-400 md:justify-normal justify-between'>
-                  <img src={bagIcon} alt="Icon" className='h-[16px]' />
-                  <p>incident report</p>
-                </div>
-
-                <div onClick={toPrevoidManagement} className='flex items-center md:gap-3 gap-2 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-400 md:justify-normal justify-between'>
-                  <img src={bagIcon} alt="Icon" className='h-[16px]' />
-                  <p>prevoid management</p>
-                </div>
-
-                <div onClick={toManagement} className='flex items-center md:gap-3 gap-2 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-400 md:justify-normal justify-between'>
-                  <img src={bagIcon} alt="Icon" className='h-[16px]' />
-                  <p>Management</p>
-                </div>
-
-                <div className='flex items-center md:gap-3 gap-2 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-400 md:justify-normal justify-between'>
-                  <img src={bagIcon} alt="Icon" className='h-[16px]' />
-                  <p>emergency contact</p>
-                </div>
-
-                <div className='flex items-center md:gap-3 gap-2 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-400 md:justify-normal justify-between'>
-                  <img src={bagIcon} alt="Icon" className='h-[16px]' />
-                  <p>Risk assesment plan</p>
-                </div>
-              </div>
-            </div>
-
-            <div className='bg-gray-200 md:block hidden opacity-50 h-full w-full absolute left-0 top-0 z-10 font-poppins' onClick={deselect}></div>
-          </>
-        )} */}
+        
       </div>
     </div>
   )

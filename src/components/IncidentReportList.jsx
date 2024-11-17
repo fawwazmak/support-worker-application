@@ -103,7 +103,7 @@ const IncidentReport = () => {
 
         {selectedStudent && (
           <>
-            <div className='modal absolute right-0 top-0 p-4 bg-white h-screen overflow-y-scroll flex flex-col gap-4 md:w-2/5 z-50 font-poppins'>
+            <div className='modal absolute right-0 top-0 p-4 bg-white h-screen overflow-y-scroll flex flex-col gap-4 md:w-2/5 z-50 font-poppins scrollbar-thin'>
               <div className='absolute right-4' onClick={deselect}>
                 <FontAwesomeIcon icon={faXmark} className='md:h-6 h-4' />
               </div>

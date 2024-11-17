@@ -82,7 +82,7 @@ const RiskAssesment = () => {
           </div> */}
         </div>
   
-        <div className="w-full md:overflow-x-hidden overflow-x-scroll overflow-y-scroll h-[50%]">
+        <div className="w-full md:overflow-x-hidden overflow-x-scroll overflow-y-scroll h-[50%] scrollbar-thin">
           <table className='w-full text-left mt-16 border rounded-[5px]'>
             <thead className='bg-gray-200'>
               <tr>
@@ -120,7 +120,7 @@ const RiskAssesment = () => {
   
           {selectedYpCandidate && (
             <>
-              <div className='modal absolute right-0 top-0 p-4 bg-white h-screen overflow-y-scroll flex flex-col gap-4 md:w-2/5 z-50 font-poppins'>
+              <div className='modal absolute right-0 top-0 p-4 bg-white h-screen overflow-y-scroll flex flex-col gap-4 md:w-2/5 z-50 font-poppins scrollbar-thin'>
                <div className='fixed right-4' onClick={deselect}>
                   <FontAwesomeIcon icon={faXmark} className='md:h-6 h-4' />
                 </div>
