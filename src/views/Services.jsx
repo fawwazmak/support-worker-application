@@ -13,8 +13,10 @@ const Services = () => {
   const [currentTab, setCurrentTab] = useState("service")
   const [showAllYP, setShowAllYP] = useState(false);
   const [showAllIncident, setShowAllIncident] = useState(false);
-  const youngpersonsTodisplay = showAllYP ? selectedStudent.youngPersons : selectedStudent.youngPersons.slice(0, 5);
-  const incidentTodisplay = showAllIncident ? selectedStudent.incidentReport : selectedStudent.incidentReport.slice(0, 5);
+  const [showAllPrevoidM, setShowAllPrevoidM] = useState(false);
+  const youngpersonsTodisplay = showAllYP ? selectedStudent.youngPersons || [] : selectedStudent.youngPersons.slice(0, 5) || [];
+  const incidentTodisplay = showAllIncident ? selectedStudent.incidentReport : selectedStudent.incidentReport.slice(0, 5) || [];
+  const prevoidToDisplay = showAllPrevoidM ? selectedStudent.prevoidManagement : selectedStudent.prevoidManagement.slice(0, 5) || [];
   const [selectedYoungPerson, setSelectedYoungPerson] = useState(null);
 
   const toProfile = () => { 
@@ -564,13 +566,13 @@ const Services = () => {
                   </thead>
 
                   <tbody className='font-medium'>
-                  {incidentTodisplay.length > 0 ? (
-                  incidentTodisplay.map(incidentTodisplay => (
-                    <tr key={incidentTodisplay.id} className="px-3 whitespace-nowrap text-center">
-                      <td>{incidentTodisplay.dateOfIncident}</td>
-                      <td>{incidentTodisplay.timeOfIncident}</td>
-                      <td>{incidentTodisplay.causeOfConcern}</td>
-                      <td>{incidentTodisplay.createdBy}</td>
+                  {prevoidToDisplay.length > 0 ? (
+                  prevoidToDisplay.map(prevoidToDisplay => (
+                    <tr key={prevoidToDisplay.serviceId} className="px-3 whitespace-nowrap text-center">
+                      <td>{prevoidToDisplay.serviceId}</td>
+                      <td>{prevoidToDisplay.room}</td>
+                      <td>{prevoidToDisplay.intendedVoidDate}</td>
+                      <td>{prevoidToDisplay.createdBy}</td>
                     </tr>
                   ))
                 ) : (
@@ -582,7 +584,7 @@ const Services = () => {
                 </table>
 
                 {selectedStudent.incidentReport.length > 5 && (
-                  <button className='block mx-auto text-center p-2 text-[#6b21a8] text-lg animate-pulse my-2' onClick={() => setShowAllIncident(!showAllIncident)}>
+                  <button className='block mx-auto text-center p-2 text-[#6b21a8] text-lg animate-pulse my-2' onClick={() => setShowAllPrevoidM(!showAllPrevoidM)}>
                     {showAllIncident ? 'View Less' : 'View All'}
                   </button>
                 )}
