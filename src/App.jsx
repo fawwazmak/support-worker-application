@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import YoungPersonProfile from "./views/YoungPersonProfile";
 import ServiceProfile from "./views/MainServiceProfile";
-import Reports from "./components/otherFormsInServiceProfile/FormsInService";
 import TrainingHub from "./views/TrainingHub";
 import Policies from "./views/Policies";
 import SWProfile from "./views/SWProfile";
@@ -17,12 +16,17 @@ import ServProfile from "./components/serviceProfileCompo/ServiceProfileForm";
 import YoungProfileForm from "./components/youngPersons/YoungProfileForm";
 import FormsInYP from "./components/otherFormsInYoungPersonProfile/FormsInYP";
 import IncidentReport from "./components/IncidentReportList";
+import IncidentForm from "./components/otherFormsInServiceProfile/IncidentReport";
+import PrevoidForm from "./components/otherFormsInServiceProfile/PrevoidManagement";
+import RoomcheckForm from "./components/otherFormsInServiceProfile/RoomCheck";
+import MaintenanceForm from "./components/otherFormsInServiceProfile/Maintenace";
 import PrevoidManagement from "./components/PrevoidManagementList";
 import ManagementList from "./components/ManagementList";
-import CaseNote from "./components/CaseNote";
-import Complaints from "./components/ComplaintsList";
-import RiskAssesment from "./components/RiskAssesment";
-import Services from "./views/Services";
+import CaseNote from "./components/otherFormsInYoungPersonProfile/CaseNote";
+import Complaints from "./components/otherFormsInYoungPersonProfile/Complaints";
+import RiskAssesment from "./components/otherFormsInYoungPersonProfile/RiskAssesment";
+import Services from "./components/serviceProfileCompo/Services";
+import YoungPersons from "./components/youngPersons/YoungPersons";
 
 function ProtectedRoute({ children, isAuthenticated, isAdmin, adminOnly = false }) {
   if (!isAuthenticated) {
@@ -47,7 +51,7 @@ function App() {
 
   return (
     <>
-      <div className="flex gap-5 md:h-screen relative md:static">
+      <div className="flex gap-5 md:h-screen relative md:static overflow-hidden">
         {location.pathname !== "/" && location.pathname !== "*" && (
           <div className="absolute md:relative md:left-0 md:top-0 top-2 z-50">
             <div className="md:hidden fixed right-4" onClick={() => setShowNav(prevShowNav => !prevShowNav)}>
@@ -72,9 +76,9 @@ function App() {
             } />
 
             <Route path="/services" element={
-              // <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
                 <Services />
-              // </ProtectedRoute>
+              </ProtectedRoute>
             } />
 
             <Route path="/serviceProfile/profile" element={
@@ -99,6 +103,34 @@ function App() {
               </ProtectedRoute>
             } />
 
+            {/* Other forms */}
+            <Route path="/incidentForm" element={
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <IncidentForm />
+              </ProtectedRoute>
+            }
+            />
+
+            <Route path="/prevoidForm" element={
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <PrevoidForm />
+              </ProtectedRoute>
+            } />
+
+            <Route path="/roomCheckForm" element={
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <RoomcheckForm />
+              </ProtectedRoute>
+            } />
+
+            <Route path="/maintenanceForm" element={
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <MaintenanceForm />
+              </ProtectedRoute>
+            } />
+
+            {/* Lorem ipsum dolor sit amet. */}
+
             <Route path="/YP" element={
               <ProtectedRoute isAuthenticated={isAuthenticated} isAdmin={isAdmin}>
                 <YoungPersonProfile />
@@ -108,6 +140,12 @@ function App() {
             <Route path="/YP/form" element={
               <ProtectedRoute isAuthenticated={isAuthenticated} isAdmin={isAdmin} adminOnly={true}>
                 <YoungProfileForm />
+              </ProtectedRoute>
+            } />
+
+            <Route path="/youngPersons" element={
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <YoungPersons />
               </ProtectedRoute>
             } />
 
@@ -127,12 +165,7 @@ function App() {
               </ProtectedRoute>
             } />
 
-            <Route path="/reports" element={
-              <ProtectedRoute isAuthenticated={isAuthenticated}>
-                <Reports />
-              </ProtectedRoute>
-            } />
-
+            
             <Route path="/trainingHub" element={
               <ProtectedRoute isAuthenticated={isAuthenticated}>
                 <FormsInYP />

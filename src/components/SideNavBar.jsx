@@ -26,10 +26,6 @@ const SideNavBar = () => {
                     <FontAwesomeIcon icon={faBriefcase} />
                     <p>YP Profile</p>
                 </NavLink>
-                <NavLink to="/reports" className={({ isActive }) => `flex gap-3 items-center p-2 rounded-[3px] ${isActive ? "bg-[#311A4878] text-white rounded-[8px] py-3" : "bg-none"}`}>
-                    <FontAwesomeIcon icon={faBriefcase} />
-                    <p>Reports</p>
-                </NavLink>
                 <NavLink to="/trainingHub" className={({ isActive }) => `flex gap-3 items-center p-2 rounded-[3px] ${isActive ? "bg-[#311A4878] text-white rounded-[8px] py-3" : "bg-none"}`}>
                     <FontAwesomeIcon icon={faBriefcase} />
                     <p>Training hub</p>

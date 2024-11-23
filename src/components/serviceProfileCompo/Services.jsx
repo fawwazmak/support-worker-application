@@ -4,20 +4,47 @@ import { useLocation } from 'react-router-dom';
 import bagIcon from "/bag-icon.svg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark} from '@fortawesome/free-solid-svg-icons';
-import arrowUp from "/arrow-up.svg"
+import arrowUp from "/arrow-up.svg";
 
 const Services = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { selectedStudent } = location.state || {};
-  const [currentTab, setCurrentTab] = useState("service")
+  const [currentTab, setCurrentTab] = useState("service");
+
+  
   const [showAllYP, setShowAllYP] = useState(false);
   const [showAllIncident, setShowAllIncident] = useState(false);
   const [showAllPrevoidM, setShowAllPrevoidM] = useState(false);
+  const [showAllRoomCheck, setShowAllRoomCheck] = useState(false);
+  const [showAllMaintenace, setShowAllMaintenace] = useState(false);
   const youngpersonsTodisplay = showAllYP ? selectedStudent.youngPersons || [] : selectedStudent.youngPersons.slice(0, 5) || [];
   const incidentTodisplay = showAllIncident ? selectedStudent.incidentReport : selectedStudent.incidentReport.slice(0, 5) || [];
   const prevoidToDisplay = showAllPrevoidM ? selectedStudent.prevoidManagement : selectedStudent.prevoidManagement.slice(0, 5) || [];
+  const roomCheckToDisplay = showAllRoomCheck ? selectedStudent.roomChecks : selectedStudent.roomChecks.slice(0, 5) || [];
+  const maintenanceToDisplay = showAllMaintenace ? selectedStudent.maintenance : selectedStudent.maintenance.slice(0, 5) || [];
+
   const [selectedYoungPerson, setSelectedYoungPerson] = useState(null);
+
+  const toYpForm = () => {
+    navigate("/YP/form")
+  }
+
+  const toIncidentReportForm = () => {
+    navigate("/incidentForm");
+  }
+
+  const toPrevoidForm = () => {
+    navigate("/prevoidForm")
+  }
+
+  const toRoomCheckForm = () => {
+    navigate("/roomCheckForm")
+  }
+
+  const toMaintenaceForm = () => {
+    navigate("/maintenanceForm")
+  }
 
   const toProfile = () => { 
     navigate("/serviceProfile/profile");
@@ -76,7 +103,7 @@ const Services = () => {
 
 
   return (
-    <div className='h-screen overflow-y-hidden'>
+    <div className='h-screen overflow-hidden'>
       <header className='text-[#6b21a8] shadow-lg mb-8'>
         <ul className='flex flex-wrap gap-8 pt-4 px-8 text-xl'>
           <li onClick={() => {setCurrentTab("service")}} className='cursor-pointer'>
@@ -388,36 +415,43 @@ const Services = () => {
           <>
             <div className=''>
               {/* Young persons  */}
-              <div>
+              <div className='w-full overflow-x-hidden'>
+                <div className='flex justify-end pr-2'>
+                  <div onClick={toYpForm} className="flex gap-4 items-center border border-[#6b21a8] rounded-[5px] p-1 text-[#6b21a8] w-fit my-1 cursor-pointer">
+                    <p>Add new</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M11 13H5v-2h6V5h2v6h6v2h-6v6h-2z"/></svg>
+                  </div>
+                </div>
                 <p className='bg-[#6b21a8] text-white p-2'>Young person</p>
-                <table className='border-separate border-spacing-2 md:border-spacing-1 w-full mt-4 border rounded-[5px]'>
-                  <thead className='bg-gray-200'>
-                    <tr className='text-center'>
-                      <th className='px-3 py-2'>ID</th>
-                      <th className='px-3 py-2'>Name</th>
-                      <th className='px-3 py-2'>Age</th>
-                      <th className='px-3 py-2'>Referral Date</th>
-                    </tr>
-                  </thead>
+                <div className="lg:overflow-x-hidden overflow-x-scroll w-full">
+                  <table className='border-separate border-spacing-2 md:border-spacing-1 w-full mt-4 border rounded-[5px] '>
+                    <thead className='bg-gray-200'>
+                      <tr className='text-center'>
+                        <th className='px-3 py-2'>ID</th>
+                        <th className='px-3 py-2'>Name</th>
+                        <th className='px-3 py-2'>Age</th>
+                        <th className='px-3 py-2'>Referral Date</th>
+                      </tr>
+                    </thead>
 
-                  <tbody className='font-medium'>
-                  {youngpersonsTodisplay.length > 0 ? (
-                  youngpersonsTodisplay.map(yp => (
-                    <tr key={yp.id} className="px-3 whitespace-nowrap text-center" onClick={() => clickedYoungPerson(yp)}>
-                      <td>{yp.id}</td>
-                      <td>{yp.name}</td>
-                      <td>{yp.age}</td>
-                      <td>{yp.referralDate}</td>
+                    <tbody className='font-medium'>
+                    {youngpersonsTodisplay.length > 0 ? (
+                    youngpersonsTodisplay.map(yp => (
+                      <tr key={yp.id} className="px-3 whitespace-nowrap text-center" onClick={() => clickedYoungPerson(yp)}>
+                        <td>{yp.id}</td>
+                        <td>{yp.name}</td>
+                        <td>{yp.age}</td>
+                        <td>{yp.referralDate}</td>
+                      </tr>
+                    ))
+                  ) : (
+                    <tr>
+                      <td colSpan="4" className="text-center">No data available</td>
                     </tr>
-                  ))
-                ) : (
-                  <tr>
-                    <td colSpan="4" className="text-center">No data available</td>
-                  </tr>
-                )}
-                  </tbody>
-                </table>
-
+                  )}
+                    </tbody>
+                  </table>
+                </div>
                 {selectedStudent.youngPersons.length > 5 && (
                   <button className='block mx-auto text-center p-2 text-[#6b21a8] text-lg animate-pulse my-2' onClick={() => setShowAllYP(!showAllYP)}>
                     {showAllYP ? 'View Less' : 'View All'}
@@ -514,36 +548,43 @@ const Services = () => {
               </>
 
               {/* Incident report  */}
-              <div>
+              <div className='w-full overflow-x-hidden'>
+                <div className='flex justify-end pr-2'>
+                  <div onClick={toIncidentReportForm} className="flex gap-4 items-center border border-[#6b21a8] rounded-[5px] p-1 text-[#6b21a8] w-fit my-1 cursor-pointer">
+                    <p>Add new</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M11 13H5v-2h6V5h2v6h6v2h-6v6h-2z"/></svg>
+                  </div>
+                </div>
                 <p className='bg-[#6b21a8] text-white p-2'>Incident report</p>
-                <table className='border-separate border-spacing-2 md:border-spacing-1 w-full mt-4 border rounded-[5px]'>
-                  <thead className='bg-gray-200'>
-                    <tr className='text-center'>
-                      <th className='px-3 py-2'>Date of incident</th>
-                      <th className='px-3 py-2'>Time of incident</th>
-                      <th className='px-3 py-2'>Cause of concern about YP</th>
-                      <th className='px-3 py-2'>Created by</th>
-                    </tr>
-                  </thead>
+                <div className="lg:overflow-x-hidden overflow-x-scroll w-full">
+                  <table className='border-separate border-spacing-2 md:border-spacing-1 w-full mt-4 border rounded-[5px] '>
+                    <thead className='bg-gray-200'>
+                      <tr className='text-center'>
+                        <th className='px-3 py-2'>Date of incident</th>
+                        <th className='px-3 py-2'>Time of incident</th>
+                        <th className='px-3 py-2'>Cause of concern about YP</th>
+                        <th className='px-3 py-2'>Created by</th>
+                      </tr>
+                    </thead>
 
-                  <tbody className='font-medium'>
-                  {incidentTodisplay.length > 0 ? (
-                  incidentTodisplay.map(incidentTodisplay => (
-                    <tr key={incidentTodisplay.id} className="px-3 whitespace-nowrap text-center">
-                      <td>{incidentTodisplay.dateOfIncident}</td>
-                      <td>{incidentTodisplay.timeOfIncident}</td>
-                      <td>{incidentTodisplay.causeOfConcern}</td>
-                      <td>{incidentTodisplay.createdBy}</td>
+                    <tbody className='font-medium'>
+                    {incidentTodisplay.length > 0 ? (
+                    incidentTodisplay.map(incidentTodisplay => (
+                      <tr key={incidentTodisplay.id} className="px-3 whitespace-nowrap text-center">
+                        <td>{incidentTodisplay.dateOfIncident}</td>
+                        <td>{incidentTodisplay.timeOfIncident}</td>
+                        <td>{incidentTodisplay.causeOfConcern}</td>
+                        <td>{incidentTodisplay.createdBy}</td>
+                      </tr>
+                    ))
+                  ) : (
+                    <tr>
+                      <td colSpan="4" className="text-center">No data available</td>
                     </tr>
-                  ))
-                ) : (
-                  <tr>
-                    <td colSpan="4" className="text-center">No data available</td>
-                  </tr>
-                )}
-                  </tbody>
-                </table>
-
+                  )}
+                    </tbody>
+                  </table>
+                </div>
                 {selectedStudent.incidentReport.length > 5 && (
                   <button className='block mx-auto text-center p-2 text-[#6b21a8] text-lg animate-pulse my-2' onClick={() => setShowAllIncident(!showAllIncident)}>
                     {showAllIncident ? 'View Less' : 'View All'}
@@ -553,39 +594,144 @@ const Services = () => {
 
 
               {/* Previod management  */}
-              <div>
+              <div className='w-full overflow-x-hidden'>
+                <div className='flex justify-end pr-2'>
+                  <div onClick={toPrevoidForm} className="flex gap-4 items-center border border-[#6b21a8] rounded-[5px] p-1 text-[#6b21a8] w-fit my-1 cursor-pointer">
+                    <p>Add new</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M11 13H5v-2h6V5h2v6h6v2h-6v6h-2z"/></svg>
+                  </div>
+                </div>
                 <p className='bg-[#6b21a8] text-white p-2'>Previod management</p>
-                <table className='border-separate border-spacing-2 md:border-spacing-1 w-full mt-4 border rounded-[5px]'>
-                  <thead className='bg-gray-200'>
-                    <tr className='text-center'>
-                      <th className='px-3 py-2'>Serivce ID</th>
-                      <th className='px-3 py-2'>Room</th>
-                      <th className='px-3 py-2'>Intended void date</th>
-                      <th className='px-3 py-2'>Created by</th>
-                    </tr>
-                  </thead>
+                <div className="lg:overflow-x-hidden overflow-x-scroll w-full">
+                  <table className='border-separate border-spacing-2 md:border-spacing-1 w-full mt-4 border rounded-[5px] '>
+                    <thead className='bg-gray-200'>
+                      <tr className='text-center'>
+                        <th className='px-3 py-2'>Serivce ID</th>
+                        <th className='px-3 py-2'>Room</th>
+                        <th className='px-3 py-2'>Intended void date</th>
+                        <th className='px-3 py-2'>Created by</th>
+                      </tr>
+                    </thead>
 
-                  <tbody className='font-medium'>
-                  {prevoidToDisplay.length > 0 ? (
-                  prevoidToDisplay.map(prevoidToDisplay => (
-                    <tr key={prevoidToDisplay.serviceId} className="px-3 whitespace-nowrap text-center">
-                      <td>{prevoidToDisplay.serviceId}</td>
-                      <td>{prevoidToDisplay.room}</td>
-                      <td>{prevoidToDisplay.intendedVoidDate}</td>
-                      <td>{prevoidToDisplay.createdBy}</td>
+                    <tbody className='font-medium'>
+                    {prevoidToDisplay.length > 0 ? (
+                    prevoidToDisplay.map(prevoidToDisplay => (
+                      <tr key={prevoidToDisplay.serviceId} className="px-3 whitespace-nowrap text-center">
+                        <td>{prevoidToDisplay.serviceId}</td>
+                        <td>{prevoidToDisplay.room}</td>
+                        <td>{prevoidToDisplay.intendedVoidDate}</td>
+                        <td>{prevoidToDisplay.createdBy}</td>
+                      </tr>
+                    ))
+                  ) : (
+                    <tr>
+                      <td colSpan="4" className="text-center">No data available</td>
                     </tr>
-                  ))
-                ) : (
-                  <tr>
-                    <td colSpan="4" className="text-center">No data available</td>
-                  </tr>
-                )}
-                  </tbody>
-                </table>
-
-                {selectedStudent.incidentReport.length > 5 && (
+                  )}
+                    </tbody>
+                  </table>
+                </div>
+                {selectedStudent.prevoidManagement.length > 5 && (
                   <button className='block mx-auto text-center p-2 text-[#6b21a8] text-lg animate-pulse my-2' onClick={() => setShowAllPrevoidM(!showAllPrevoidM)}>
-                    {showAllIncident ? 'View Less' : 'View All'}
+                    {showAllPrevoidM ? 'View Less' : 'View All'}
+                  </button>
+                )}
+              </div>
+
+              {/* Room checks */}
+              <div className='w-full overflow-x-hidden'>
+                <div className='flex justify-end pr-2'>
+                  <div onClick={toRoomCheckForm} className="flex gap-4 items-center border border-[#6b21a8] rounded-[5px] p-1 text-[#6b21a8] w-fit my-1 cursor-pointer">
+                    <p>Add new</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M11 13H5v-2h6V5h2v6h6v2h-6v6h-2z"/></svg>
+                  </div>
+                </div>
+                <p className='bg-[#6b21a8] text-white p-2'>Room checks</p>
+                
+                <div className="lg:overflow-x-hidden overflow-x-scroll w-full">
+                  <table className='border-separate border-spacing-2 md:border-spacing-1 w-full mt-4 border rounded-[5px] '>
+                    <thead className='bg-gray-200'>
+                      <tr className='text-center'>
+                        <th className='px-3 py-2'>Serivce</th>
+                        <th className='px-3 py-2'>Staff lead</th>
+                        <th className='px-3 py-2'>Compiled by</th>
+                        <th className='px-3 py-2'>Last modified by</th>
+                      </tr>
+                    </thead>
+
+                    <tbody className='font-medium'>
+                    {roomCheckToDisplay.length > 0 ? (
+                    roomCheckToDisplay.map(roomCheckToDisplay => (
+                      <tr key={roomCheckToDisplay.service} className="px-3 whitespace-nowrap text-center">
+                        <td>{roomCheckToDisplay.service}</td>
+                        <td>{roomCheckToDisplay.staffLead}</td>
+                        <td>{roomCheckToDisplay.compiledBy}</td>
+                        <td>{roomCheckToDisplay.lastModified}</td>
+                      </tr>
+                    ))
+                  ) : (
+                    <tr>
+                      <td colSpan="4" className="text-center">No data available</td>
+                    </tr>
+                  )}
+                    </tbody>
+                  </table>
+                </div>
+                {selectedStudent.roomChecks.length > 5 && (
+                  <button className='block mx-auto text-center p-2 text-[#6b21a8] text-lg animate-pulse my-2' onClick={() => setShowAllRoomCheck(!showAllRoomCheck)}>
+                    {showAllRoomCheck ? 'View Less' : 'View All'}
+                  </button>
+                )}
+              </div>
+
+              {/* Maintenance  */}
+              <div className='w-full overflow-x-hidden'>
+                <div className='flex justify-end pr-2'>
+                  <div onClick={toMaintenaceForm} className="flex gap-4 items-center border border-[#6b21a8] rounded-[5px] p-1 text-[#6b21a8] w-fit my-1 cursor-pointer">
+                    <p>Add new</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M11 13H5v-2h6V5h2v6h6v2h-6v6h-2z"/></svg>
+                  </div>
+                </div>
+                <p className='bg-[#6b21a8] text-white p-2'>Maintenance</p>
+                
+               <div className="lg:overflow-x-hidden overflow-x-scroll w-full">
+                  <table className='border-separate border-spacing-2 md:border-spacing-1 w-full mt-4 border rounded-[5px] '>
+                    <thead className='bg-gray-200'>
+                      <tr className='text-center'>
+                        <th className='px-3 py-2'>Serivce name</th>
+                        <th className='px-3 py-2'>Room number</th>
+                        <th className='px-3 py-2'>Name of YP</th>
+                        <th className='px-3 py-2'>Date repair requested</th>
+                        <th className='px-3 py-2'>Time repair requested</th>
+                        <th className='px-3 py-2'>Reference number</th>
+                        <th className='px-3 py-2'>Last modified</th>
+                      </tr>
+                    </thead>
+
+                    <tbody className='font-medium'>
+                    {maintenanceToDisplay.length > 0 ? (
+                    maintenanceToDisplay.map(maintenanceToDisplay => (
+                      <tr key={maintenanceToDisplay.serviceName} className="px-3 whitespace-nowrap text-center">
+                        <td>{maintenanceToDisplay.serviceName}</td>
+                        <td>{maintenanceToDisplay.roomNumber}</td>
+                        <td>{maintenanceToDisplay.nameOfYP}</td>
+                        <td>{maintenanceToDisplay.dateOfRepairReq}</td>
+                        <td>{maintenanceToDisplay.timeOfRepairReq}</td>
+                        <td>{maintenanceToDisplay.referenceNumber}</td>
+                        <td>{maintenanceToDisplay.lastModified}</td>
+                      </tr>
+                    ))
+                  ) : (
+                    <tr>
+                      <td colSpan="4" className="text-center">No data available</td>
+                    </tr>
+                  )}
+                    </tbody>
+                  </table>
+                </div>
+                {selectedStudent.maintenance.length > 5 && (
+                  <button className='block mx-auto text-center p-2 text-[#6b21a8] text-lg animate-pulse my-2' onClick={() => setShowAllMaintenace(!showAllMaintenace)}>
+                    {showAllMaintenace ? 'View Less' : 'View All'}
                   </button>
                 )}
               </div>
