@@ -14,7 +14,6 @@ import SideNavBar from "./components/SideNavBar";
 import LoginPage from "./views/LoginPage";
 import ServProfile from "./components/serviceProfileCompo/ServiceProfileForm";
 import YoungProfileForm from "./components/youngPersons/YoungProfileForm";
-import FormsInYP from "./components/otherFormsInYoungPersonProfile/FormsInYP";
 import IncidentReport from "./components/IncidentReportList";
 import IncidentForm from "./components/otherFormsInServiceProfile/IncidentReport";
 import PrevoidForm from "./components/otherFormsInServiceProfile/PrevoidManagement";
@@ -27,6 +26,7 @@ import Complaints from "./components/otherFormsInYoungPersonProfile/Complaints";
 import RiskAssesment from "./components/otherFormsInYoungPersonProfile/RiskAssesment";
 import Services from "./components/serviceProfileCompo/Services";
 import YoungPersons from "./components/youngPersons/YoungPersons";
+import HealthAndSafety from "./components/otherFormsInServiceProfile/HealthAndSafety";
 
 function ProtectedRoute({ children, isAuthenticated, isAdmin, adminOnly = false }) {
   if (!isAuthenticated) {
@@ -129,6 +129,12 @@ function App() {
               </ProtectedRoute>
             } />
 
+            <Route path="/healthAndSafetyForm" element={
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <HealthAndSafety />
+              </ProtectedRoute>
+            } />
+
             {/* Lorem ipsum dolor sit amet. */}
 
             <Route path="/YP" element={
@@ -162,13 +168,6 @@ function App() {
             <Route path="/riskAssesment" element={
               <ProtectedRoute isAuthenticated={isAuthenticated}>
                 <RiskAssesment />
-              </ProtectedRoute>
-            } />
-
-            
-            <Route path="/trainingHub" element={
-              <ProtectedRoute isAuthenticated={isAuthenticated}>
-                <FormsInYP />
               </ProtectedRoute>
             } />
 

@@ -76,7 +76,16 @@ const ServiceProfile = () => {
       {service: "Six", compiledBy: "Mide", staffLead: "Ayo", lastModified: "Shina"},
       {service: "Seven", compiledBy: "Ade", staffLead: "Remi", lastModified: "Tolu"}
     ],
-    },
+    healthAndSafety: [
+      {service: "001", compiledBy: "Aina", staffLead: "James", cctvWorking: "yes"},
+      {service: "002", compiledBy: "Kola", staffLead: "Rebecca", cctvWorking: "yes"},
+      {service: "003", compiledBy: "Desire", staffLead: "Femi", cctvWorking: "no"},
+      {service: "004", compiledBy: "Joy", staffLead: "Mercy", cctvWorking: "yes"},
+      {service: "005", compiledBy: "Lekan", staffLead: "Segun", cctvWorking: "no"},
+      {service: "006", compiledBy: "Famous", staffLead: "Bayo", cctvWorking: "yes"},
+      {service: "007", compiledBy: "Victoria", staffLead: "Vitory", cctvWorking: "yes"},
+    ]
+  },
 
     { id: 2, name: "Olorunsogo Olawale", email: "wale@gmail.com", address: "2, Coker street Olusoga Houston", contact: "08035567812", date: '15/04/24', dob: "2000-02-11", age: "25", riskLevel: "low", image: studentDemo, 
     youngPersons: [
@@ -127,7 +136,16 @@ const ServiceProfile = () => {
       {service: "Six", compiledBy: "Mide", staffLead: "Ayo", lastModified: "Shina"},
       {service: "Seven", compiledBy: "Ade", staffLead: "Remi", lastModified: "Tolu"}
     ],
-    },
+    healthAndSafety: [
+      {service: "001", compiledBy: "Aina", staffLead: "James", cctvWorking: "yes"},
+      {service: "002", compiledBy: "Kola", staffLead: "Rebecca", cctvWorking: "yes"},
+      {service: "003", compiledBy: "Desire", staffLead: "Femi", cctvWorking: "no"},
+      {service: "004", compiledBy: "Joy", staffLead: "Mercy", cctvWorking: "yes"},
+      {service: "005", compiledBy: "Lekan", staffLead: "Segun", cctvWorking: "no"},
+      {service: "006", compiledBy: "Famous", staffLead: "Bayo", cctvWorking: "yes"},
+      {service: "007", compiledBy: "Victoria", staffLead: "Vitory", cctvWorking: "yes"},
+    ]
+  },
 
     { id: 3, name: "Mafoluku Arike", email: "mafoluku@gmail.com", address: "30, Cole street Olusoga Houston", contact: "08035567812", date: '11/04/24', dob: "1997-06-24", age: "23", riskLevel: "low", image: studentDemo, 
     youngPersons: [
@@ -178,7 +196,16 @@ const ServiceProfile = () => {
       {service: "Six", compiledBy: "Mide", staffLead: "Ayo", lastModified: "Shina"},
       {service: "Seven", compiledBy: "Ade", staffLead: "Remi", lastModified: "Tolu"}
     ],
-    },
+    healthAndSafety: [
+      {service: "001", compiledBy: "Aina", staffLead: "James", cctvWorking: "yes"},
+      {service: "002", compiledBy: "Kola", staffLead: "Rebecca", cctvWorking: "yes"},
+      {service: "003", compiledBy: "Desire", staffLead: "Femi", cctvWorking: "no"},
+      {service: "004", compiledBy: "Joy", staffLead: "Mercy", cctvWorking: "yes"},
+      {service: "005", compiledBy: "Lekan", staffLead: "Segun", cctvWorking: "no"},
+      {service: "006", compiledBy: "Famous", staffLead: "Bayo", cctvWorking: "yes"},
+      {service: "007", compiledBy: "Victoria", staffLead: "Vitory", cctvWorking: "yes"},
+    ]
+  },
 
     { id: 4, name: "Afolabi Ayomide", email: "mide@gmail.com", address: "5, Day street Olusoga Houston", contact: "08035567812", date: '15/04/24', dob: "1999-07-28", age: "22", riskLevel: "medium", image: studentDemo, 
     youngPersons: [
@@ -226,7 +253,16 @@ const ServiceProfile = () => {
       {service: "Six", compiledBy: "Mide", staffLead: "Ayo", lastModified: "Shina"},
       {service: "Seven", compiledBy: "Ade", staffLead: "Remi", lastModified: "Tolu"}
     ],
-    },
+    healthAndSafety: [
+      {service: "001", compiledBy: "Aina", staffLead: "James", cctvWorking: "yes"},
+      {service: "002", compiledBy: "Kola", staffLead: "Rebecca", cctvWorking: "yes"},
+      {service: "003", compiledBy: "Desire", staffLead: "Femi", cctvWorking: "no"},
+      {service: "004", compiledBy: "Joy", staffLead: "Mercy", cctvWorking: "yes"},
+      {service: "005", compiledBy: "Lekan", staffLead: "Segun", cctvWorking: "no"},
+      {service: "006", compiledBy: "Famous", staffLead: "Bayo", cctvWorking: "yes"},
+      {service: "007", compiledBy: "Victoria", staffLead: "Vitory", cctvWorking: "yes"},
+    ]
+  },
 
     { id: 5, name: "Olasunkami Ishola", email: "olashola@gmail.com", address: "22, Smith street Olusoga Houston", contact: "08035567812", date: '12/04/24', dob: "2001-01-30", age: "27", riskLevel: "low", image: studentDemo, youngPersons: [
       {id: "001", name: "James", age: "21 years 3months", referralDate: "05/07/2022"},
@@ -276,7 +312,16 @@ const ServiceProfile = () => {
       {service: "Six", compiledBy: "Mide", staffLead: "Ayo", lastModified: "Shina"},
       {service: "Seven", compiledBy: "Ade", staffLead: "Remi", lastModified: "Tolu"}
     ],
-    },
+    healthAndSafety: [
+      {service: "001", compiledBy: "Aina", staffLead: "James", cctvWorking: "yes"},
+      {service: "002", compiledBy: "Kola", staffLead: "Rebecca", cctvWorking: "yes"},
+      {service: "003", compiledBy: "Desire", staffLead: "Femi", cctvWorking: "no"},
+      {service: "004", compiledBy: "Joy", staffLead: "Mercy", cctvWorking: "yes"},
+      {service: "005", compiledBy: "Lekan", staffLead: "Segun", cctvWorking: "no"},
+      {service: "006", compiledBy: "Famous", staffLead: "Bayo", cctvWorking: "yes"},
+      {service: "007", compiledBy: "Victoria", staffLead: "Vitory", cctvWorking: "yes"},
+    ]
+  },
 
     { id: 6, name: "Sanni Ajoke", email: "ajoke@gmail.com", address: "4, John street Olusoga Houston", contact: "08035567812", date: '14/04/24', dob: "2000-09-11", age: "23", riskLevel: "low", image: studentDemo, 
     youngPersons: [
@@ -324,7 +369,16 @@ const ServiceProfile = () => {
       {service: "Six", compiledBy: "Mide", staffLead: "Ayo", lastModified: "Shina"},
       {service: "Seven", compiledBy: "Ade", staffLead: "Remi", lastModified: "Tolu"}
     ],
-    },
+    healthAndSafety: [
+      {service: "001", compiledBy: "Aina", staffLead: "James", cctvWorking: "yes"},
+      {service: "002", compiledBy: "Kola", staffLead: "Rebecca", cctvWorking: "yes"},
+      {service: "003", compiledBy: "Desire", staffLead: "Femi", cctvWorking: "no"},
+      {service: "004", compiledBy: "Joy", staffLead: "Mercy", cctvWorking: "yes"},
+      {service: "005", compiledBy: "Lekan", staffLead: "Segun", cctvWorking: "no"},
+      {service: "006", compiledBy: "Famous", staffLead: "Bayo", cctvWorking: "yes"},
+      {service: "007", compiledBy: "Victoria", staffLead: "Vitory", cctvWorking: "yes"},
+    ]
+  },
 
     { id: 7, name: "Idowu Labake", email: "idowulabake@gmail.com", address: "9, Elegant street Olusoga Houston", contact: "08035567812", date: '11/04/24', dob: "1996-12-29", age: "24", riskLevel: "low", image: studentDemo, 
     youngPersons: [
@@ -371,7 +425,16 @@ const ServiceProfile = () => {
       {service: "Six", compiledBy: "Mide", staffLead: "Ayo", lastModified: "Shina"},
       {service: "Seven", compiledBy: "Ade", staffLead: "Remi", lastModified: "Tolu"}
     ],
-    },
+    healthAndSafety: [
+      {service: "001", compiledBy: "Aina", staffLead: "James", cctvWorking: "yes"},
+      {service: "002", compiledBy: "Kola", staffLead: "Rebecca", cctvWorking: "yes"},
+      {service: "003", compiledBy: "Desire", staffLead: "Femi", cctvWorking: "no"},
+      {service: "004", compiledBy: "Joy", staffLead: "Mercy", cctvWorking: "yes"},
+      {service: "005", compiledBy: "Lekan", staffLead: "Segun", cctvWorking: "no"},
+      {service: "006", compiledBy: "Famous", staffLead: "Bayo", cctvWorking: "yes"},
+      {service: "007", compiledBy: "Victoria", staffLead: "Vitory", cctvWorking: "yes"},
+    ]
+  },
 
     { id: 8, name: "Balogun Adeshina", email: "shina@gmail.com", address: "51, Rainbow street Olusoga Houston", contact: "08035567812", date: '12/04/24', dob: "1998-08-15", age: "26", riskLevel: "low", image: studentDemo, 
     youngPersons: [
@@ -422,7 +485,16 @@ const ServiceProfile = () => {
       {service: "Six", compiledBy: "Mide", staffLead: "Ayo", lastModified: "Shina"},
       {service: "Seven", compiledBy: "Ade", staffLead: "Remi", lastModified: "Tolu"}
     ],
-    },
+    healthAndSafety: [
+      {service: "001", compiledBy: "Aina", staffLead: "James", cctvWorking: "yes"},
+      {service: "002", compiledBy: "Kola", staffLead: "Rebecca", cctvWorking: "yes"},
+      {service: "003", compiledBy: "Desire", staffLead: "Femi", cctvWorking: "no"},
+      {service: "004", compiledBy: "Joy", staffLead: "Mercy", cctvWorking: "yes"},
+      {service: "005", compiledBy: "Lekan", staffLead: "Segun", cctvWorking: "no"},
+      {service: "006", compiledBy: "Famous", staffLead: "Bayo", cctvWorking: "yes"},
+      {service: "007", compiledBy: "Victoria", staffLead: "Vitory", cctvWorking: "yes"},
+    ]
+  },
 
     { id: 9, name: "Olateju Motunrayo", email: "olarayo@gmail.com", address: "33, Martins street Olusoga Houston", contact: "08035567812", date: '12/04/24', dob: "2000-01-11", age: "20", riskLevel: "high", image: studentDemo, youngPersons: [
       {id: "001", name: "James", age: "21 years 3months", referralDate: "05/07/2022"},
@@ -469,7 +541,16 @@ const ServiceProfile = () => {
       {service: "Six", compiledBy: "Mide", staffLead: "Ayo", lastModified: "Shina"},
       {service: "Seven", compiledBy: "Ade", staffLead: "Remi", lastModified: "Tolu"}
     ],
-    },
+    healthAndSafety: [
+      {service: "001", compiledBy: "Aina", staffLead: "James", cctvWorking: "yes"},
+      {service: "002", compiledBy: "Kola", staffLead: "Rebecca", cctvWorking: "yes"},
+      {service: "003", compiledBy: "Desire", staffLead: "Femi", cctvWorking: "no"},
+      {service: "004", compiledBy: "Joy", staffLead: "Mercy", cctvWorking: "yes"},
+      {service: "005", compiledBy: "Lekan", staffLead: "Segun", cctvWorking: "no"},
+      {service: "006", compiledBy: "Famous", staffLead: "Bayo", cctvWorking: "yes"},
+      {service: "007", compiledBy: "Victoria", staffLead: "Vitory", cctvWorking: "yes"},
+    ]
+  },
 
   ]);
 

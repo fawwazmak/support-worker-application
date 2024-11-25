@@ -18,11 +18,14 @@ const Services = () => {
   const [showAllPrevoidM, setShowAllPrevoidM] = useState(false);
   const [showAllRoomCheck, setShowAllRoomCheck] = useState(false);
   const [showAllMaintenace, setShowAllMaintenace] = useState(false);
+  const [showAllHealthAndSafety, setShowAllHealthAndSafety] = useState(false);
   const youngpersonsTodisplay = showAllYP ? selectedStudent.youngPersons || [] : selectedStudent.youngPersons.slice(0, 5) || [];
   const incidentTodisplay = showAllIncident ? selectedStudent.incidentReport : selectedStudent.incidentReport.slice(0, 5) || [];
   const prevoidToDisplay = showAllPrevoidM ? selectedStudent.prevoidManagement : selectedStudent.prevoidManagement.slice(0, 5) || [];
   const roomCheckToDisplay = showAllRoomCheck ? selectedStudent.roomChecks : selectedStudent.roomChecks.slice(0, 5) || [];
   const maintenanceToDisplay = showAllMaintenace ? selectedStudent.maintenance : selectedStudent.maintenance.slice(0, 5) || [];
+  const healthAndSafetyToDisplay = showAllHealthAndSafety ? selectedStudent.healthAndSafety : selectedStudent.healthAndSafety.slice(0, 5) || [];
+
 
   const [selectedYoungPerson, setSelectedYoungPerson] = useState(null);
 
@@ -59,7 +62,11 @@ const Services = () => {
 
   const toManagement = () => {
     navigate("/management")
-  } 
+  }
+
+  const toHealthAndSafetyForm = () => {
+    navigate("/healthAndSafetyForm")
+  }
 
 
   const clickedYoungPerson = (youngPerson) => {
@@ -732,6 +739,51 @@ const Services = () => {
                 {selectedStudent.maintenance.length > 5 && (
                   <button className='block mx-auto text-center p-2 text-[#6b21a8] text-lg animate-pulse my-2' onClick={() => setShowAllMaintenace(!showAllMaintenace)}>
                     {showAllMaintenace ? 'View Less' : 'View All'}
+                  </button>
+                )}
+              </div>
+
+              {/* Health & Safety  */}
+              <div className='w-full overflow-x-hidden'>
+                <div className='flex justify-end pr-2'>
+                  <div onClick={toHealthAndSafetyForm} className="flex gap-4 items-center border border-[#6b21a8] rounded-[5px] p-1 text-[#6b21a8] w-fit my-1 cursor-pointer">
+                    <p>Add new</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M11 13H5v-2h6V5h2v6h6v2h-6v6h-2z"/></svg>
+                  </div>
+                </div>
+                <p className='bg-[#6b21a8] text-white p-2'>Health & Safety</p>
+               <div className="lg:overflow-x-hidden overflow-x-scroll w-full">
+                  <table className='border-separate border-spacing-2 md:border-spacing-1 w-full mt-4 border rounded-[5px] '>
+                    <thead className='bg-gray-200'>
+                      <tr className='text-center'>
+                        <th className='px-3 py-2'>Serivce</th>
+                        <th className='px-3 py-2'>Complied by</th>
+                        <th className='px-3 py-2'>Staff lead</th>
+                        <th className='px-3 py-2'>CCTV working</th>
+                      </tr>
+                    </thead>
+
+                    <tbody className='font-medium'>
+                    {healthAndSafetyToDisplay.length > 0 ? (
+                    healthAndSafetyToDisplay.map(healthAndSafetyToDisplay => (
+                      <tr key={healthAndSafetyToDisplay.service} className="px-3 whitespace-nowrap text-center">
+                        <td>{healthAndSafetyToDisplay.service}</td>
+                        <td>{healthAndSafetyToDisplay.compiledBy}</td>
+                        <td>{healthAndSafetyToDisplay.staffLead}</td>
+                        <td>{healthAndSafetyToDisplay.cctvWorking}</td>
+                      </tr>
+                    ))
+                  ) : (
+                    <tr>
+                      <td colSpan="4" className="text-center">No data available</td>
+                    </tr>
+                  )}
+                    </tbody>
+                  </table>
+                </div>
+                {selectedStudent.healthAndSafety.length > 5 && (
+                  <button className='block mx-auto text-center p-2 text-[#6b21a8] text-lg animate-pulse my-2' onClick={() => setShowAllHealthAndSafety(!showAllHealthAndSafety)}>
+                    {showAllHealthAndSafety ? 'View Less' : 'View All'}
                   </button>
                 )}
               </div>
