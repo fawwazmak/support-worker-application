@@ -13,7 +13,7 @@ const SideNavBar = () => {
     }
 
     return (
-        <aside className='bg-purple-800 p-4 h-full flex flex-col md:gap-24 gap-4 font-poppins'>
+        <aside className='bg-[#622C98] p-4 h-full flex flex-col md:gap-24 gap-4 font-poppins'>
             {/* logo */}
             <img src={Logo} alt="Logo" className='h-12 md:w-52 w-full' />
 
@@ -38,9 +38,9 @@ const SideNavBar = () => {
                     <FontAwesomeIcon icon={faBriefcase} />
                     <p>S/w profile</p>
                 </NavLink>
-                <NavLink to="/timesheet" className={({ isActive }) => `flex gap-3 items-center p-2 rounded-[3px] ${isActive ? "bg-[#311A4878] text-white rounded-[8px] py-3" : "bg-none"}`}>
+                <NavLink to="/shiftTracker" className={({ isActive }) => `flex gap-3 items-center p-2 rounded-[3px] ${isActive ? "bg-[#311A4878] text-white rounded-[8px] py-3" : "bg-none"}`}>
                     <FontAwesomeIcon icon={faBriefcase} />
-                    <p>Timesheet</p>
+                    <p>ShiftTracker</p>
                 </NavLink>
             </div>
 

@@ -8,7 +8,7 @@ import ServiceProfile from "./views/MainServiceProfile";
 import TrainingHub from "./views/TrainingHub";
 import Policies from "./views/Policies";
 import SWProfile from "./views/SWProfile";
-import Timesheet from "./views/TimeSheet";
+import ShiftTracker from "./views/ShiftTracker";
 import NoPage from "./components/NoPage";
 import SideNavBar from "./components/SideNavBar";
 import LoginPage from "./views/LoginPage";
@@ -27,6 +27,10 @@ import RiskAssesment from "./components/otherFormsInYoungPersonProfile/RiskAsses
 import Services from "./components/serviceProfileCompo/Services";
 import YoungPersons from "./components/youngPersons/YoungPersons";
 import HealthAndSafety from "./components/otherFormsInServiceProfile/HealthAndSafety";
+import CompletedLog from "./components/shiftTracker/Completed";
+import LiveAvailable from "./components/shiftTracker/LiveAvailable";
+import Upcoming from "./components/shiftTracker/Upcoming";
+import CreateTimeSheet from "./components/shiftTracker/CreateTimeSheet";
 
 function ProtectedRoute({ children, isAuthenticated, isAdmin, adminOnly = false }) {
   if (!isAuthenticated) {
@@ -171,6 +175,12 @@ function App() {
               </ProtectedRoute>
             } />
 
+            <Route path="/trainingHub" element={
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <TrainingHub />
+              </ProtectedRoute>
+            } />
+
             <Route path="/policies" element={
               <ProtectedRoute isAuthenticated={isAuthenticated}>
                 <Policies />
@@ -183,9 +193,33 @@ function App() {
               </ProtectedRoute>
             } />
             
-            <Route path="/timesheet" element={
+            <Route path="/shiftTracker" element={
               <ProtectedRoute isAuthenticated={isAuthenticated}>
-                <Timesheet />
+                <ShiftTracker />
+              </ProtectedRoute>
+            } />
+
+            <Route path="/completedLog" element={
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <CompletedLog />
+              </ProtectedRoute>
+            } />
+
+            <Route path="/liveAvailable" element={
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <LiveAvailable />
+              </ProtectedRoute>
+            } />
+
+            <Route path="/Upcoming" element={
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <Upcoming />  
+              </ProtectedRoute>
+            } />
+
+            <Route path="/createTimesheet" element={
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <CreateTimeSheet />
               </ProtectedRoute>
             } />
 

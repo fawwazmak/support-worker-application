@@ -74,118 +74,118 @@ const IncidentReport = () => {
         </div>     
 
         <div className="w-full lg:overflow-x-hidden overflow-x-scroll px-4 md:px-0 font-poppins">
-        <table className='border-separate border-spacing-2 md:border-spacing-1 w-full mt-16 border rounded-[5px]'>
-          <thead className='bg-gray-200'>
-            <tr className='text-center'>
-              <th className='px-3 py-2'>S/N</th>
-              <th className='px-3 py-2'>Name</th>
-              <th className='px-3 py-2'>Address</th>
-              <th className='px-3 py-2'>Date</th>
-              <th className='px-3 py-2'>Gender</th>
-              <th className='px-3 py-2'>Age</th>
-            </tr>
-          </thead>
-
-          <tbody className='font-medium'>
-            {students.map(student => (
-              <tr key={student.id} className='px-3 whitespace-nowrap text-center cursor-pointer' onClick={() => clickedStudent(student)}>
-                <td>{student.id}</td>
-                <td>{student.name}</td>
-                <td>{student.address}</td>
-                <td>{student.date}</td>
-                <td>{student.gender}</td>
-                <td>{student.age}</td>
+          <table className='border-separate border-spacing-2 md:border-spacing-1 w-full mt-16 border rounded-[5px]'>
+            <thead className='bg-gray-200'>
+              <tr className='text-center'>
+                <th className='px-3 py-2'>S/N</th>
+                <th className='px-3 py-2'>Name</th>
+                <th className='px-3 py-2'>Address</th>
+                <th className='px-3 py-2'>Date</th>
+                <th className='px-3 py-2'>Gender</th>
+                <th className='px-3 py-2'>Age</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+
+            <tbody className='font-medium'>
+              {students.map(student => (
+                <tr key={student.id} className='px-3 whitespace-nowrap text-center cursor-pointer' onClick={() => clickedStudent(student)}>
+                  <td>{student.id}</td>
+                  <td>{student.name}</td>
+                  <td>{student.address}</td>
+                  <td>{student.date}</td>
+                  <td>{student.gender}</td>
+                  <td>{student.age}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
 
 
-        {selectedStudent && (
-          <>
-            <div className='modal absolute right-0 top-0 p-4 bg-white h-screen overflow-y-scroll flex flex-col gap-4 md:w-2/5 z-50 font-poppins scrollbar-thin'>
-              <div className='absolute right-4' onClick={deselect}>
-                <FontAwesomeIcon icon={faXmark} className='md:h-6 h-4' />
-              </div>
-              <figure>
-                <img src={selectedStudent.image} alt="student image" className='block h-28 w-28 mx-auto border-8 border-[#2060BE] rounded-[50%] mb-3' />
-                <figcaption className='text-center font-bold md:text-2xl text-lg'>{selectedStudent.name}</figcaption>
-              </figure>
+          {selectedStudent && (
+            <>
+              <div className='modal absolute right-0 top-0 p-4 bg-white h-screen overflow-y-scroll flex flex-col gap-4 md:w-2/5 z-50 font-poppins scrollbar-thin'>
+                <div className='absolute right-4' onClick={deselect}>
+                  <FontAwesomeIcon icon={faXmark} className='md:h-6 h-4' />
+                </div>
+                <figure>
+                  <img src={selectedStudent.image} alt="student image" className='block h-28 w-28 mx-auto border-8 border-[#2060BE] rounded-[50%] mb-3' />
+                  <figcaption className='text-center font-bold md:text-2xl text-lg'>{selectedStudent.name}</figcaption>
+                </figure>
 
-              <table>
-                <thead>
-                  <tr><th className='text-center bg-[#622C981C] py-2 w-full' colSpan={2}>Young person's details</th></tr>
-                </thead>
+                <table>
+                  <thead>
+                    <tr><th className='text-center bg-[#622C981C] py-2 w-full' colSpan={2}>Young person's details</th></tr>
+                  </thead>
+                    
+                  <tfoot>
+                    <tr><td colSpan={2} className='text-center bg-[#622C981C] py-2 w-full'>Actions</td></tr>
+                  </tfoot>
+
+                  <tbody className='w-1/2 mx-auto'>
+                    <tr className='font-semibold'>
+                      <td className='text-gray-400 md:pt-4 pt-2'>Risk level</td>
+                      <td className='w-1/2 md:text-start text-right text-wrap md:pt-4 pt-2'>{selectedStudent.riskLevel}</td>
+                    </tr>
+                    <tr className='font-semibold'>
+                      <td className='text-gray-400'>Email</td>
+                      <td className='w-1/2 md:text-start text-right text-wrap'>{selectedStudent.email}</td>
+                    </tr>
+                    <tr className='font-semibold'>
+                      <td className='text-gray-400'>Phone</td>
+                      <td className='w-1/2 md:text-start text-right text-wrap'>{selectedStudent.contact}</td>
+                    </tr>
+                    <tr className='font-semibold'>
+                      <td className='text-gray-400'>Address</td>
+                      <td className='w-1/2 md:text-start text-right text-wrap'>{selectedStudent.address}</td>
+                    </tr>
+                    <tr className='font-semibold'>
+                      <td className='text-gray-400'>Age</td>
+                      <td className='w-1/2 md:text-start text-right text-wrap'>{selectedStudent.age}</td>
+                    </tr>
+                    <tr className='font-semibold'>
+                      <td className='text-gray-400 md:pb-4 pb-2'>Gender</td>
+                      <td className='w-1/2 md:text-start text-right text-wrap md:pb-4 pb-2'>{selectedStudent.gender}</td>
+                    </tr>
+                  </tbody>
+                </table>  
+
                   
-                <tfoot>
-                  <tr><td colSpan={2} className='text-center bg-[#622C981C] py-2 w-full'>Actions</td></tr>
-                </tfoot>
+                <div className='flex flex-wrap gap-2 md:justify-start justify-end'>
+                  <div onClick={toServicePage} className='flex items-center md:gap-3 gap-2 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-400 md:justify-normal justify-between'>
+                    <img src={bagIcon} alt="Icon" className='h-[16px]' />
+                    <p>profile</p>
+                  </div>
 
-                <tbody className='w-1/2 mx-auto'>
-                  <tr className='font-semibold'>
-                    <td className='text-gray-400 md:pt-4 pt-2'>Risk level</td>
-                    <td className='w-1/2 md:text-start text-right text-wrap md:pt-4 pt-2'>{selectedStudent.riskLevel}</td>
-                  </tr>
-                  <tr className='font-semibold'>
-                    <td className='text-gray-400'>Email</td>
-                    <td className='w-1/2 md:text-start text-right text-wrap'>{selectedStudent.email}</td>
-                  </tr>
-                  <tr className='font-semibold'>
-                    <td className='text-gray-400'>Phone</td>
-                    <td className='w-1/2 md:text-start text-right text-wrap'>{selectedStudent.contact}</td>
-                  </tr>
-                  <tr className='font-semibold'>
-                    <td className='text-gray-400'>Address</td>
-                    <td className='w-1/2 md:text-start text-right text-wrap'>{selectedStudent.address}</td>
-                  </tr>
-                  <tr className='font-semibold'>
-                    <td className='text-gray-400'>Age</td>
-                    <td className='w-1/2 md:text-start text-right text-wrap'>{selectedStudent.age}</td>
-                  </tr>
-                  <tr className='font-semibold'>
-                    <td className='text-gray-400 md:pb-4 pb-2'>Gender</td>
-                    <td className='w-1/2 md:text-start text-right text-wrap md:pb-4 pb-2'>{selectedStudent.gender}</td>
-                  </tr>
-                </tbody>
-              </table>  
+                  {/* <div className='flex items-center md:gap-3 gap-2 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-400 md:justify-normal justify-between'>
+                    <img src={bagIcon} alt="Icon" className='h-[16px]' />
+                    <p>incident report</p>
+                  </div> */}
 
-                
-              <div className='flex flex-wrap gap-2 md:justify-start justify-end'>
-                <div onClick={toServicePage} className='flex items-center md:gap-3 gap-2 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-400 md:justify-normal justify-between'>
-                  <img src={bagIcon} alt="Icon" className='h-[16px]' />
-                  <p>profile</p>
-                </div>
+                  <div onClick={toPrevoidManagement} className='flex items-center md:gap-3 gap-2 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-400 md:justify-normal justify-between'>
+                    <img src={bagIcon} alt="Icon" className='h-[16px]' />
+                    <p>Prevoid management</p>
+                  </div>
 
-                {/* <div className='flex items-center md:gap-3 gap-2 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-400 md:justify-normal justify-between'>
-                  <img src={bagIcon} alt="Icon" className='h-[16px]' />
-                  <p>incident report</p>
-                </div> */}
+                  <div onClick={toManagement} className='flex items-center md:gap-3 gap-2 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-400 md:justify-normal justify-between'>
+                    <img src={bagIcon} alt="Icon" className='h-[16px]' />
+                    <p>Management</p>
+                  </div>
 
-                <div onClick={toPrevoidManagement} className='flex items-center md:gap-3 gap-2 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-400 md:justify-normal justify-between'>
-                  <img src={bagIcon} alt="Icon" className='h-[16px]' />
-                  <p>Prevoid management</p>
-                </div>
+                  <div className='flex items-center md:gap-3 gap-2 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-400 md:justify-normal justify-between'>
+                    <img src={bagIcon} alt="Icon" className='h-[16px]' />
+                    <p>emergency contact</p>
+                  </div>
 
-                <div onClick={toManagement} className='flex items-center md:gap-3 gap-2 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-400 md:justify-normal justify-between'>
-                  <img src={bagIcon} alt="Icon" className='h-[16px]' />
-                  <p>Management</p>
-                </div>
-
-                <div className='flex items-center md:gap-3 gap-2 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-400 md:justify-normal justify-between'>
-                  <img src={bagIcon} alt="Icon" className='h-[16px]' />
-                  <p>emergency contact</p>
-                </div>
-
-                <div className='flex items-center md:gap-3 gap-2 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-400 md:justify-normal justify-between'>
-                  <img src={bagIcon} alt="Icon" className='h-[16px]' />
-                  <p>Risk assesment plan</p>
+                  <div className='flex items-center md:gap-3 gap-2 font-semibold p-2 rounded-[5px] cursor-pointer text-gray-500 border-2 border-gray-400 md:justify-normal justify-between'>
+                    <img src={bagIcon} alt="Icon" className='h-[16px]' />
+                    <p>Risk assesment plan</p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className='bg-gray-200 md:block hidden opacity-50 h-full w-full absolute left-0 top-0 z-10 font-poppins' onClick={deselect}></div>
-          </>
-        )}
+              <div className='bg-gray-200 md:block hidden opacity-50 h-full w-full absolute left-0 top-0 z-10 font-poppins' onClick={deselect}></div>
+            </>
+          )}
       </div> 
     </div>
   )

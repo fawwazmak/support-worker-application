@@ -67,8 +67,6 @@ const YoungPersons = () => {
     }
   }
 
-
-
   const formRef = useRef(null);
 
   const handleSubmit = (event) => {
@@ -768,6 +766,7 @@ const YoungPersons = () => {
                   </tbody>
                 </table>
               </div>
+              
               {selectedYpCandidate.riskAssesment.length > 5 && (
                 <button className='block mx-auto text-center p-2 text-[#6b21a8] text-lg animate-pulse my-2' onClick={() => setShowAllRiskAssessment(!showAllRiskAssessment)}>
                   {showAllRiskAssessment ? 'View Less' : 'View All'}
@@ -828,7 +827,7 @@ const YoungPersons = () => {
                   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M11 13H5v-2h6V5h2v6h6v2h-6v6h-2z"/></svg>
                 </div>
               </div>
-              <p className='bg-[#6b21a8] text-white p-2'>Case note</p>
+              <p className='bg-[#6b21a8] text-white p-2'>Complaints</p>
               <div className="lg:overflow-x-hidden overflow-x-scroll w-full">
                 <table className='border-separate border-spacing-2 md:border-spacing-1 w-full mt-4 border rounded-[5px] '>
                   <thead className='bg-gray-200'>

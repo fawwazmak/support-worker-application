@@ -46,7 +46,7 @@ const LoginPage = ({ onLogin }) => {
   };
 
   return (
-    <div className='bg-purple-800 w-screen h-screen flex items-center justify-center'>
+    <div className='bg-[#622C98] w-screen h-screen flex items-center justify-center'>
       <form
         className='bg-gray-200 md:w-2/5 w-4/5 px-5 py-8 flex flex-col gap-8 rounded-[10px] opacity-80 border-2 border-black'
         onSubmit={onSubmit}
@@ -56,7 +56,7 @@ const LoginPage = ({ onLogin }) => {
           <p className='text-center'>Login to your account to continue</p>
         </div>
 
-        <div className='flex justify-between gap-2 border-b-2 border-b-purple-800 pb-2'>
+        <div className='flex justify-between gap-2 border-b-2 border-b-[#622C98] pb-2'>
           <input
             className='block w-full border-none outline-none focus:outline-none focus:border-none bg-transparent'
             type="email"
@@ -68,7 +68,7 @@ const LoginPage = ({ onLogin }) => {
           <FontAwesomeIcon icon={faEnvelope} />
         </div>
 
-        <div className='flex justify-between gap-2 border-b-2 border-b-purple-800 pb-2'>
+        <div className='flex justify-between gap-2 border-b-2 border-b-[#622C98] pb-2'>
           <input
             className='block w-full border-none outline-none focus:outline-none focus:border-none bg-transparent'
             type='password'
@@ -107,7 +107,7 @@ const LoginPage = ({ onLogin }) => {
 
         {error && <p className='text-red-500 text-center'>{error}</p>}
 
-        <button className='bg-purple-800 py-2 rounded-[5px] text-gray-200 text-xl font-medium'>Login</button>
+        <button className='bg-[#622C98] py-2 rounded-[5px] text-gray-200 text-xl font-medium'>Login</button>
 
         <p className='text-center'>Don't have an account? <span className='text-blue-500 cursor-pointer'>Sign up here</span></p>
 
